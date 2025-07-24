@@ -1,0 +1,206 @@
+[
+  {
+    "no": 1,
+    "name": "Andhika Laksmana Putra Alka",
+    "university": "Institut Teknologi Batam",
+    "major": "Sistem Informasi"
+  },
+  {
+    "no": 2,
+    "name": "Aggitya Yosafat Hutabarat",
+    "university": "Universitas Indonesia",
+    "major": "Sistem Informasi"
+  },
+  {
+    "no": 3,
+    "name": "Keimazriel Delan",
+    "university": "Universitas Gadjah Mada",
+    "major": "Statistika"
+  },
+  {
+    "no": 4,
+    "name": "Devin Faiz Faturahman",
+    "university": "Universitas Indonesia",
+    "major": "Sistem Informasi"
+  },
+  {
+    "no": 5,
+    "name": "Nabilah Putri Wijaya",
+    "university": "Universitas Semarang",
+    "major": "Informatika"
+  },
+  {
+    "no": 6,
+    "name": "Andhika Reihan Hervito",
+    "university": "Universitas Indonesia",
+    "major": "Sistem Informasi"
+  },
+  {
+    "no": 7,
+    "name": "Vinsensius Fendy Kurniawan",
+    "university": "Institut Teknologi Batam",
+    "major": "Sistem Informasi"
+  },
+  {
+    "no": 8,
+    "name": "Handy Arfiano Hastyawan",
+    "university": "Telkom University Kampus Surabaya",
+    "major": "Informatika"
+  },
+  {
+    "no": 9,
+    "name": "Muhammad Alfin",
+    "university": "Politeknik Negeri Banyuwangi",
+    "major": "Teknologi Rekayasa Perangkat Lunak"
+  },
+  {
+    "no": 10,
+    "name": "Vincent Tanjaya",
+    "university": "Bina Nusantara University",
+    "major": "Computer Science"
+  },
+  {
+    "no": 11,
+    "name": "Farraheira Panundaratrisna Fauziah",
+    "university": "Universitas Pembangunan Nasional Veteran Jawa Timur",
+    "major": "Sistem Informasi"
+  },
+  {
+    "no": 12,
+    "name": "Adyatma Kevin Aryaputra Ramadhan",
+    "university": "Universitas Pembangunan Nasional Veteran Jawa Timur",
+    "major": "Sistem Informasi"
+  },
+  {
+    "no": 13,
+    "name": "Reyhan Zada Virgiwibowo",
+    "university": "Universitas Indonesia",
+    "major": "Ilmu Komputer"
+  },
+  {
+    "no": 14,
+    "name": "Samuel Farrel Bagasputra",
+    "university": "Universitas Indonesia",
+    "major": "Ilmu Komputer"
+  },
+  {
+    "no": 15,
+    "name": "Devi Kartika",
+    "university": "Universitas Semarang",
+    "major": "Teknik Informatika"
+  },
+  {
+    "no": 16,
+    "name": "Fairah Almira",
+    "university": "Institut Teknologi Padang",
+    "major": "Teknik Informatika"
+  },
+  {
+    "no": 17,
+    "name": "Scudetto Ciano Syam",
+    "university": "Universitas Indonesia",
+    "major": "Sistem Informasi"
+  },
+  {
+    "no": 18,
+    "name": "Abila Prastika Navilata",
+    "university": "Universitas Muhammadiyah Surakarta",
+    "major": "Teknik Informatika"
+  },
+  {
+    "no": 19,
+    "name": "Syahana Arman",
+    "university": "Politeknik Negeri Batam",
+    "major": "Teknologi Rekayasa Multimedia"
+  },
+  {
+    "no": 20,
+    "name": "Kevin Yoga Pratama",
+    "university": "Politeknik Negeri Banyuwangi",
+    "major": "Bisnis Digital"
+  },
+  {
+    "no": 21,
+    "name": "Rafi Irsyad Saharso",
+    "university": "Universitas Indonesia",
+    "major": "Sistem Informasi"
+  },
+  {
+    "no": 22,
+    "name": "Harjuno Abdullah",
+    "university": "Universitas Indonesia",
+    "major": "Sistem Informasi"
+  },
+  {
+    "no": 23,
+    "name": "Devina Benhans",
+    "university": "Universitas Internasional Batam",
+    "major": "Sistem Informasi"
+  },
+  {
+    "no": 24,
+    "name": "Muhammad Fatih Zain",
+    "university": "Universitas Indonesia",
+    "major": "Sistem Informasi"
+  },
+  {
+    "no": 25,
+    "name": "Rifat Fauzan",
+    "university": "Universitas Indonesia",
+    "major": "Sistem Informasi"
+  },
+  {
+    "no": 26,
+    "name": "Mustafa Fauzy Tompoh",
+    "university": "Universitas Tadulako",
+    "major": "Teknik Informatika"
+  },
+  {
+    "no": 27,
+    "name": "Bryan Eugene",
+    "university": "Bina Nusantara University",
+    "major": "Computer Science"
+  },
+  {
+    "no": 28,
+    "name": "Martin Marcelino Tarigan",
+    "university": "Universitas Indonesia",
+    "major": "Sistem Informasi"
+  },
+  {
+    "no": 29,
+    "name": "Muhammad Nasywan Sulthan Muyassar Arhata",
+    "university": "Universitas Gunadarma",
+    "major": "Informatika"
+  },
+  {
+    "no": 30,
+    "name": "Patricia Noerant Pinkan Andjani",
+    "university": "Universitas Gunadarma",
+    "major": "Informatika"
+  },
+  {
+    "no": 31,
+    "name": "Muhammad Rahmananda Arief Wibisono",
+    "university": "Universitas Esa Unggul",
+    "major": "Teknik Informatika"
+  },
+  {
+    "no": 32,
+    "name": "Ahmad Fadli Hutasuhut",
+    "university": "Universitas Negeri Jakarta",
+    "major": "Sistem dan Teknologi Informasi"
+  },
+  {
+    "no": 33,
+    "name": "Natasha Rahima",
+    "university": "Universitas Gunadarma",
+    "major": "Informatika"
+  },
+  {
+    "no": 34,
+    "name": "Muhammad Rahmad",
+    "university": "Sekolah Tinggi Teknologi Indonesia Tanjungpinang",
+    "major": "Teknik Informatika"
+  }
+]
