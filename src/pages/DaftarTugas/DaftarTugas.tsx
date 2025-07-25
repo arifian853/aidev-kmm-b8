@@ -3,319 +3,67 @@ import { useNavigate } from 'react-router-dom';
 import { Calendar, BookOpen, ExternalLink } from 'lucide-react';
 import { Footer } from '@/components/layout/Footer';
 import { Navbar } from '@/components/layout/Navbar';
+import tugasData from '@/utils/TugasData.json';
 
 interface Task {
-    id: number;
+    task_number: string;
     title: string;
-    instruction: string;
-    dateGiven: string;
+    competency: string;
+    date_given: string;
     deadline: string;
-    syllabus: string;
-    taskLink: string;
-    solutionLink: string;
+    example_task: string;
+    instructions: string;
 }
 
 export const DaftarTugas = () => {
     const navigate = useNavigate();
 
-    const tasks: Task[] = [
-        {
-            id: 1,
-            title: "Tugas 1 - Tugas Esai: Refleksi dan Pandangan Pribadi tentang AI",
-            instruction: "Lorem ipsum dolor sit amet",
-            dateGiven: "2025-03-01",
-            deadline: "2025-03-07",
-            syllabus: "AI Introduction",
-            taskLink: "http://example.com/tugas1",
-            solutionLink: "http://example.com/solusi1"
-        },
-        {
-            id: 2,
-            title: "Tugas 2 - Mini Project: Eksplorasi Matematika Dasar untuk Machine Learning",
-            instruction: "Lorem ipsum dolor sit amet",
-            dateGiven: "2025-03-04",
-            deadline: "2025-03-10",
-            syllabus: "AI Introduction",
-            taskLink: "http://example.com/tugas2",
-            solutionLink: "http://example.com/solusi2"
-        },
-        {
-            id: 3,
-            title: "Tugas 3 - Mini Project: Beautify your GitHub Account! - Make a custom README.MD Profile",
-            instruction: "Lorem ipsum dolor sit amet",
-            dateGiven: "2025-03-06",
-            deadline: "2025-03-12",
-            syllabus: "AI Development Tools and Frameworks",
-            taskLink: "http://example.com/tugas3",
-            solutionLink: "http://example.com/solusi3"
-        },
-        {
-            id: 4,
-            title: "Tugas 4 - Mini Project: Dasar - dasar Python",
-            instruction: "Lorem ipsum dolor sit amet",
-            dateGiven: "2025-03-08",
-            deadline: "2025-03-14",
-            syllabus: "Python Programming",
-            taskLink: "http://example.com/tugas4",
-            solutionLink: "http://example.com/solusi4"
-        },
-        {
-            id: 5,
-            title: "Tugas 5 - Mini Project: Pemrograman Python menggunakan Function and Class",
-            instruction: "Lorem ipsum dolor sit amet",
-            dateGiven: "2025-03-10",
-            deadline: "2025-03-16",
-            syllabus: "Python Programming",
-            taskLink: "http://example.com/tugas5",
-            solutionLink: "http://example.com/solusi5"
-        },
-        {
-            id: 6,
-            title: "Tugas 6 - Mini Project: Pengenalan Object-Oriented Programming (OOP) di Python",
-            instruction: "Lorem ipsum dolor sit amet",
-            dateGiven: "2025-03-12",
-            deadline: "2025-03-18",
-            syllabus: "Python Programming",
-            taskLink: "http://example.com/tugas6",
-            solutionLink: "http://example.com/solusi6"
-        },
-        {
-            id: 7,
-            title: "Tugas 7 - Mini Project: Exploratory Data Analysis",
-            instruction: "Lorem ipsum dolor sit amet",
-            dateGiven: "2025-03-15",
-            deadline: "2025-03-21",
-            syllabus: "Data Science",
-            taskLink: "http://example.com/tugas7",
-            solutionLink: "http://example.com/solusi7"
-        },
-        {
-            id: 8,
-            title: "Tugas 8 - Mini Project: Praktikum Data Science",
-            instruction: "Lorem ipsum dolor sit amet",
-            dateGiven: "2025-03-18",
-            deadline: "2025-03-24",
-            syllabus: "Data Science",
-            taskLink: "http://example.com/tugas8",
-            solutionLink: "http://example.com/solusi8"
-        },
-        {
-            id: 9,
-            title: "Tugas 9 - Project: Predicting Rain Rate (RR) using Linear Regression",
-            instruction: "Lorem ipsum dolor sit amet",
-            dateGiven: "2025-03-20",
-            deadline: "2025-03-27",
-            syllabus: "Machine Learning",
-            taskLink: "http://example.com/tugas9",
-            solutionLink: "http://example.com/solusi9"
-        },
-        {
-            id: 10,
-            title: "Tugas 10 - Project: Predicting Power Consumption using Linear Regression",
-            instruction: "Lorem ipsum dolor sit amet",
-            dateGiven: "2025-03-22",
-            deadline: "2025-03-29",
-            syllabus: "Machine Learning",
-            taskLink: "http://example.com/tugas10",
-            solutionLink: "http://example.com/solusi10"
-        },
-        {
-            id: 11,
-            title: "Tugas 11 - Project: Sunshine Classification using Logistic Regression",
-            instruction: "Lorem ipsum dolor sit amet",
-            dateGiven: "2025-03-24",
-            deadline: "2025-03-31",
-            syllabus: "Machine Learning",
-            taskLink: "http://example.com/tugas11",
-            solutionLink: "http://example.com/solusi11"
-        },
-        {
-            id: 12,
-            title: "Tugas 12 - Project: Iris Flower Classification with Decision Tree",
-            instruction: "Lorem ipsum dolor sit amet",
-            dateGiven: "2025-03-26",
-            deadline: "2025-04-02",
-            syllabus: "Machine Learning",
-            taskLink: "http://example.com/tugas12",
-            solutionLink: "http://example.com/solusi12"
-        },
-        {
-            id: 13,
-            title: "Tugas 13 - Project: Mall Customers Clustering with KMeans, DBSCAN, & Agglomerative",
-            instruction: "Lorem ipsum dolor sit amet",
-            dateGiven: "2025-03-28",
-            deadline: "2025-04-04",
-            syllabus: "Machine Learning",
-            taskLink: "http://example.com/tugas13",
-            solutionLink: "http://example.com/solusi13"
-        },
-        {
-            id: 14,
-            title: "Tugas 14 - Project: Fashion MNIST Image Classification with TensorFlow/Keras",
-            instruction: "Lorem ipsum dolor sit amet",
-            dateGiven: "2025-04-01",
-            deadline: "2025-04-08",
-            syllabus: "Deep Learning",
-            taskLink: "http://example.com/tugas14",
-            solutionLink: "http://example.com/solusi14"
-        },
-        {
-            id: 15,
-            title: "Tugas 15 - Mini Quiz: Neural Network Base Knowledge Quiz",
-            instruction: "Lorem ipsum dolor sit amet",
-            dateGiven: "2025-04-03",
-            deadline: "2025-04-06",
-            syllabus: "Deep Learning",
-            taskLink: "http://example.com/tugas15",
-            solutionLink: "http://example.com/solusi15"
-        },
-        {
-            id: 16,
-            title: "Tugas 16 - Mini Project: Natural Language Processing with Hugging Face Transformers",
-            instruction: "Lorem ipsum dolor sit amet",
-            dateGiven: "2025-04-05",
-            deadline: "2025-04-12",
-            syllabus: "AI Application",
-            taskLink: "http://example.com/tugas16",
-            solutionLink: "http://example.com/solusi16"
-        },
-        {
-            id: 17,
-            title: "Tugas 17 - Course Completion : Prompt Engineering for Everyone",
-            instruction: "Lorem ipsum dolor sit amet",
-            dateGiven: "2025-04-07",
-            deadline: "2025-04-14",
-            syllabus: "AI Application",
-            taskLink: "http://example.com/tugas17",
-            solutionLink: "http://example.com/solusi17"
-        },
-        {
-            id: 18,
-            title: "Tugas 18 - Project: Retrieval-Augmented Generation with Gradio and Groq API Key",
-            instruction: "Lorem ipsum dolor sit amet",
-            dateGiven: "2025-04-10",
-            deadline: "2025-04-17",
-            syllabus: "AI Application",
-            taskLink: "http://example.com/tugas18",
-            solutionLink: "http://example.com/solusi18"
-        },
-        {
-            id: 19,
-            title: "Tugas 19 - Mini Project: Face Recognition System using OpenCV",
-            instruction: "Lorem ipsum dolor sit amet",
-            dateGiven: "2025-04-12",
-            deadline: "2025-04-19",
-            syllabus: "AI Application",
-            taskLink: "http://example.com/tugas19",
-            solutionLink: "http://example.com/solusi19"
-        },
-        {
-            id: 20,
-            title: "Tugas 20 - Mini Project: Convolution Neural Networks - Brain Tumor Classification",
-            instruction: "Lorem ipsum dolor sit amet",
-            dateGiven: "2025-04-14",
-            deadline: "2025-04-21",
-            syllabus: "AI Application",
-            taskLink: "http://example.com/tugas20",
-            solutionLink: "http://example.com/solusi20"
-        },
-        {
-            id: 21,
-            title: "Tugas 21 - Quiz : Computer Vision Quiz",
-            instruction: "Lorem ipsum dolor sit amet",
-            dateGiven: "2025-04-16",
-            deadline: "2025-04-18",
-            syllabus: "AI Application",
-            taskLink: "http://example.com/tugas21",
-            solutionLink: "http://example.com/solusi21"
-        },
-        {
-            id: 22,
-            title: "Tugas 22 - Essay: Analysis on Time Series Specific Libraries",
-            instruction: "Lorem ipsum dolor sit amet",
-            dateGiven: "2025-04-18",
-            deadline: "2025-04-24",
-            syllabus: "AI Application",
-            taskLink: "http://example.com/tugas22",
-            solutionLink: "http://example.com/solusi22"
-        },
-        {
-            id: 23,
-            title: "Tugas 23 - Mini Project: Use Attention Mechanism Layer on LSTM",
-            instruction: "Lorem ipsum dolor sit amet",
-            dateGiven: "2025-04-20",
-            deadline: "2025-04-27",
-            syllabus: "AI Application",
-            taskLink: "http://example.com/tugas23",
-            solutionLink: "http://example.com/solusi23"
-        },
-        {
-            id: 24,
-            title: "Tugas 24 - Mini-Project: Movie Recommendation with Content-Based Filtering",
-            instruction: "Lorem ipsum dolor sit amet",
-            dateGiven: "2025-04-22",
-            deadline: "2025-04-29",
-            syllabus: "AI Application",
-            taskLink: "http://example.com/tugas24",
-            solutionLink: "http://example.com/solusi24"
-        },
-        {
-            id: 25,
-            title: "Tugas 25 - Mini Project: Speech Classification with CNN",
-            instruction: "Lorem ipsum dolor sit amet",
-            dateGiven: "2025-04-24",
-            deadline: "2025-05-01",
-            syllabus: "AI Application",
-            taskLink: "http://example.com/tugas25",
-            solutionLink: "http://example.com/solusi25"
-        },
-        {
-            id: 26,
-            title: "Tugas 26 - Essay: Comparison of Learning Methods and Basic Understanding of Reinforcement Learning Concepts",
-            instruction: "Lorem ipsum dolor sit amet",
-            dateGiven: "2025-04-26",
-            deadline: "2025-05-03",
-            syllabus: "AI Application",
-            taskLink: "http://example.com/tugas26",
-            solutionLink: "http://example.com/solusi26"
-        },
-        {
-            id: 27,
-            title: "Tugas 27 - Project: Deploying a Machine Learning Model with Flask API on Hugging Face Spaces",
-            instruction: "Lorem ipsum dolor sit amet",
-            dateGiven: "2025-04-28",
-            deadline: "2025-05-05",
-            syllabus: "Model Deployment",
-            taskLink: "http://example.com/tugas27",
-            solutionLink: "http://example.com/solusi27"
-        }
-    ];
+    const tasks: Task[] = tugasData.tasks;
 
-    const handleTaskClick = (taskId: number) => {
+    const handleTaskClick = (taskNumber: string) => {
+        // Extract number from task_number (e.g., "Tugas 1" -> "1")
+        const taskId = taskNumber.replace('Tugas ', '');
         navigate(`/assignment/${taskId}`);
     };
 
-    const getSyllabusColor = (syllabus: string) => {
+    const getSyllabusColor = (competency: string) => {
         const colors: { [key: string]: string } = {
-            'AI Introduction': 'bg-blue-500',
-            'AI Development Tools and Frameworks': 'bg-green-500',
+            'Introduction to AI': 'bg-blue-500',
+            'AI Development Tools and Framework': 'bg-green-500',
             'Python Programming': 'bg-yellow-500',
             'Data Science': 'bg-purple-500',
             'Machine Learning': 'bg-red-500',
             'Deep Learning': 'bg-indigo-500',
-            'AI Application': 'bg-pink-500',
+            'AI Applications': 'bg-pink-500',
             'Model Deployment': 'bg-teal-500'
         };
-        return colors[syllabus] || 'bg-gray-500';
+        return colors[competency] || 'bg-gray-500';
     };
 
     const formatDate = (dateString: string) => {
-        const date = new Date(dateString);
-        return date.toLocaleDateString('id-ID', {
-            day: 'numeric',
-            month: 'long',
-            year: 'numeric'
-        });
+        // Parse the date string format "Friday, 7 March 2025, 12:00 AM"
+        const parts = dateString.split(', ');
+        if (parts.length >= 3) {
+            const datePart = parts[1]; // "7 March 2025"
+            const date = new Date(datePart);
+            if (!isNaN(date.getTime())) {
+                return date.toLocaleDateString('id-ID', {
+                    day: 'numeric',
+                    month: 'long',
+                    year: 'numeric'
+                });
+            }
+        }
+        return dateString; // Return original if parsing fails
+    };
+
+    const getShortInstruction = (instructions: string) => {
+        // Get first sentence or first 100 characters
+        const firstSentence = instructions.split('.')[0];
+        if (firstSentence.length > 100) {
+            return firstSentence.substring(0, 100) + '...';
+        }
+        return firstSentence + '.';
     };
 
     const containerVariants = {
@@ -368,9 +116,9 @@ export const DaftarTugas = () => {
                         initial="hidden"
                         animate="visible"
                     >
-                        {tasks.map((task) => (
+                        {tasks.map((task, index) => (
                             <motion.div
-                                key={task.id}
+                                key={index}
                                 variants={cardVariants}
                                 whileHover={{
                                     scale: 1.02,
@@ -381,23 +129,23 @@ export const DaftarTugas = () => {
                                 <div
                                     className="h-full cursor-pointer hover:shadow-lg transition-shadow duration-300 border-0 shadow-md p-6 rounded-xl"
                                     style={{ backgroundColor: 'var(--gray)' }}
-                                    onClick={() => handleTaskClick(task.id)}
+                                    onClick={() => handleTaskClick(task.task_number)}
                                 >
                                     {/* Task Header */}
                                     <div className="flex items-start justify-between mb-4">
                                         <div className="flex-1">
                                             <div className="flex items-center gap-2 mb-2">
                                                 <span
-                                                    className={`text-xs px-2 py-1 rounded-full font-medium text-white ${getSyllabusColor(task.syllabus)}`}
+                                                    className={`text-xs px-2 py-1 rounded-full font-medium text-white ${getSyllabusColor(task.competency)}`}
                                                 >
-                                                    {task.syllabus}
+                                                    {task.competency}
                                                 </span>
                                             </div>
                                             <h3
                                                 className="text-lg font-bold mb-2 line-clamp-2 group-hover:text-opacity-80 transition-all"
                                                 style={{ color: 'var(--black)' }}
                                             >
-                                                {task.title}
+                                                {task.task_number} - {task.title}
                                             </h3>
                                         </div>
                                         <ExternalLink size={20} style={{ color: 'var(--black)', opacity: 0.5 }} />
@@ -409,14 +157,14 @@ export const DaftarTugas = () => {
                                             className="text-sm opacity-70 mb-3"
                                             style={{ color: 'var(--black-dark)' }}
                                         >
-                                            {task.instruction}
+                                            {getShortInstruction(task.instructions)}
                                         </p>
 
                                         {/* Dates */}
                                         <div className="space-y-2">
                                             <div className="flex items-center gap-2 text-xs">
                                                 <Calendar size={14} style={{ color: 'var(--black)' }} />
-                                                <span style={{ color: 'var(--black-dark)' }}>Diberikan: {formatDate(task.dateGiven)}</span>
+                                                <span style={{ color: 'var(--black-dark)' }}>Diberikan: {formatDate(task.date_given)}</span>
                                             </div>
                                             <div className="flex items-center gap-2 text-xs">
                                                 <Calendar size={14} style={{ color: 'var(--black)' }} />
@@ -438,7 +186,7 @@ export const DaftarTugas = () => {
                                                 color: 'var(--black)'
                                             }}
                                         >
-                                            Tugas #{task.id}
+                                            {task.task_number}
                                         </span>
                                     </div>
                                 </div>

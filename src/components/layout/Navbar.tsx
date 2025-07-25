@@ -24,7 +24,7 @@ export const Navbar = () => {
           }
         </div>
         <ul className={`bg-[#EFEFEF] dark:bg-[#1C1C1C] md:border-none border rounded-lg md:shadow-none shadow-lg md:m-0 p-5 m-5 md:p-0 flex flex-col items-center gap-4 md:flex-row absolute md:static md:z-auto z-[2] md:right-0 right-0 w-[200px] md:w-auto md:pl-0 transition-all duration-100 ease-in-out ${toggle ? 'top-24 opacity-100' : 'top-24 z-[-99] right-72 opacity-0 md:opacity-100'}`}>
-          <li className="border-b p-1 border-[#1C1C1C] dark:border-[#EFEFEF] hover:border-teal-500 dark:hover:border-teal-500"><Link to='/onboarding'>Onboarding</Link></li>
+          <li className="border-b p-1 border-[#1C1C1C] dark:border-[#EFEFEF] hover:border-teal-500 dark:hover:border-teal-500"><Link to='/onboarding'>Home</Link></li>
           <li className="border-b p-1 border-[#1C1C1C] dark:border-[#EFEFEF] hover:border-teal-500 dark:hover:border-teal-500"><Link to='/silabus'>Silabus</Link></li>
           <li className="border-b p-1 border-[#1C1C1C] dark:border-[#EFEFEF] hover:border-teal-500 dark:hover:border-teal-500"><Link to='/assignment'>Tugas</Link></li>
           <li className="border-b p-1 border-[#1C1C1C] dark:border-[#EFEFEF] hover:border-teal-500 dark:hover:border-teal-500"><Link to='/data'>Peserta</Link></li>

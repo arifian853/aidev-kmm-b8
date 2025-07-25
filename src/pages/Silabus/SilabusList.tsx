@@ -5,72 +5,38 @@ import { BookOpen, Code, Database, Brain, Cpu, Rocket, Users, Wrench, Lightbulb 
 import { Footer } from '@/components/layout/Footer';
 import { Navbar } from '@/components/layout/Navbar';
 import { useNavigate } from 'react-router-dom';
+import syllabusData from '@/utils/SilabusData.json';
 
-const syllabusData = [
-  {
-    id: 1,
-    title: 'Introduction to AI',
-    description: 'Pengenalan dasar tentang Artificial Intelligence dan konsep fundamentalnya',
-    icon: Lightbulb,
-    color: 'bg-blue-500'
-  },
-  {
-    id: 2,
-    title: 'AI Dev. Tools and Frameworks',
-    description: 'Tools dan framework yang digunakan dalam pengembangan AI',
-    icon: Wrench,
-    color: 'bg-green-500'
-  },
-  {
-    id: 3,
-    title: 'Python Programming',
-    description: 'Pemrograman Python untuk AI dan Data Science',
-    icon: Code,
-    color: 'bg-yellow-500'
-  },
-  {
-    id: 4,
-    title: 'Data Science',
-    description: 'Analisis data, visualisasi, dan statistical modeling',
-    icon: Database,
-    color: 'bg-purple-500'
-  },
-  {
-    id: 5,
-    title: 'Machine Learning',
-    description: 'Algoritma machine learning dan implementasinya',
-    icon: Brain,
-    color: 'bg-red-500'
-  },
-  {
-    id: 6,
-    title: 'Deep Learning',
-    description: 'Neural networks dan deep learning architectures',
-    icon: Cpu,
-    color: 'bg-indigo-500'
-  },
-  {
-    id: 7,
-    title: 'AI Applications',
-    description: 'Penerapan AI dalam berbagai industri dan use cases',
-    icon: Rocket,
-    color: 'bg-pink-500'
-  },
-  {
-    id: 8,
-    title: 'Model Deployment',
-    description: 'Deploy model AI ke production environment',
-    icon: BookOpen,
-    color: 'bg-teal-500'
-  },
-  {
-    id: 9,
-    title: 'Soft Skills',
-    description: 'Komunikasi, teamwork, dan professional skills',
-    icon: Users,
-    color: 'bg-orange-500'
-  }
-];
+// Mapping icon untuk setiap kategori
+const getIconForCategory = (category: string) => {
+  const categoryLower = category.toLowerCase();
+  if (categoryLower.includes('introduction') || categoryLower.includes('ai')) return Lightbulb;
+  if (categoryLower.includes('tools') || categoryLower.includes('frameworks')) return Wrench;
+  if (categoryLower.includes('python')) return Code;
+  if (categoryLower.includes('data science')) return Database;
+  if (categoryLower.includes('machine learning')) return Brain;
+  if (categoryLower.includes('deep learning')) return Cpu;
+  if (categoryLower.includes('applications')) return Rocket;
+  if (categoryLower.includes('deployment')) return BookOpen;
+  if (categoryLower.includes('soft skills')) return Users;
+  return BookOpen; // default icon
+};
+
+// Mapping warna untuk setiap kategori
+const getColorForCategory = (index: number) => {
+  const colors = [
+    'bg-blue-500',
+    'bg-green-500', 
+    'bg-yellow-500',
+    'bg-purple-500',
+    'bg-red-500',
+    'bg-indigo-500',
+    'bg-pink-500',
+    'bg-teal-500',
+    'bg-orange-500'
+  ];
+  return colors[index % colors.length];
+};
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
@@ -97,9 +63,9 @@ const cardVariants: Variants = {
 export const SilabusList = () => {
   const navigate = useNavigate();
   
-  const handleSyllabusClick = (syllabusId: number) => {
-    // Navigate ke halaman silabus dengan ID
-    navigate(`/silabus/${syllabusId}`);
+  const handleSyllabusClick = (syllabusIndex: number) => {
+    // Navigate ke halaman silabus dengan index (dimulai dari 0)
+    navigate(`/silabus/${syllabusIndex}`);
   };
 
   return (
@@ -130,11 +96,12 @@ export const SilabusList = () => {
             initial="hidden"
             animate="visible"
           >
-            {syllabusData.map((syllabus) => {
-              const IconComponent = syllabus.icon;
+            {syllabusData.courses.map((course, index) => {
+              const IconComponent = getIconForCategory(course.category);
+              const color = getColorForCategory(index);
               return (
                 <motion.div
-                  key={syllabus.id}
+                  key={index}
                   variants={cardVariants}
                   whileHover={{
                     scale: 1.02,
@@ -148,25 +115,25 @@ export const SilabusList = () => {
                   >
                     <CardHeader className="pb-4">
                       <div className="flex items-center gap-3 mb-2">
-                        <div className={`p-2 rounded-lg ${syllabus.color} text-white`}>
+                        <div className={`p-2 rounded-lg ${color} text-white`}>
                           <IconComponent size={24} />
                         </div>
                         <div className="text-sm font-medium" style={{ color: 'var(--black-dark)', opacity: 0.7 }}>
-                          Modul {syllabus.id}
+                          Modul {index + 1}
                         </div>
                       </div>
                       <CardTitle className="text-xl font-bold leading-tight" style={{ color: 'var(--black)' }}>
-                        {syllabus.title}
+                        {course.category}
                       </CardTitle>
                       <CardDescription className="mt-2 min-h-[40px]" style={{ color: 'var(--black-dark)', opacity: 0.8 }}>
-                        {syllabus.description}
+                        {course.description}
                       </CardDescription>
                     </CardHeader>
                     <CardContent className="pt-0">
                       <Button
                         className="w-full text-white hover:opacity-90 transition-opacity"
                         style={{ backgroundColor: 'var(--black)', borderColor: 'var(--black)' }}
-                        onClick={() => handleSyllabusClick(syllabus.id)}
+                        onClick={() => handleSyllabusClick(index)}
                       >
                         Mulai Belajar
                       </Button>

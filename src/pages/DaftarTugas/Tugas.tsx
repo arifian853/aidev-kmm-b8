@@ -4,114 +4,119 @@ import { ArrowLeft, Calendar, BookOpen, ExternalLink, CheckCircle, Clock } from 
 import { Button } from '@/components/ui/button';
 import { Footer } from '@/components/layout/Footer';
 import { Navbar } from '@/components/layout/Navbar';
+import tugasData from '@/utils/TugasData.json';
+import ReactMarkdown from 'react-markdown';
 
-interface TaskDetail {
-    id: number;
+export interface TaskDetail {
+    task_number: string;
     title: string;
-    instruction: string;
-    dateGiven: string;
+    competency: string;
+    date_given: string;
     deadline: string;
-    syllabus: string;
-    taskLink: string;
-    solutionLink: string;
-    description: string;
-    objectives: string[];
-    requirements: string[];
-    deliverables: string[];
+    example_task: string;
+    instructions: string;
 }
 
 export const Tugas = () => {
     const { id } = useParams<{ id: string }>();
     const navigate = useNavigate();
 
-    const taskData: { [key: string]: TaskDetail } = {
-        '1': {
-            id: 1,
-            title: "Tugas 1 - Tugas Esai: Refleksi dan Pandangan Pribadi tentang AI",
-            instruction: "Menulis esai reflektif tentang pemahaman dan pandangan pribadi mengenai Artificial Intelligence",
-            dateGiven: "2025-03-01",
-            deadline: "2025-03-07",
-            syllabus: "AI Introduction",
-            taskLink: "http://example.com/tugas1",
-            solutionLink: "http://example.com/solusi1",
-            description: "Tugas ini bertujuan untuk mengeksplorasi pemahaman awal tentang AI dan bagaimana teknologi ini dapat mempengaruhi kehidupan sehari-hari. Mahasiswa diminta untuk menulis esai yang mencerminkan pandangan pribadi mereka tentang perkembangan AI di masa depan.",
-            objectives: [
-                "Memahami konsep dasar Artificial Intelligence",
-                "Menganalisis dampak AI terhadap masyarakat",
-                "Mengembangkan kemampuan berpikir kritis tentang teknologi AI",
-                "Melatih kemampuan menulis akademik"
-            ],
-            requirements: [
-                "Esai minimal 1000 kata",
-                "Menggunakan minimal 3 referensi akademik",
-                "Format APA untuk sitasi",
-                "Struktur esai: pendahuluan, isi, kesimpulan"
-            ],
-            deliverables: [
-                "File PDF esai",
-                "Daftar referensi",
-                "Refleksi singkat (200 kata)"
-            ]
-        },
-        '2': {
-            id: 2,
-            title: "Tugas 2 - Mini Project: Eksplorasi Matematika Dasar untuk Machine Learning",
-            instruction: "Mengeksplorasi konsep matematika fundamental yang digunakan dalam machine learning",
-            dateGiven: "2025-03-04",
-            deadline: "2025-03-10",
-            syllabus: "AI Introduction",
-            taskLink: "http://example.com/tugas2",
-            solutionLink: "http://example.com/solusi2",
-            description: "Project ini fokus pada pemahaman matematika dasar yang menjadi fondasi machine learning, termasuk aljabar linear, kalkulus, statistik, dan probabilitas.",
-            objectives: [
-                "Memahami konsep aljabar linear untuk ML",
-                "Menguasai dasar-dasar kalkulus dalam optimisasi",
-                "Memahami statistik dan probabilitas",
-                "Implementasi konsep matematika dalam Python"
-            ],
-            requirements: [
-                "Jupyter Notebook dengan implementasi",
-                "Visualisasi menggunakan matplotlib/seaborn",
-                "Penjelasan konsep dalam markdown",
-                "Contoh aplikasi dalam ML"
-            ],
-            deliverables: [
-                "Jupyter Notebook (.ipynb)",
-                "File Python (.py)",
-                "Laporan PDF",
-                "Presentasi singkat"
-            ]
-        }
-
-    };
-
-    const task = taskData[id || '1'] || taskData['1'];
+    // Find task by ID (task number)
+    const task = tugasData.tasks.find(t => t.task_number === `Tugas ${id}`) || tugasData.tasks[0];
 
     const formatDate = (dateString: string) => {
-        const date = new Date(dateString);
-        return date.toLocaleDateString('id-ID', {
-            day: 'numeric',
-            month: 'long',
-            year: 'numeric'
-        });
+        // Parse the date string format "Friday, 7 March 2025, 12:00 AM"
+        const parts = dateString.split(', ');
+        if (parts.length >= 3) {
+            const datePart = parts[1]; // "7 March 2025"
+            const date = new Date(datePart);
+            if (!isNaN(date.getTime())) {
+                return date.toLocaleDateString('id-ID', {
+                    day: 'numeric',
+                    month: 'long',
+                    year: 'numeric'
+                });
+            }
+        }
+        return dateString; // Return original if parsing fails
     };
 
-    const getSyllabusColor = (syllabus: string) => {
+    const getSyllabusColor = (competency: string) => {
         const colors: { [key: string]: string } = {
-            'AI Introduction': 'var(--black)',
-            'AI Development Tools and Frameworks': 'var(--black-dark)',
-            'Python Programming': 'var(--black)',
-            'Data Science': 'var(--black-dark)',
-            'Machine Learning': 'var(--black)',
-            'Deep Learning': 'var(--black-dark)',
-            'AI Application': 'var(--black)',
-            'Model Deployment': 'var(--black-dark)'
+            'Introduction to AI': 'bg-blue-500',
+            'AI Development Tools and Framework': 'bg-green-500',
+            'Python Programming': 'bg-yellow-500',
+            'Data Science': 'bg-purple-500',
+            'Machine Learning': 'bg-red-500',
+            'Deep Learning': 'bg-indigo-500',
+            'AI Applications': 'bg-pink-500',
+            'Model Deployment': 'bg-teal-500'
         };
-        return colors[syllabus] || 'var(--black)';
+        return colors[competency] || 'bg-gray-500';
     };
 
     const handleBack = () => {
         navigate('/assignment');
+    };
+
+    const getTaskObjectives = (instructions: string) => {
+        // Extract objectives from instructions (this is a simple implementation)
+        const objectives = [];
+        if (instructions.includes('Tujuan') || instructions.includes('Objektif')) {
+            objectives.push('Memahami konsep dasar dari topik yang diberikan');
+            objectives.push('Mengimplementasikan solusi praktis');
+            objectives.push('Menganalisis hasil dan memberikan insight');
+            objectives.push('Melatih kemampuan problem solving');
+        } else {
+            objectives.push('Menyelesaikan tugas sesuai dengan instruksi yang diberikan');
+            objectives.push('Mengembangkan pemahaman praktis');
+            objectives.push('Melatih kemampuan analisis dan implementasi');
+        }
+        return objectives;
+    };
+
+    const getTaskRequirements = (instructions: string) => {
+        const requirements = [];
+        if (instructions.includes('Google Colab')) {
+            requirements.push('Akses ke Google Colab');
+            requirements.push('Koneksi internet yang stabil');
+        }
+        if (instructions.includes('GitHub')) {
+            requirements.push('Akun GitHub aktif');
+            requirements.push('Pemahaman dasar Git');
+        }
+        if (instructions.includes('Python')) {
+            requirements.push('Pemahaman dasar Python');
+            requirements.push('Environment Python yang terinstall');
+        }
+        if (requirements.length === 0) {
+            requirements.push('Mengikuti instruksi yang diberikan');
+            requirements.push('Mengumpulkan tugas tepat waktu');
+        }
+        return requirements;
+    };
+
+    const getTaskDeliverables = (instructions: string) => {
+        const deliverables = [];
+        if (instructions.includes('PDF')) {
+            deliverables.push('File PDF');
+        }
+        if (instructions.includes('Google Colab') || instructions.includes('.ipynb')) {
+            deliverables.push('Notebook (.ipynb)');
+        }
+        if (instructions.includes('GitHub') || instructions.includes('repository')) {
+            deliverables.push('Link repository GitHub');
+        }
+        if (instructions.includes('Google Docs')) {
+            deliverables.push('Link Google Docs');
+        }
+        if (instructions.includes('.py')) {
+            deliverables.push('File Python (.py)');
+        }
+        if (deliverables.length === 0) {
+            deliverables.push('Hasil tugas sesuai format yang diminta');
+        }
+        return deliverables;
     };
 
     return (
@@ -149,13 +154,9 @@ export const Tugas = () => {
                     >
                         <div className="flex items-center gap-3 mb-4">
                             <span
-                                className="text-sm px-3 py-1 rounded-full font-medium"
-                                style={{
-                                    backgroundColor: getSyllabusColor(task.syllabus),
-                                    color: 'var(--white)'
-                                }}
+                                className={`text-sm px-3 py-1 rounded-full font-medium text-white ${getSyllabusColor(task.competency)}`}
                             >
-                                {task.syllabus}
+                                {task.competency}
                             </span>
                             <span
                                 className="text-sm px-3 py-1 rounded-full"
@@ -164,7 +165,7 @@ export const Tugas = () => {
                                     color: 'var(--black)'
                                 }}
                             >
-                                Tugas #{task.id}
+                                {task.task_number}
                             </span>
                         </div>
 
@@ -172,22 +173,15 @@ export const Tugas = () => {
                             className="text-3xl md:text-4xl font-bold mb-4"
                             style={{ color: 'var(--black)' }}
                         >
-                            {task.title}
+                            {task.task_number} - {task.title}
                         </h1>
-
-                        <p
-                            className="text-lg opacity-80 mb-6"
-                            style={{ color: 'var(--black-dark)' }}
-                        >
-                            {task.instruction}
-                        </p>
 
                         {/* Date Info */}
                         <div className="flex flex-wrap gap-6 mb-6">
                             <div className="flex items-center gap-2">
                                 <Calendar size={18} style={{ color: 'var(--black)' }} />
                                 <span className="text-sm" style={{ color: 'var(--black-dark)' }}>
-                                    Diberikan: {formatDate(task.dateGiven)}
+                                    Diberikan: {formatDate(task.date_given)}
                                 </span>
                             </div>
                             <div className="flex items-center gap-2">
@@ -213,31 +207,19 @@ export const Tugas = () => {
                                     color: 'var(--white)',
                                     border: 'none'
                                 }}
-                                onClick={() => window.open(task.taskLink, '_blank')}
+                                onClick={() => window.open(task.example_task, '_blank')}
                             >
                                 <ExternalLink size={16} />
                                 Lihat Tugas
-                            </Button>
-                            <Button
-                                className="flex items-center gap-2"
-                                style={{
-                                    backgroundColor: 'var(--black-dark)',
-                                    color: 'var(--white)',
-                                    border: 'none'
-                                }}
-                                onClick={() => window.open(task.solutionLink, '_blank')}
-                            >
-                                <CheckCircle size={16} />
-                                Lihat Solusi
                             </Button>
                         </div>
                     </motion.div>
 
                     {/* Content Sections */}
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                        {/* Description */}
+                        {/* Instructions */}
                         <motion.div
-                            className="p-6 rounded-xl shadow-md"
+                            className="lg:col-span-2 p-6 rounded-xl shadow-md"
                             style={{ backgroundColor: 'var(--gray)' }}
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
@@ -246,12 +228,117 @@ export const Tugas = () => {
                             <div className="flex items-center gap-2 mb-4">
                                 <BookOpen size={20} style={{ color: 'var(--black)' }} />
                                 <h2 className="text-xl font-bold" style={{ color: 'var(--black)' }}>
-                                    Deskripsi
+                                    Instruksi Tugas
                                 </h2>
                             </div>
-                            <p className="text-sm leading-relaxed" style={{ color: 'var(--black-dark)' }}>
-                                {task.description}
-                            </p>
+                            <div 
+                                className="prose max-w-none markdown-content"
+                                style={{ color: 'var(--black-dark)' }}
+                            >
+                                <ReactMarkdown
+                                    components={{
+                                        h1: ({ children }) => (
+                                            <h1 className="text-2xl font-bold mb-4 mt-6" style={{ color: 'var(--black)' }}>
+                                                {children}
+                                            </h1>
+                                        ),
+                                        h2: ({ children }) => (
+                                            <h2 className="text-xl font-bold mb-3 mt-5" style={{ color: 'var(--black)' }}>
+                                                {children}
+                                            </h2>
+                                        ),
+                                        h3: ({ children }) => (
+                                            <h3 className="text-lg font-semibold mb-2 mt-4" style={{ color: 'var(--black)' }}>
+                                                {children}
+                                            </h3>
+                                        ),
+                                        h4: ({ children }) => (
+                                            <h4 className="text-base font-semibold mb-2 mt-3" style={{ color: 'var(--black)' }}>
+                                                {children}
+                                            </h4>
+                                        ),
+                                        p: ({ children }) => (
+                                            <p className="mb-4 text-sm leading-relaxed" style={{ color: 'var(--black-dark)' }}>
+                                                {children}
+                                            </p>
+                                        ),
+                                        ul: ({ children }) => (
+                                            <ul className="list-disc list-inside mb-4 space-y-1">
+                                                {children}
+                                            </ul>
+                                        ),
+                                        ol: ({ children }) => (
+                                            <ol className="list-decimal list-inside mb-4 space-y-1">
+                                                {children}
+                                            </ol>
+                                        ),
+                                        li: ({ children }) => (
+                                            <li className="text-sm mb-1" style={{ color: 'var(--black-dark)' }}>
+                                                {children}
+                                            </li>
+                                        ),
+                                        strong: ({ children }) => (
+                                            <strong className="font-semibold" style={{ color: 'var(--black)' }}>
+                                                {children}
+                                            </strong>
+                                        ),
+                                        em: ({ children }) => (
+                                            <em className="italic" style={{ color: 'var(--black-dark)' }}>
+                                                {children}
+                                            </em>
+                                        ),
+                                        code: ({ children }) => (
+                                            <code 
+                                                className="px-2 py-1 rounded text-sm font-mono"
+                                                style={{ 
+                                                    backgroundColor: 'var(--white)', 
+                                                    color: 'var(--black)',
+                                                    border: '1px solid var(--black-light)'
+                                                }}
+                                            >
+                                                {children}
+                                            </code>
+                                        ),
+                                        pre: ({ children }) => (
+                                            <pre 
+                                                className="p-4 rounded-lg text-sm font-mono overflow-x-auto mb-4"
+                                                style={{ 
+                                                    backgroundColor: 'var(--white)', 
+                                                    color: 'var(--black)',
+                                                    border: '1px solid var(--black-light)'
+                                                }}
+                                            >
+                                                {children}
+                                            </pre>
+                                        ),
+                                        a: ({ href, children }) => (
+                                            <a 
+                                                href={href}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="underline hover:no-underline"
+                                                style={{ color: 'var(--black)' }}
+                                            >
+                                                {children}
+                                            </a>
+                                        ),
+                                        blockquote: ({ children }) => (
+                                            <blockquote 
+                                                className="border-l-4 pl-4 py-2 mb-4 italic"
+                                                style={{ 
+                                                    borderColor: 'var(--black)',
+                                                    backgroundColor: 'var(--white)',
+                                                    color: 'var(--black-dark)'
+                                                }}
+                                            >
+                                                {children}
+                                            </blockquote>
+                                        )
+                                    }}
+                                >
+                                    {task.instructions}
+                                </ReactMarkdown>
+                            </div>
                         </motion.div>
 
                         {/* Objectives */}
@@ -266,7 +353,7 @@ export const Tugas = () => {
                                 Tujuan Pembelajaran
                             </h2>
                             <ul className="space-y-2">
-                                {task.objectives.map((objective, index) => (
+                                {getTaskObjectives(task.instructions).map((objective, index) => (
                                     <li key={index} className="flex items-start gap-2">
                                         <CheckCircle size={16} style={{ color: 'var(--black)', marginTop: '2px' }} />
                                         <span className="text-sm" style={{ color: 'var(--black-dark)' }}>
@@ -289,7 +376,7 @@ export const Tugas = () => {
                                 Persyaratan
                             </h2>
                             <ul className="space-y-2">
-                                {task.requirements.map((requirement, index) => (
+                                {getTaskRequirements(task.instructions).map((requirement, index) => (
                                     <li key={index} className="flex items-start gap-2">
                                         <div className="w-2 h-2 rounded-full mt-2" style={{ backgroundColor: 'var(--black)' }} />
                                         <span className="text-sm" style={{ color: 'var(--black-dark)' }}>
@@ -302,7 +389,7 @@ export const Tugas = () => {
 
                         {/* Deliverables */}
                         <motion.div
-                            className="p-6 rounded-xl shadow-md"
+                            className="lg:col-span-2 p-6 rounded-xl shadow-md"
                             style={{ backgroundColor: 'var(--gray)' }}
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
@@ -312,7 +399,7 @@ export const Tugas = () => {
                                 Deliverables
                             </h2>
                             <ul className="space-y-2">
-                                {task.deliverables.map((deliverable, index) => (
+                                {getTaskDeliverables(task.instructions).map((deliverable, index) => (
                                     <li key={index} className="flex items-start gap-2">
                                         <CheckCircle size={16} style={{ color: 'green', marginTop: '2px' }} />
                                         <span className="text-sm" style={{ color: 'var(--black-dark)' }}>

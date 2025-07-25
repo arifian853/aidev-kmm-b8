@@ -1,0 +1,521 @@
+{
+  "courses": [
+    {
+      "category": "Introduction to AI",
+      "description": "Pengenalan dasar tentang Artificial Intelligence dan konsep fundamentalnya",
+      "classes": [
+        {
+          "name": "Introduction to AI",
+          "description": "Artificial Intelligence adalah cabang dari ilmu komputer yang bertujuan untuk menciptakan sistem yang dapat melakukan tugas-tugas yang biasanya membutuhkan kecerdasan manusia, seperti pengenalan suara, pengambilan keputusan, atau penerjemahan bahasa.",
+          "ppt_class": "https://www.canva.com/design/DAGbsU6uWnA/OHvN4O5zU0eX0ESnDPjIRw/view?utlId=ha9d7a98605",
+          "date": "Kamis, 6 Maret 2025",
+          "reading_module": "https://docs.google.com/document/d/1lJXawi72FTNQX6S_phQpGWc7gRusMfqm7Id3VK8qCbc/edit?usp=sharing"
+        },
+        {
+          "name": "Artificial Intelligence Domains",
+          "description": "Artificial Intelligence domains adalah area atau bidang khusus dalam AI di mana teknologi ini digunakan untuk menyelesaikan tugas tertentu. Setiap domain memiliki fokus yang berbeda sesuai dengan jenis masalah yang ingin diselesaikan.",
+          "ppt_class": "https://www.canva.com/design/DAGcVNeLEmA/L0gQz_xOXoqnRbt66sq9Ag/view?utlId=ha127b2f170",
+          "date": "Jum'at, 7 Maret 2025",
+          "reading_module": "https://docs.google.com/document/d/1TxnSW_F_CIr3m22hE1KOsnMMS1k6a9NmfFuzoYmhX0s/edit?usp=sharing"
+        },
+        {
+          "name": "AI Ethics and Responsible AI Development",
+          "description": "Etika adalah kumpulan prinsip moral yang membantu kita membedakan antara yang benar dan yang salah. Etika kecerdasan buatan (AI) adalah bidang multidisiplin yang mempelajari cara mengoptimalkan dampak positif kecerdasan buatan sambil meminimalkan risiko dan hasil yang merugikan.",
+          "ppt_class": "https://www.canva.com/design/DAGfV4LKeR8/NwGbOvmbtU6YpSklRS4ocg/view?utlId=h0bbca21022",
+          "date": "Senin, 10 Maret 2025",
+          "reading_module": "https://www.ibm.com/think/topics/ai-ethics"
+        },
+        {
+          "name": "Trends in AI and the Future of Artificial Intelligence",
+          "description": "Tren kecerdasan buatan (AI) meliputi Generative AI, Multimodal AI, dan regulasi AI. Tren-tren ini mengubah cara AI digunakan di berbagai industri, termasuk kesehatan, keuangan, dan manufaktur.",
+          "ppt_class": "https://www.canva.com/design/DAGhTkSn-OI/LcCZBgQvrO3D7OUalKZZkQ/view?utlId=hc8e450175e",
+          "date": "Selasa, 11 Maret 2025",
+          "reading_module": "https://aws.amazon.com/id/what-is/artificial-general-intelligence/"
+        },
+        {
+          "name": "Statistics, Linear Algebra, and Probability for ML",
+          "description": "Statistika adalah ilmu yang mempelajari tentang pengumpulan, analisis, interpretasi, penyajian, dan pengorganisasian data. Statistika membantu menyajikan data yang rumit sehingga mudah dipahami sehingga dapat diambil kesimpulan yang bermakna. Probabilitas merupakan besarnya kesempatan (kemungkinan) suatu peristiwa akan terjadi. Probabilitas dapat diukur dengan menggunakan angka atau persentase untuk menggambarkan seberapa besar kemungkinan terjadinya suatu peristiwa atau kejadian. Aljabar linear adalah cabang ilmu matematika yang mempelajari sistem persamaan linear, vektor, transformasi linear, dan matriks.",
+          "ppt_class": "None, async",
+          "date": "Jum'at, 14 Maret 2025",
+          "reading_module": "https://docs.google.com/document/d/1YgqcfLrmoPukWL7JLgGeurACPPAzir-Xx5IRk5oceK4/edit?usp=sharing"
+        }
+      ],
+      "practice": []
+    },
+    {
+      "category": "AI Dev. Tools and Frameworks",
+      "description": "Tools dan framework yang digunakan dalam pengembangan AI",
+      "classes": [
+        {
+          "name": "AI Development Tools and Frameworks",
+          "description": "Tools dan framework memiliki peran krusial dalam seluruh siklus pengembangan AI, mulai dari pemrosesan data hingga deployment model ke lingkungan produksi.",
+          "ppt_class": "https://www.canva.com/design/DAGdvCGrOQ0/HBU3ZadWff_-LCiR6AMYww/view?utlId=hec9b62c416",
+          "date": "Rabu, 12 Maret 2025",
+          "reading_module": "https://docs.google.com/document/d/1xKTOKOL_A5rh1ieRv8JRhPYOnayJRcev52iWjQH1LWE/edit?usp=sharing"
+        },
+        {
+          "name": "Git and GitHub",
+          "description": "Git adalah sistem kontrol versi yang kuat dan banyak digunakan untuk melacak perubahan kode sumber selama pengembangan perangkat lunak. GitHub adalah platform berbasis web yang menggunakan Git, sebuah \"sistem kontrol versi\", untuk membantu pengembang mengelola dan melacak perubahan pada kode mereka.",
+          "ppt_class": "https://www.canva.com/design/DAGdvCGrOQ0/HBU3ZadWff_-LCiR6AMYww/view?utlId=hec9b62c416",
+          "date": "Rabu, 19 Maret 2025",
+          "reading_module": "None"
+        }
+      ],
+      "practice": []
+    },
+    {
+      "category": "Python Programming",
+      "description": "Pemrograman Python untuk AI dan Data Science",
+      "classes": [
+        {
+          "name": "Introduction to Python",
+          "description": "Python adalah bahasa pemrograman yang banyak digunakan dalam aplikasi web, pengembangan perangkat lunak, ilmu data, dan pembelajaran mesin.",
+          "ppt_class": "https://www.canva.com/design/DAGdvCGrOQ0/HBU3ZadWff_-LCiR6AMYww/view?utlId=hec9b62c416",
+          "date": "Kamis, 20 Maret 2025",
+          "reading_module": "https://docs.google.com/document/d/1gAOQZHPtgDHHRACsfwqCySqUw8F4aaxU/edit"
+        },
+        {
+          "name": "Data Structures and Control Flow",
+          "description": "Struktur data pada Python serta alur kontrol nya.",
+          "ppt_class": "https://www.canva.com/design/DAGctL9IGqM/5ncd53HkRf8krvL1VM-6QA/view?utlId=h2bde4b016b",
+          "date": "Senin, 24 Maret 2025",
+          "reading_module": "https://docs.google.com/document/d/1gAOQZHPtgDHHRACsfwqCySqUw8F4aaxU/edit"
+        },
+        {
+          "name": "Function and Class",
+          "description": "Fungsi dan kelas pada Python",
+          "ppt_class": "https://www.canva.com/design/DAGczPpDJfo/WkAaOLdZ3cIXpEF2tbKbqA/view?utlId=h081e242b31",
+          "date": "Selasa, 25 Maret 2025",
+          "reading_module": "https://docs.google.com/document/d/1gAOQZHPtgDHHRACsfwqCySqUw8F4aaxU/edit"
+        },
+        {
+          "name": "Python Modules, Packages and Projects",
+          "description": "Module, package dan project Python",
+          "ppt_class": "https://www.canva.com/design/DAGdrwCPU5k/F2ALA2DN4ouMkqEurGpqsA/view?utlId=hdb29e89239",
+          "date": "Rabu, 26 Maret 2025",
+          "reading_module": "https://docs.google.com/document/d/1gAOQZHPtgDHHRACsfwqCySqUw8F4aaxU/edit"
+        },
+        {
+          "name": "Python Object-Oriented Programming",
+          "description": "Pemrograman Berorientasi Objek pada Python",
+          "ppt_class": "None, async",
+          "date": "Kamis, 27 Maret 2025",
+          "reading_module": "https://docs.google.com/document/d/15QwZmli80KnYdjKpgsZd9zT-MDWXFC0G/edit?usp=sharing&ouid=104578463738234355559&rtpof=true&sd=true"
+        }
+      ],
+      "practice": [
+        {
+          "title": "Tutorial install python",
+          "url": "https://docs.google.com/document/d/1za8q3HIFCrZvG2tgG1rrdXE-5rzXg7khaisKTNIpEEo/edit?usp=sharing"
+        },
+        {
+          "title": "Python Array",
+          "url": "https://colab.research.google.com/drive/1hmOYDo6498oozeh56OyjSXlhh3P1DB57?usp=sharing"
+        },
+        {
+          "title": "Python NumPy Array",
+          "url": "https://colab.research.google.com/drive/1kKoYnpmyCO2wCHHRkyivYv3D0WvGiEjg?usp=sharing"
+        },
+        {
+          "title": "Python Class and Object",
+          "url": "https://colab.research.google.com/drive/1blhw_5C0Isbtef8MlsB_WO30dcIkh7Po?usp=sharing"
+        },
+        {
+          "title": "Python Code Collection",
+          "url": "https://github.com/ibmacademy-aai/python_collection"
+        }
+      ]
+    },
+    {
+      "category": "Data Science",
+      "description": "Analisis data, visualisasi, dan statistical modeling",
+      "classes": [
+        {
+          "name": "Introduction to Data Science",
+          "description": "Data science adalah bidang interdisipliner yang berfokus pada penggalian pengetahuan dan wawasan dari data terstruktur dan tak terstruktur menggunakan berbagai metode, proses, algoritma, dan sistem ilmiah.",
+          "ppt_class": "https://www.canva.com/design/DAGcbNPCrPQ/nDxv8oCKcg1qzlL-HQQ9zQ/view?utlId=h6ffe6aa7cd",
+          "date": "Selasa, 08 April 2025",
+          "reading_module": "https://docs.google.com/document/d/1synHZMVNb7TelqbTP4UUq_b82nimhJlC0mD4Hy-rC-A/edit?usp=sharing"
+        },
+        {
+          "name": "Data Cleaning and Transformation",
+          "description": "Proses pembersihan dan transformasi data.",
+          "ppt_class": "https://www.canva.com/design/DAGctw2jxJk/wk1a_sb-wCcjjsxIa0TEbg/view?utlId=ha6b588ba6c",
+          "date": "Rabu, 09 April 2025",
+          "reading_module": "https://docs.google.com/document/d/1qhqQIioSIkDIMpZuQZgiJ19dzCUwLBK6cGqA_uaxK-o/edit?usp=sharing"
+        },
+        {
+          "name": "Feature Engineering",
+          "description": "Proses pemilihan fitur sebelum modelling.",
+          "ppt_class": "https://www.canva.com/design/DAGerQtMf8Y/8eyH25nvlWLF_9jpAo5k3g/view?utlId=h1fb9876169",
+          "date": "Kamis, 10 April 2025",
+          "reading_module": "https://docs.google.com/document/d/1AyoGsUUW77r-bwC1SKdSvmqeCqq_HmYw1HrRfTrdqUg/edit?usp=sharing"
+        },
+        {
+          "name": "Data Visualization with Matplotlib and Seaborn",
+          "description": "Proses visualisasi data dengan tools Matplotlib dan Seaborn.",
+          "ppt_class": "https://www.canva.com/design/DAGeGyVIp0A/hPXG5x9WNDZQX_kZzv356w/view?utlId=hfe53644347",
+          "date": "None",
+          "reading_module": "None"
+        },
+        {
+          "name": "Exploratory Data Analysis (EDA)",
+          "description": "Penerapan proses Exploratory Data Analysis (EDA) pada proses eksplorasi data.",
+          "ppt_class": "None, async",
+          "date": "Jum'at, 11 April 2025",
+          "reading_module": "https://docs.google.com/document/d/1ifszkXmngiNxdK-LirAKQVa_g3G-QHJjNsH-DDH1seI/edit?usp=sharing"
+        }
+      ],
+      "practice": [
+        {
+          "title": "Data Cleaning and Transformation",
+          "url": "https://colab.research.google.com/drive/1cCozod_L1um-5E4YDhD2RLoNXRNoylq9?usp=sharing"
+        },
+        {
+          "title": "Feature Engineering",
+          "url": "https://colab.research.google.com/drive/1Xm-WI8ahJGkekN5-4cpA_aCfvSeai1pq?usp=sharing"
+        }
+      ]
+    },
+    {
+      "category": "Machine Learning",
+      "description": "Algoritma machine learning dan implementasinya",
+      "classes": [
+        {
+          "name": "Introduction to Machine Learning",
+          "description": "Perkenalan awal dengan Pembelajaran Mesin.",
+          "ppt_class": "https://www.canva.com/design/DAGc_PV00Tc/LYKGZLLnM-xNZSfT8fJinA/view?utlId=hfb77be585b",
+          "date": "Senin, 14 April 2025",
+          "reading_module": "https://docs.google.com/document/d/1L_avGBxJdzxaUotWpltnIkafJ8uBBfJfC1MZJmYtZLY/edit?usp=sharing"
+        },
+        {
+          "name": "Types of Machine Learning",
+          "description": "Jenis-jenis Pembelajaran Mesin.",
+          "ppt_class": "https://www.canva.com/design/DAGkdoIdx5c/VrPqPKEMhrrBI7jcU3g8Fw/view?utlId=h49dc72d5b0",
+          "date": "Selasa, 15 April 2025",
+          "reading_module": "None"
+        },
+        {
+          "name": "Machine Learning Algorithms",
+          "description": "Jenis-jenis algoritma Pembelajaran Mesin.",
+          "ppt_class": "https://www.canva.com/design/DAGd1hUA64c/mZnt8IKh5nkaEczGvydgVw/view?utlId=h29dc9554fe",
+          "date": "Rabu, 16 April 2025",
+          "reading_module": "None"
+        }
+      ],
+      "practice": [
+        {
+          "title": "Regression",
+          "url": "https://colab.research.google.com/drive/1cMnZqXETzFzxkqwNhAV1NU2kaM_51-yB?usp=sharing"
+        },
+        {
+          "title": "Classification",
+          "url": "https://colab.research.google.com/drive/1alx7dn_Jmeofw4GccJ_gb8OiLaT169Ca?usp=sharing"
+        },
+        {
+          "title": "Clustering",
+          "url": "https://colab.research.google.com/drive/12RWvOSSS9E4NsM7zLvXabQDQaLw457ln?usp=sharing"
+        },
+        {
+          "title": "Predict Tavg with LSTM",
+          "url": "https://colab.research.google.com/drive/1UgZlZorvQbErFM9y_tAaXoZXY-cHu9B4?usp=sharing"
+        }
+      ]
+    },
+    {
+      "category": "Deep Learning",
+      "description": "Neural networks dan deep learning architectures",
+      "classes": [
+        {
+          "name": "Introduction to Deep Learning",
+          "description": "Perkenalan awal dengan pembelajaran mendalam.",
+          "ppt_class": "https://www.canva.com/design/DAGcJIhRgJE/4U_TtMxGdCeNk6c8M-JCSQ/view?utlId=h50b3c43075",
+          "date": "Selasa, 22 April 2025",
+          "reading_module": "None"
+        },
+        {
+          "name": "Neural Network",
+          "description": "Perkenalan awal dengan Jaringan Syaraf Tiruan.",
+          "ppt_class": "https://www.canva.com/design/DAGcUx1fk9k/Imqmu-Y3oXNy16GUo7YY_Q/view?utlId=h51fc7ababa",
+          "date": "Rabu - Senin, 23 - 28 April 2025",
+          "reading_module": "None"
+        },
+        {
+          "name": "Deep Learning and Neural Network Algorithms",
+          "description": "Perkenalan awal dengan Jaringan Syaraf Tiruan serta algoritma Pembelajaran Mendalam.",
+          "ppt_class": "https://www.canva.com/design/DAGcs_hBHE4/E83SEMbVSYwT4hNLKeeADg/view?utlId=hb22c3b88c4",
+          "date": "Senin - Selasa, 05 - 06 Mei 2025",
+          "reading_module": "None"
+        },
+        {
+          "name": "Transfer Learning in Deep Learning",
+          "description": "Perkenalan dengan Transfer Learning.",
+          "ppt_class": "https://www.canva.com/design/DAGl8_4sr5I/ctRymaha2zXckVobE_MPyw/view?utlId=h4996b0af11",
+          "date": "Selasa - Rabu, 29-30 April 2025",
+          "reading_module": "None"
+        }
+      ],
+      "practice": [
+        {
+          "title": "Record Introduction to Deep Learning",
+          "url": "https://drive.google.com/file/d/1Q75P3xcSrbahOzmZkDUIedqC25qnRsqf/view?usp=sharing"
+        },
+        {
+          "title": "Record Neural Network Part 1",
+          "url": "https://drive.google.com/file/d/1NtaU2KhwLtSHj-UP7-zWXo2LVA8YX5rn/view?usp=sharing"
+        },
+        {
+          "title": "Record Neural Network Part 2",
+          "url": "https://drive.google.com/file/d/1Ncil0u1Xy7ZDGHVIRf1H9AykkD8Dglae/view?usp=sharing"
+        },
+        {
+          "title": "Record Deep Learning and Neural Network Algorithms Part 1",
+          "url": "https://drive.google.com/file/d/17-WekhUl4eWGm6rMRYYaFxeskTXS33Nm/view?usp=sharing"
+        },
+        {
+          "title": "Record Deep Learning and Neural Network Algorithms Part 2",
+          "url": "https://drive.google.com/file/d/1hTtFeje4V1YHSEZKKLLo3g8kzGw-gBSx/view?usp=sharing"
+        },
+        {
+          "title": "Transfer Learning with VGG16",
+          "url": "https://colab.research.google.com/drive/1eO1M4wL705BD2rl69aeup-nJgkWOc3a6?usp=sharing"
+        },
+        {
+          "title": "Record Transfer Learning in Deep Learning Pt. 1",
+          "url": "https://drive.google.com/file/d/1HYS8Rnf5g__YFht9Vq76CmjpZvfk4-0M/view?usp=sharing"
+        },
+        {
+          "title": "Record Transfer Learning in Deep Learning Pt. 2",
+          "url": "https://drive.google.com/file/d/1lrgRJgXxWnoKXnFat2TPWDTkTxV0ZIsq/view?usp=sharing"
+        }
+      ]
+    },
+    {
+      "category": "AI Applications",
+      "description": "Penerapan AI dalam berbagai industri dan use cases",
+      "classes": [
+        {
+          "name": "Generative AI",
+          "description": "Perkenalan dengan Generative AI.",
+          "ppt_class": "https://www.canva.com/design/DAGl845OjUI/yMTIyyR6tyX3x1mwHdtSBg/view?utlId=h1f64a66a9a",
+          "date": "Jum'at, Rabu, Kamis, 9, 14, 15 Mei 2025",
+          "reading_module": "None"
+        },
+        {
+          "name": "Natural Language Processing",
+          "description": "Perkenalan dengan Natural Language Processing",
+          "ppt_class": "https://www.canva.com/design/DAGnfSJmXp8/iMl55pkTgSsOwt2CGS1WsA/view?utlId=h1f7e4fba3f",
+          "date": "Senin, Selasa, Rabu, 19, 20, 21 Mei 2025",
+          "reading_module": "None"
+        },
+        {
+          "name": "Computer Vision",
+          "description": "Perkenalan dengan Computer Vision",
+          "ppt_class": "https://www.canva.com/design/DAGn3VTuGEE/fDFtzljWjavs9gHAPLjHkA/view?utlId=hf1439ab438",
+          "date": "Kamis, Jum'at, Senin, 22, 23, 26 Mei 2025",
+          "reading_module": "None"
+        },
+        {
+          "name": "Time-Series Forecasting",
+          "description": "Perkenalan dengan Time-Series Forecasting",
+          "ppt_class": "https://www.canva.com/design/DAGoqn9CXOw/JBov57ObwV6fdMGDj4az6A/view?utlId=h519e43116f",
+          "date": "Senin, Selasa, Rabu, 02, 03, 04 Juni 2025",
+          "reading_module": "None"
+        },
+        {
+          "name": "Recommendation System",
+          "description": "Perkenalan dengan Recommendation System",
+          "ppt_class": "https://www.canva.com/design/DAGpX5lgAJ8/pF-erDdFsbGemZg_OU3Veg/view?utlId=h2d3c2b47e5",
+          "date": "Jum'at, Senin, Selasa, 06, 09, 10 Juni 2025",
+          "reading_module": "None"
+        },
+        {
+          "name": "Speech & Audio Processing",
+          "description": "Perkenalan dengan Speech & Audio Processing",
+          "ppt_class": "https://www.canva.com/design/DAGp6IEuZHE/dPtiNQvf9AUQaCMFofXoOQ/view?utlId=ha0a84b6e31",
+          "date": "Kamis, Jum'at, 12, 13 Juni 2025",
+          "reading_module": "None"
+        },
+        {
+          "name": "Reinforcement Learning",
+          "description": "Perkenalan dengan Reinforcement Learning",
+          "ppt_class": "https://www.canva.com/design/DAGqED985F4/9GPiPqDXe_EnZWoDWdznAw/view?utlId=hf526ee433a",
+          "date": "Selasa, Rabu, 17, 18 Juni 2025",
+          "reading_module": "None"
+        }
+      ],
+      "practice": [
+        {
+          "title": "Record Generative AI Part 3",
+          "url": "https://drive.google.com/file/d/1qNsM-yASBZBfkll-IGy2kVfPaHVE_zAU/view?usp=sharing"
+        },
+        {
+          "title": "Tokenization (NLP)",
+          "url": "https://colab.research.google.com/drive/1FeOAz9VWmRfue8RwUYrYaZ_U6r_FMkmw?usp=sharing"
+        },
+        {
+          "title": "Lemmatization and Stemming (NLP)",
+          "url": "https://colab.research.google.com/drive/1o9v5BLOoXTamckXT4cyACXAyw84ysnSy?usp=sharing"
+        },
+        {
+          "title": "Stopwords Removal (NLP)",
+          "url": "https://colab.research.google.com/drive/1_r-kLqPILVbM6Y3wATp4yxQFREKsvycM?usp=sharing"
+        },
+        {
+          "title": "Parts-Of-Speech (POS) Tagging dalam NLP",
+          "url": "https://colab.research.google.com/drive/1vgQC5rOfC0Yw7JKztYaXA1EufmNmDAem?usp=sharing"
+        },
+        {
+          "title": "Sentiment Analysis (NLP)",
+          "url": "https://colab.research.google.com/drive/18wKuh2Ur8syP8BkU8xRMp3muRWxwLq0m?usp=sharing"
+        },
+        {
+          "title": "Spam Detection (NLP)",
+          "url": "https://colab.research.google.com/drive/1FozyVhsm8X-CJkimdK2-p_Fzl8H9gpW3?usp=sharing"
+        },
+        {
+          "title": "Bag-of-Words - NLP",
+          "url": "https://colab.research.google.com/drive/1gadv31QYFG5rxVbBuxvGwwbob53y0sE7?usp=sharing"
+        },
+        {
+          "title": "TF-IDF (Term Frequency-Inverse Document Frequency) - NLP",
+          "url": "https://colab.research.google.com/drive/13c8SohEfcxg8fUUYXfQMOKSTg0D8FKBV?usp=sharing"
+        },
+        {
+          "title": "Word Embeddings - NLP",
+          "url": "https://colab.research.google.com/drive/1LG8rrPeujwIbRT5QlVFZ7TM-VPI4o8Y7?usp=sharing"
+        },
+        {
+          "title": "Model Selection and Training - NLP",
+          "url": "https://colab.research.google.com/drive/1D5ppsda0SKZMzt7GKaHiAQ6Gn7mJXlAN?usp=sharing"
+        },
+        {
+          "title": "Text Summarization - NLP",
+          "url": "https://colab.research.google.com/drive/1gFGtOe__eNAiw3noyBuyk7_XCwJ5yKc9?usp=sharing"
+        },
+        {
+          "title": "Modul Pembelajaran CNN untuk Klasifikasi MNIST (Tulisan Tangan Digit)",
+          "url": "https://colab.research.google.com/drive/1DK2JLJSzuwxCu_OvYr6ZWjvx-QYGNTzb?usp=sharing"
+        },
+        {
+          "title": "Simple GAN Implementation on MNIST Dataset",
+          "url": "https://colab.research.google.com/drive/152F1gqXOuW4A3Vy5Krole8sF-1hJR8WD?usp=sharing"
+        },
+        {
+          "title": "Time - Series Data Visualization - TSF",
+          "url": "https://colab.research.google.com/drive/1pSSfKCUnzAmSSKNEUUiY1CnZbBvsu99d?usp=sharing"
+        },
+        {
+          "title": "Time - Series Data Stationarity Test with ADF (Augmented Dickey-Fuller) and Transformation - TSF",
+          "url": "https://colab.research.google.com/drive/1vA9ON4GP9OJaOkF7N1gR8mw6lW9eOpiO?usp=sharing"
+        },
+        {
+          "title": "Time-Series Traditional Forecasting Techniques - TSF",
+          "url": "https://colab.research.google.com/drive/1KLQA9lw24rvF8Lr-JlYkJbt5fqoxQT0l?usp=sharing"
+        },
+        {
+          "title": "Time-Series Forecasting with Autoregressive Models - TSF",
+          "url": "https://colab.research.google.com/drive/1fu11CauCDs9KEZoTNDuQdJcqQr6LzviF?usp=sharing"
+        },
+        {
+          "title": "Time-Series Forecasting with Machine Learning Models - TSF",
+          "url": "https://colab.research.google.com/drive/1OJFLcnKYSSpmkg8ByUiR-5gVyTnaHv9a?usp=sharing"
+        },
+        {
+          "title": "Time-Series Forecasting with Deep Learning Approach - TSF",
+          "url": "https://colab.research.google.com/drive/1fu0syfuGjCGcrMHCsW8W5hn19wINO8mM?usp=sharing"
+        },
+        {
+          "title": "Recommendation System with Content-Based Filtering",
+          "url": "https://colab.research.google.com/drive/1w8LuYxAkNFJbdDPRyQgvv9cTBLmkJRkP?usp=sharing"
+        },
+        {
+          "title": "Recommendation System with Item-Based Collaborative Filtering",
+          "url": "https://colab.research.google.com/drive/1AO-Jz-5ZyorJUdgEwjt8dbLmTMb2GNsU?usp=sharing"
+        },
+        {
+          "title": "Matrix Factorization",
+          "url": "https://colab.research.google.com/drive/1gUZlLEH1ReU8gEzcj_mMBhlMz_t-07lK?usp=sharing"
+        },
+        {
+          "title": "Movie Recommendation with Neural Collaborative Filtering",
+          "url": "https://colab.research.google.com/drive/13-xTSGrvQCOL1tr2V95Q5ZpY9oSqMEVL?usp=sharing"
+        },
+        {
+          "title": "Game Recommendation with Autoencoders",
+          "url": "https://colab.research.google.com/drive/11_bd8Ddwl1KDTWolqKo3-7d5p3rQP3pc?usp=sharing"
+        },
+        {
+          "title": "Movie Recommendation with Hybrid Recommender (Content-Based Filtering + Neural Collaborative Filtering)",
+          "url": "https://colab.research.google.com/drive/1WYuZE6XJ7dvsPTBzyN6iX6mXIRIFkSFd?usp=sharing"
+        },
+        {
+          "title": "Vowel Classification",
+          "url": "https://colab.research.google.com/drive/1OtS6QR0u1bJp0-lJyFZ71_HFdQ3f2Stj?usp=sharing"
+        },
+        {
+          "title": "Reinforcement Learning demo on Snake Game with Q-Learning Agent",
+          "url": "https://github.com/arifian853/snake_game_rl"
+        }
+      ]
+    },
+    {
+      "category": "Model Deployment",
+      "description": "Deploy model AI ke production environment",
+      "classes": [
+        {
+          "name": "Introduction to Back-end Dev for AI",
+          "description": "Perkenalan dengan Back-end Dev untuk AI Development",
+          "ppt_class": "https://www.canva.com/design/DAGbr5M9m8g/4aE6OBaeeG-xsWb_GLl0-A/view?utlId=h4d96cf4921",
+          "date": "Senin, 23 Juni 2025",
+          "reading_module": "None"
+        },
+        {
+          "name": "Introduction to Flask",
+          "description": "Perkenalan dengan platform Flask",
+          "ppt_class": "https://www.canva.com/design/DAGb_wrLfcs/-uZAzPXhjsLNaLdDp_Fggw/view?utlId=h4ff8c7a73c",
+          "date": "Selasa, 24 Juni 2025",
+          "reading_module": "None"
+        },
+        {
+          "name": "Host your Flask API to HuggingFace Spaces",
+          "description": "Hosting API Flask di HuggingFace Spaces.",
+          "ppt_class": "https://drive.google.com/file/d/13pHz9-yYuRk1rmuMyw7qBrJZFJ4Y6J7J/view?usp=sharing",
+          "date": "Selasa, 24 Juni 2025",
+          "reading_module": "None"
+        }
+      ],
+      "practice": [
+        {
+          "title": "GitHub Repository for the HuggingFace Deployment Video Record",
+          "url": "https://github.com/arifian853/predict_tavg"
+        },
+        {
+          "title": "HuggingFace Spaces for the HuggingFace Deployment Video Record",
+          "url": "https://huggingface.co/spaces/arifian853/predict-tavg"
+        }
+      ]
+    },
+    {
+      "category": "Soft Skills",
+      "description": "Komunikasi, teamwork, dan professional skills",
+      "classes": [
+        {
+          "name": "Design Thinking",
+          "description": "Bagaimana mempelajari Design Thinking dari IBM?",
+          "ppt_class": "https://www.canva.com/design/DAGhfWMrszA/quRF4ks-ugqo6V3X8pl9zQ/view?utlId=h7301ce6300",
+          "date": "Senin, 17 Maret 2025",
+          "reading_module": "https://www.ibm.com/design/thinking/page/courses/Co-Creator"
+        },
+        {
+          "name": "Professional Skills",
+          "description": "Bagaimana mempelajari Professional Skills dari IBM?",
+          "ppt_class": "https://www.canva.com/design/DAGeHNYTnZk/8sx2-vEVO9JwPSKHKCV3dw/view?utlId=hc8645bb70d",
+          "date": "Selasa, 18 Maret 2025",
+          "reading_module": "https://students.yourlearning.ibm.com/activity/PLAN-C60CBE94E2D1"
+        }
+      ],
+      "practice": []
+    }
+  ]
+}

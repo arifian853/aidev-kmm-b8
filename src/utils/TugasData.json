@@ -1,0 +1,247 @@
+{
+  "tasks": [
+    {
+      "task_number": "Tugas 1",
+      "title": "Tugas Esai: Refleksi dan Pandangan Pribadi tentang AI",
+      "competency": "Introduction to AI",
+      "date_given": "Friday, 7 March 2025, 12:00 AM",
+      "deadline": "Monday, 10 March 2025, 5:00 AM",
+      "example_task": "http://example.com",
+      "instructions": "Dalam esai ini, Anda diminta untuk merefleksikan pemahaman Anda tentang kecerdasan buatan (AI) dan bagaimana teknologi ini memengaruhi kehidupan serta industri di masa kini dan masa depan. Tuliskan pandangan pribadi Anda mengenai peran AI dalam berbagai bidang, tantangan yang dihadapi, serta potensi dan risiko yang perlu diperhatikan.\n\n### Ketentuan Esai:\n- **Panjang esai**: 500–800 kata.\n- **Struktur esai**:\n  - **Pendahuluan**: Gambarkan pemahaman awal Anda tentang AI dan mengapa topik ini penting.\n  - **Isi**:\n    - Bagikan pandangan Anda mengenai dampak AI dalam kehidupan sehari-hari dan industri tertentu.\n    - Jelaskan tantangan atau isu etika yang menurut Anda perlu diperhatikan dalam pengembangan AI.\n    - Bagikan refleksi pribadi Anda: Apakah AI lebih banyak membawa manfaat atau risiko? Bagaimana menurut Anda AI seharusnya dikembangkan di masa depan?\n  - **Kesimpulan**: Ringkas pemikiran Anda dan berikan pandangan akhir mengenai AI.\n- **Format**: Tulis dalam bahasa yang jelas dan terstruktur. Gunakan font yang mudah dibaca (misalnya Times New Roman 12pt, spasi 1,5).\n- **Referensi (jika ada)**: Jika Anda merujuk pada sumber tertentu, cantumkan dalam daftar pustaka.\n\n💡 Batas pengumpulan: **Senin, 10 Maret 2025**\n📝 Format pengumpulan: **PDF**\n\n✅ Plagiarisme akan dicek, dan AI-detection tools akan digunakan. Harap gunakan bahasa sendiri."
+    },
+    {
+      "task_number": "Tugas 2",
+      "title": "Mini Project: Eksplorasi Matematika Dasar untuk Machine Learning",
+      "competency": "Introduction to AI",
+      "date_given": "Friday, 14 March 2025, 9:15 AM",
+      "deadline": "Friday, 21 March 2025, 11:59 PM",
+      "example_task": "http://example.com",
+      "instructions": "### Tugas:\n\n#### Bagian 1: Statistika Dasar\n\n**Analisis Data Sederhana**\nDiberikan kumpulan data berikut: `12, 15, 22, 18, 30, 25, 19, 15, 28, 22`\na. Hitung nilai mean (rata-rata), median, dan modus.\nb. Hitung range, variansi, dan standar deviasi.\nc. Buatlah tabel frekuensi dan gambarkan histogram sederhana berdasarkan data tersebut.\nJelaskan langkah-langkah perhitungan dan interpretasikan hasilnya!\n\n**Konsep Statistika Deskriptif vs. Inferensial**\nJelaskan perbedaan antara statistika deskriptif dan inferensial.\nBerikan contoh aplikasi masing-masing dalam dunia machine learning (misalnya, peran statistika deskriptif dalam meringkas data dan inferensial dalam pengambilan keputusan dari sampel).\n\n#### Bagian 2: Probabilitas\n\n**Distribusi Bernoulli**\nMisalkan sebuah eksperimen hanya memiliki dua hasil: sukses dengan probabilitas 0,4 dan gagal dengan probabilitas 0,6.\na. Hitung mean dan variansi dari distribusi Bernoulli tersebut.\nb. Jelaskan arti kedua nilai tersebut dalam konteks eksperimen.\n\n**Distribusi Binomial**\nMisalkan percobaan diulang sebanyak 10 kali dengan probabilitas sukses 0,4 pada tiap percobaan.\na. Hitung probabilitas munculnya tepat 4 sukses.\nb. Hitung mean dan variansi dari distribusi binomial tersebut.\n(Gunakan rumus: `P(X = k) = C(n, k) · p^k · (1 – p)^(n – k).`)\n\n**Distribusi Poisson**\nDalam sebuah toko, rata-rata pelanggan yang datang per jam adalah 5.\na. Hitung probabilitas bahwa tepat 8 pelanggan datang dalam satu jam.\nb. Jelaskan kondisi di mana penggunaan distribusi Poisson tepat untuk menggambarkan situasi tersebut.\n\n**Distribusi Normal**\nMisalkan tinggi badan mahasiswa berdistribusi normal dengan rata-rata 170 cm dan standar deviasi 10 cm.\na. Hitung peluang seorang mahasiswa memiliki tinggi antara 160 cm dan 180 cm (gunakan perhitungan z-score).\nb. Gambarkan kurva distribusi normal dan tandai area yang sesuai dengan interval tinggi badan tersebut.\n\n#### Bagian 3: Aljabar Linear\n\n**Analisis Matriks dan Eigen**\nDiberikan matriks A sebagai representasi fitur dalam dataset:\n```\nA = [3 1]\n    [1 3]\n```\na. Hitung determinan dari matriks A.\nb. Temukan nilai eigen (eigenvalues) dari matriks A.\nc. Untuk setiap nilai eigen, tentukan vektor eigen (eigenvectors) yang sesuai.\nJelaskan langkah-langkah perhitungan dan interpretasikan maknanya, misalnya dalam konteks reduksi dimensi atau Principal Component Analysis (PCA).\n\n**Aplikasi Konsep Eigen dalam PCA**\nJelaskan bagaimana konsep matriks, nilai eigen, dan vektor eigen digunakan dalam metode Principal Component Analysis (PCA) untuk reduksi dimensi data.\nBerikan penjelasan singkat mengenai proses dan manfaatnya dalam machine learning.\n\n#### Bagian 4: Refleksi dan Aplikasi Nyata dalam Machine Learning\n\n**Integrasi Konsep**\nJelaskan secara singkat bagaimana statistika, probabilitas, dan aljabar linear saling terkait dalam membangun model machine learning yang efektif.\nSertakan contoh nyata, misalnya bagaimana pemilihan fitur (feature selection) dan evaluasi model bisa terbantu dengan pemahaman konsep-konsep tersebut.\n\n**Pertanyaan Reflektif**\nBayangkan Anda adalah seorang analis data. Tuliskan dalam 200–300 kata bagaimana Anda akan menggunakan analisis statistika dan aljabar linear untuk membuat keputusan strategis dalam sebuah proyek machine learning.\nFokuskan jawaban Anda pada langkah-langkah analitis dan aplikasi praktis yang dapat meningkatkan performa model.\n\n### Instruksi Tugas:\n- Kerjakan tugas ini secara individu.\n- Tunjukkan semua langkah perhitungan secara tertulis (dapat menggunakan kalkulator manual bila diperlukan).\n- Jawaban dituliskan dengan rapi, beserta penjelasan yang cukup untuk setiap langkah.\n- Kumpulkan tugas dalam bentuk dokumen tertulis (misalnya PDF atau hasil scan kertas perhitungan manual).\n- Pastikan setiap bagian dikerjakan dengan teliti dan didukung dengan penjelasan yang mendalam.\n\n### Ketentuan Tugas:\n💡 Batas pengumpulan: **Jum'at, 21 Maret 2025**\n📝 Format pengumpulan: **PDF** (Jika membuat perhitungan tertulis di kertas, masukkan ke pdf nya)\n\n✅ Silakan gunakan dan manfaatkan AI untuk keperluan riset dan pemahaman materi."
+    },
+    {
+      "task_number": "Tugas 3",
+      "title": "Mini Project: Beautify Your GitHub Account! Make a custom README.MD Profile",
+      "competency": "AI Development Tools and Framework",
+      "date_given": "Wednesday, 19 March 2025, 12:00 PM",
+      "deadline": "Monday, 24 March 2025, 11:59 PM",
+      "example_task": "http://example.com",
+      "instructions": "### Buat Profil GitHub yang Keren dengan README.md\n\n#### Deskripsi\nGitHub memungkinkan kita untuk membuat profil `README.md` yang bisa digunakan untuk personal branding, menunjukkan keahlian, serta menampilkan proyek-proyek terbaik kita. Dalam tugas ini, kamu akan membuat README profil GitHub yang menarik dan mencerminkan identitasmu sebagai developer! 🚀\n\n#### Instruksi\n1. Buat repository baru di GitHub dengan nama yang sesuai dengan username GitHub-mu (contoh: Jika username kamu `arifian853`, maka repository harus diberi nama `arifian853`).\n2. Buat file `README.md` di dalam repository tersebut.\n3. Tambahkan elemen-elemen berikut dalam `README.md`-mu:\n   - **Introduction**: Perkenalkan dirimu secara singkat.\n   - **Skills & Tech Stack**: Tampilkan teknologi dan bahasa pemrograman yang kamu kuasai.\n   - **GitHub Stats (opsional)**: Bisa pakai [GitHub Readme Stats](https://github.com/anuraghazra/github-readme-stats) atau streaks dari [GitHub Readme Stats](https://github.com/anuraghazra/github-readme-stats).\n   - **Social Media Links**: Tambahkan tautan LinkedIn, Twitter, atau portofolio jika ada.\n   - **Fun Facts atau Quotes**: Bisa tambahkan sesuatu yang unik tentang dirimu.\n   - **GIF atau Banner (opsional)**: Gunakan gambar atau animasi untuk membuatnya lebih menarik.\n4. Commit & Push perubahan ke repository-mu.\n5. Pastikan `README.md` muncul di halaman profil GitHub-mu.\n\nSetelah tugas ini selesai, profil GitHub-mu akan lebih menarik dan mencerminkan siapa kamu sebagai developer.\n\n**Kumpulkan tautan profil GitHub kamu disini!**"
+    },
+    {
+      "task_number": "Tugas 4",
+      "title": "Mini Project: Dasar - dasar Python",
+      "competency": "Python Programming",
+      "date_given": "Tuesday, 25 March 2025, 12:00 AM",
+      "deadline": "Monday, 7 April 2025, 11:59 PM",
+      "example_task": "http://example.com",
+      "instructions": "### Deskripsi Tugas:\nDalam tugas ini, Anda akan membuat program Python sederhana yang mencakup konsep dasar Python, yaitu:\n- Mencetak output dengan `print()`\n- Menggunakan variabel dan tipe data\n- Menggunakan struktur data (list & dictionary)\n- Menggunakan kontrol alur (if-else & loop)\n\n### Instruksi Tugas:\nBuat program Python yang melakukan hal berikut:\n\n1. Mencetak **\"Selamat datang di program tugas Python!\"**\n\n2. Meminta pengguna memasukkan nama dan umur\n\n3. Menampilkan pesan **\"Halo, [nama]! Tahun depan kamu berumur [umur + 1] tahun.\"**\n\n4. Buat list berisi 5 nama mahasiswa, lalu:\n   - Cetak seluruh nama dalam list menggunakan loop `for`\n   - Cek apakah nama \"Budi\" ada dalam list atau tidak (gunakan `if`)\n\n5. Buat dictionary berisi data mahasiswa (NIM dan Nama)\n   - Cetak seluruh data dalam format: **\"NIM: [nim], Nama: [nama]\"**\n\n6. Buat program sederhana yang meminta pengguna memasukkan angka dan mengecek apakah angka tersebut genap atau ganjil menggunakan `if-else`\n   - Jika genap, tampilkan **\"Angka [x] adalah genap\"**\n   - Jika ganjil, tampilkan **\"Angka [x] adalah ganjil\"**\n\n### Output yang diharapkan :\n```\nSelamat datang di program tugas Python!\nMasukkan nama Anda: Ahmad\nMasukkan umur Anda: 20\nHalo, Ahmad! Tahun depan kamu berumur 21 tahun.\n\nDaftar nama mahasiswa:\n1. Siti\n2. Budi\n3. Andi\n4. Rina\n5. Dika\n\nBudi ada dalam daftar mahasiswa.\n\nData Mahasiswa:\nNIM: 220101, Nama: Siti\nNIM: 220102, Nama: Budi\nNIM: 220103, Nama: Andi\n\nMasukkan sebuah angka: 7\nAngka 7 adalah ganjil.\n```\n\n**Kumpulkan dalam format `.py`**"
+    },
+    {
+      "task_number": "Tugas 5",
+      "title": "Mini Project: Pemrograman Python menggunakan Function and Class",
+      "competency": "Python Programming",
+      "date_given": "Tuesday, 25 March 2025, 12:00 AM",
+      "deadline": "Monday, 7 April 2025, 11:59 PM",
+      "example_task": "http://example.com",
+      "instructions": "1. Buat fungsi bernama `hitung_rata_rata(nilai_list)`\n   - Fungsi ini menerima list nilai (misalnya: `[80, 90, 75]`).\n   - Menghitung rata-rata dari nilai dalam list.\n   - Mengembalikan nilai rata-rata tersebut.\n\n   **Contoh pemanggilan fungsi:**\n   ```python\n   print(hitung_rata_rata()) # Output: 81.67\n   ```\n\n2. Buat kelas `Mahasiswa` dengan atribut dan metode berikut:\n   - **Atribut**: `nama`, `nim`, dan `nilai` (berupa list nilai).\n   - **Metode `__init__`**: Untuk inisialisasi data mahasiswa.\n   - **Metode `tampilkan_info()`**: Untuk mencetak nama, NIM, dan nilai rata-rata mahasiswa.\n   - **Metode `tambah_nilai(nilai_baru)`**: Untuk menambahkan nilai baru ke dalam list nilai.\n\n   **Contoh penggunaan kelas:**\n   ```python\n   mhs1 = Mahasiswa(\"Budi\", \"220101\",)\n   mhs1.tampilkan_info()\n   mhs1.tambah_nilai(95)\n   mhs1.tampilkan_info()\n   ```\n\n3. Buat program utama (`if __name__ == \"__main__\"`) yang:\n   - Membuat minimal dua objek `Mahasiswa`.\n   - Memanggil metode `tampilkan_info()` untuk masing-masing mahasiswa.\n   - Menambahkan nilai baru untuk salah satu mahasiswa dan menampilkan hasil akhirnya.\n\n### Contoh Output yang Diharapkan:\n```\nNama: Budi\nNIM: 220101\nRata-rata nilai: 85.0\n\nMenambahkan nilai baru...\nNama: Budi\nNIM: 220101\nRata-rata nilai: 87.5\n```\n\n**Kumpulkan dalam format `.py`**"
+    },
+    {
+      "task_number": "Tugas 6",
+      "title": "Mini Project: Pengenalan Object-Oriented Programming (OOP) di Python",
+      "competency": "Python Programming",
+      "date_given": "Friday, 28 March 2025, 12:00 AM",
+      "deadline": "Monday, 7 April 2025, 11:59 PM",
+      "example_task": "http://example.com",
+      "instructions": "### Deskripsi Tugas:\nDalam tugas ini, Anda akan membuat kelas (`class`) sederhana yang merepresentasikan data mahasiswa menggunakan konsep dasar OOP di Python, yaitu:\n- Class & Object\n- Constructor (`__init__`)\n- Method (Fungsi dalam class)\n- Encapsulation (Atribut privat)\n\n### Instruksi Tugas:\n1. Buat sebuah `class` bernama `Mahasiswa` yang memiliki atribut berikut:\n   - `nama` (string)\n   - `nim` (string)\n   - `jurusan` (string)\n   - `ipk` (float, default = `0.0`)\n\n2. Tambahkan `method` dalam `class`:\n   - `tampilkan_info()` → Menampilkan informasi mahasiswa dalam format:\n     ```\n     Nama    : [Nama]\n     NIM     : [NIM]\n     Jurusan : [Jurusan]\n     IPK     : [IPK]\n     ```\n   - `update_ipk(nilai_baru)` → Memperbarui nilai IPK, tetapi pastikan IPK tetap dalam rentang 0.0 – 4.0 (gunakan `if-else`). Jika tidak valid, tampilkan **\"IPK tidak valid!\"**.\n\n3. Buat minimal 2 objek mahasiswa, lalu:\n   - Tampilkan informasi awal mahasiswa.\n   - Ubah IPK salah satu mahasiswa.\n   - Cetak informasi setelah perubahan.\n\n### Contoh Output yang Diharapkan:\n```python\n# Objek mahasiswa\nmhs1 = Mahasiswa(\"Siti\", \"220101\", \"Teknik Informatika\", 3.5)\nmhs2 = Mahasiswa(\"Budi\", \"220102\", \"Sistem Informasi\")\n\n# Menampilkan informasi awal\nmhs1.tampilkan_info()\nmhs2.tampilkan_info()\n\n# Update IPK\nmhs2.update_ipk(3.8)\nmhs2.tampilkan_info()\n\n# Contoh input IPK tidak valid\nmhs1.update_ipk(4.5)  # Akan menampilkan \"IPK tidak valid!\"\n```\n\n### Kriteria Penilaian:\n- Program harus berjalan tanpa error.\n- Menggunakan `class` dengan atribut dan `method` dengan benar.\n- Memanfaatkan `constructor (__init__)`.\n- Menerapkan validasi sederhana untuk IPK.\n\n**Bonus**:\nTambahkan method `status_lulus()` yang mengembalikan **\"Lulus\"** jika IPK ≥ 2.5, atau **\"Belum Lulus\"** jika di bawahnya. 🚀\n\n**Dikumpulkan dalam format `.py`**"
+    },
+    {
+      "task_number": "Tugas 7",
+      "title": "Mini Project: Exploratory Data Analysis",
+      "competency": "Data Science",
+      "date_given": "Friday, 11 April 2025, 12:00 AM",
+      "deadline": "Sunday, 20 April 2025, 12:00 AM",
+      "example_task": "http://example.com",
+      "instructions": "Kerjakan tugas di Google Colab dengan template ini : [https://colab.research.google.com/drive/1DtrD1aQ99S6x5Lu98UMhrWQDT_4oBK4p?usp=sharing](https://colab.research.google.com/drive/1DtrD1aQ99S6x5Lu98UMhrWQDT_4oBK4p?usp=sharing)\n\nDuplicate template dengan cara :\n- **File** > **Save a copy in Drive**\n\nLalu kerjakan dengan akun Google Colab sendiri / lokal di Visual Studio Code.\n\n**Kumpulkan dalam bentuk link Google Colab / file `.ipynb`**"
+    },
+    {
+      "task_number": "Tugas 8",
+      "title": "Mini Project: Praktikum Data Science",
+      "competency": "Data Science",
+      "date_given": "Friday, 11 April 2025, 12:00 AM",
+      "deadline": "Sunday, 20 April 2025, 12:00 AM",
+      "example_task": "http://example.com",
+      "instructions": "Kerjakan tugas di Google Colab dengan template ini : [https://colab.research.google.com/drive/1Cje3m9osirZgPm7a6kafXmEYkUVytW9U?usp=sharing](https://colab.research.google.com/drive/1Cje3m9osirZgPm7a6kafXmEYkUVytW9U?usp=sharing)\n\nDuplicate template dengan cara :\n- **File** > **Save a copy in Drive**\n\nLalu kerjakan dengan akun Google Colab sendiri / lokal di Visual Studio Code.\n**Kumpulkan dalam bentuk link Google Colab / file `.ipynb`**"
+    },
+    {
+      "task_number": "Tugas 9",
+      "title": "Project: Predicting Rain Rate (RR) using Linear Regression",
+      "competency": "Machine Learning",
+      "date_given": "Tuesday, 13 May 2025, 9:00 AM",
+      "deadline": "Saturday, 31 May 2025, 11:59 PM",
+      "example_task": "http://example.com",
+      "instructions": "Kerjakan tugas di Google Colab dengan template ini : [https://colab.research.google.com/drive/1ANpF-x6drPVxgs3XH3iwLD6MWGU9qEC9?usp=sharing](https://colab.research.google.com/drive/1ANpF-x6drPVxgs3XH3iwLD6MWGU9qEC9?usp=sharing)\n\nDuplicate template dengan cara :\n- **File** > **Save a copy in Drive**\n\nLalu kerjakan dengan akun Google Colab sendiri.\n\n**Kumpulkan dalam bentuk : link Google Colab.**\n\n**Deadline : Sabtu, 31 Mei 2025.**"
+    },
+    {
+      "task_number": "Tugas 10",
+      "title": "Project: Predicting Power Consumption using Linear Regression",
+      "competency": "Machine Learning",
+      "date_given": "Tuesday, 13 May 2025, 9:00 AM",
+      "deadline": "Saturday, 31 May 2025, 11:59 PM",
+      "example_task": "http://example.com",
+      "instructions": "Kerjakan tugas di Google Colab dengan template ini : [https://colab.research.google.com/drive/1vWYaFQ5ztOeWtiDzHl6GLKBgXf9sLArh?usp=sharing](https://colab.research.google.com/drive/1vWYaFQ5ztOeWtiDzHl6GLKBgXf9sLArh?usp=sharing)\n\nDuplicate template dengan cara :\n- **File** > **Save a copy in Drive**\n\nLalu kerjakan dengan akun Google Colab sendiri.\n\n**Kumpulkan dalam bentuk : link Google Colab.**\n\n**Deadline : Sabtu, 31 Mei 2025.**"
+    },
+    {
+      "task_number": "Tugas 11",
+      "title": "Project: Sunshine Classification using Logistic Regression",
+      "competency": "Machine Learning",
+      "date_given": "Tuesday, 13 May 2025, 9:00 AM",
+      "deadline": "Saturday, 31 May 2025, 11:59 PM",
+      "example_task": "http://example.com",
+      "instructions": "Kerjakan tugas di Google Colab dengan template ini : [https://colab.research.google.com/drive/1dMh40YR7QcUN9pkIUp41DjuDc5H-Q_lX?usp=sharing](https://colab.research.google.com/drive/1dMh40YR7QcUN9pkIUp41DjuDc5H-Q_lX?usp=sharing)\n\nDuplicate template dengan cara :\n- **File** > **Save a copy in Drive**\n\nLalu kerjakan dengan akun Google Colab sendiri.\n\n**Kumpulkan dalam bentuk : link Google Colab.**\n\n**Deadline : Sabtu, 31 Mei 2025.**"
+    },
+    {
+      "task_number": "Tugas 12",
+      "title": "Project: Iris Flower Classification with Decision Tree",
+      "competency": "Machine Learning",
+      "date_given": "Thursday, 26 June 2025, 4:00 PM",
+      "deadline": "Friday, 11 July 2025, 11:59 PM",
+      "example_task": "http://example.com",
+      "instructions": "Kerjakan tugas di Google Colab dengan template ini : [https://colab.research.google.com/drive/1z15hxhnfWYaSUyNLS8CDEeEaCCo6NyfC?usp=sharing](https://colab.research.google.com/drive/1z15hxhnfWYaSUyNLS8CDEeEaCCo6NyfC?usp=sharing)\n\nDuplicate template dengan cara :\n- **File** > **Save a copy in Drive**\n\nLalu kerjakan dengan akun Google Colab sendiri.\n\n**Kumpulkan dalam bentuk : link Google Colab.**\n\n**Deadline : Jum'at 11 Juli 2025.**"
+    },
+    {
+      "task_number": "Tugas 13",
+      "title": "Project: Mall Customers Clustering with KMeans, DBSCAN, & Agglomerative",
+      "competency": "Machine Learning",
+      "date_given": "Thursday, 26 June 2025, 12:00 AM",
+      "deadline": "Friday, 11 July 2025, 11:59 PM",
+      "example_task": "http://example.com",
+      "instructions": "Kerjakan tugas di Google Colab dengan template ini : [https://colab.research.google.com/drive/1souB5IvOcvui8A6sub0g5vBCsuLZuHk8?usp=sharing](https://colab.research.google.com/drive/1souB5IvOcvui8A6sub0g5vBCsuLZuHk8?usp=sharing)\n\nDuplicate template dengan cara :\n- **File** > **Save a copy in Drive**\n\nLalu kerjakan dengan akun Google Colab sendiri.\n\n**Kumpulkan dalam bentuk : link Google Colab.**\n\n**Deadline : Jum'at 11 Juli 2025.**"
+    },
+    {
+      "task_number": "Tugas 14",
+      "title": "Project: Fashion MNIST Image Classification with TensorFlow/Keras",
+      "competency": "Deep Learning",
+      "date_given": "Thursday, 26 June 2025, 12:00 AM",
+      "deadline": "Friday, 11 July 2025, 11:59 PM",
+      "example_task": "http://example.com",
+      "instructions": "Kerjakan tugas di Google Colab dengan template ini : [https://colab.research.google.com/drive/1KhQWq58uq0zzpVogE5QLuqJU6wW7-ghS?usp=sharing](https://colab.research.google.com/drive/1KhQWq58uq0zzpVogE5QLuqJU6wW7-ghS?usp=sharing)\n\nDuplicate template dengan cara :\n- **File** > **Save a copy in Drive**\n\nLalu kerjakan dengan akun Google Colab sendiri.\n\n**Kumpulkan dalam bentuk : link Google Colab.**\n\n**Deadline : Jum'at 11 Juli 2025.**"
+    },
+    {
+      "task_number": "Tugas 15",
+      "title": "Mini Quiz: Neural Network Base Knowledge Quiz",
+      "competency": "Deep Learning",
+      "date_given": "Thursday, 26 June 2025, 12:00 AM",
+      "deadline": "Friday, 11 July 2025, 11:59 PM",
+      "example_task": "http://example.com",
+      "instructions": "### Deskripsi Tugas\nJaringan saraf tiruan (Neural Network) adalah pondasi dari banyak teknologi kecerdasan buatan modern. Untuk memahami algoritma yang lebih kompleks di Deep Learning, sangat penting untuk memahami prinsip dasar cara kerja neural network.\n\nDalam tugas ini, kamu diminta menjawab 10 pertanyaan berbentuk esai singkat. Jawaban harus disampaikan dengan narasi yang jelas dan menggunakan bahasa sendiri, bukan copy-paste. Sertakan analogi, ilustrasi, atau contoh jika dirasa perlu.\n\nQuiz berada didalam sini : [https://docs.google.com/document/d/1X_790ZHk6FMKkNB6va32ljQ0oyzdPYeFFfE47n4BJN0/edit?usp=sharing](https://docs.google.com/document/d/1X_790ZHk6FMKkNB6va32ljQ0oyzdPYeFFfE47n4BJN0/edit?usp=sharing)\n\nDuplicate template dengan cara :\n- **File** > **Buat salinan / make a copy**\n\nLalu kerjakan dengan akun Google sendiri.\n\n**Kumpulkan dalam bentuk : link Google Docs. (Jangan lupa public view)**\n\n**Deadline : Jum'at 11 Juli 2025.**"
+    },
+    {
+      "task_number": "Tugas 16",
+      "title": "Mini Project: Natural Language Processing with Hugging Face Transformers",
+      "competency": "AI Applications",
+      "date_given": "Thursday, 15 May 2025, 9:00 AM",
+      "deadline": "Saturday, 31 May 2025, 11:59 PM",
+      "example_task": "http://example.com",
+      "instructions": "Silakan kerjakan tugas ini dengan instruksi yang ada di dalam slide.\n\n**Notebook**: [https://colab.research.google.com/drive/19BiI2skIoCwhKgabmaX5PXRqQxWZahlm?usp=sharing](https://colab.research.google.com/drive/19BiI2skIoCwhKgabmaX5PXRqQxWZahlm?usp=sharing)\n\n- **Copy to drive** -> kerjakan di Google Colab pakai akun sendiri.\n- Jika sudah selesai -> download file `.ipynb`.\n- Letakkan di folder berbarengan dengan file `README` (di PC/laptop mu).\n- Kerjakan `README` sesuai template dan aturan : [https://github.com/arifian853/NLP_with_HF_Transformers](https://github.com/arifian853/NLP_with_HF_Transformers).\n- Push ke repository GitHub, jangan lupa di publik - kan. Ingat nama repository jangan sampai salah : `NLP_with_HF_Transformers`.\n- Deadline : **31 Mei 2025**.\n\n**Kumpulkan LINK REPOSITORY GITHUB nya.**\n\n**Bukan Google Colab.**"
+    },
+    {
+      "task_number": "Tugas 17",
+      "title": "Course Completion : Prompt Engineering for Everyone",
+      "competency": "AI Applications",
+      "date_given": "Wednesday, 21 May 2025, 10:00 AM",
+      "deadline": "Tuesday, 10 June 2025, 11:59 PM",
+      "example_task": "http://example.com",
+      "instructions": "Tugas ini simpel. Cukup kerjakan course Prompt Engineering for Everyone sampai dapat sertifikat.\n\n**Course**: [https://cognitiveclass.ai/courses/prompt-engineering-for-everyone](https://cognitiveclass.ai/courses/prompt-engineering-for-everyone)\n\n- Kerjakan course sampai selesai semuanya.\n- Dapatkan sertifikat di akhir.\n- Kumpulkan credential link sertifikat tersebut.\n- **Kumpulkan hanya link kredensial bukti penyelesaian course tersebut.**"
+    },
+    {
+      "task_number": "Tugas 18",
+      "title": "Project: Retrieval-Augmented Generation with Gradio and Groq API Key",
+      "competency": "AI Applications",
+      "date_given": "Wednesday, 21 May 2025, 10:00 AM",
+      "deadline": "Sunday, 15 June 2025, 12:00 AM",
+      "example_task": "http://example.com",
+      "instructions": "Kerjakan tugas ini sesuai dengan aturan berikut :\n\n1. Buat API Key baru di [https://console.groq.com/home](https://console.groq.com/home)\n2. Clone repository : [https://github.com/arifian853/RAG_with_GroqAPI](https://github.com/arifian853/RAG_with_GroqAPI)\n3. Ubah file `.env-example` jadi `.env`\n4. Ubah nilai `your-groq-api-key` dengan API Key yang kamu dapatkan\n5. Buat sebuah virtual environment\n6. Install dependency yang diperlukan pada `requirements.txt`\n7. Jalankan project, jika sudah hidup dan berhasil, ikuti alur TODO yang ada pada `README`.\n8. Isi TODO yang ada di `README` sesuai dengan alur yang ada.\n   - Alur TODO itu adalah apa yang harus kamu lakukan terhadap kode yang sudah ada yaitu analisis percobaan model-model lain selain yang sudah tertulis di kode dan analisis perubahan temperature pada kode.\n9. Lalu, buat dokumentasi tentang tata cara lengkap menjalankan project tersebut, sesuai TODO di `README`.\n10. Terakhir, push kode ke repository GitHub kalian masing-masing dengan nama repository : `RAG_with_GroqAPI`.\n\n**Kumpulkan link repository kalian tersebut disini.**\n**Kumpulkan hanya link repository GitHub!**\n\n**Tips : Jangan lupa ubah visibility repository ke Public!**"
+    },
+    {
+      "task_number": "Tugas 19",
+      "title": "Mini Project: Face Recognition System using OpenCV",
+      "competency": "AI Applications",
+      "date_given": "Monday, 26 May 2025, 12:00 PM",
+      "deadline": "Monday, 16 June 2025, 11:59 PM",
+      "example_task": "http://example.com",
+      "instructions": "Clone repository berikut ini:\n[https://github.com/belgisanggita/face-recognition-opencv](https://github.com/belgisanggita/face-recognition-opencv)\n\n### Instruksi:\n\n1. Jalankan proyek tersebut di komputer pribadi kalian hingga dapat berfungsi dengan baik. Pastikan sistem deteksi wajahnya bekerja sesuai harapan. Perhatikan struktur folder.\n\n2. Buatlah sebuah esai/artikel singkat mengenai proyek ini.\n   Tulis di Google Docs dengan struktur sebagai berikut:\n   - Penjelasan singkat mengenai apa itu OpenCV dan fungsinya dalam bidang Computer Vision.\n   - Sertakan screenshot hasil deteksi wajah ke dalam artikel tersebut.\n   - Tuliskan confidence score (tingkat keyakinan) dari wajah yang berhasil terdeteksi.\n   - Buatlah narasi/deskripsi singkat mengenai setiap yang deteksi wajah ini.\n\n3. Tulis artikel tersebut di Google Docs, lalu atur akses dokumen agar dapat dibaca publik (public view).\n\n**Kumpulkan tugas dalam bentuk tautan share Google Docs yang sudah dibuka untuk umum (publicly viewable link).**"
+    },
+    {
+      "task_number": "Tugas 20",
+      "title": "Mini Project: Convolution Neural Networks - Brain Tumor Classification",
+      "competency": "AI Applications",
+      "date_given": "Monday, 26 May 2025, 12:00 PM",
+      "deadline": "Monday, 16 June 2025, 11:59 PM",
+      "example_task": "http://example.com",
+      "instructions": "1. Download file `.ipynb` : [https://colab.research.google.com/drive/1tSqoRrAuLNv5gDhiVA8jIssmxn-fC0xg?usp=sharing](https://colab.research.google.com/drive/1tSqoRrAuLNv5gDhiVA8jIssmxn-fC0xg?usp=sharing)\n2. Buat sebuah notebook Google Colab dalam format Markdown penuh, seperti contoh berikut:\n   📎 CNN Markdown Example : [https://colab.research.google.com/drive/1DK2JLJSzuwxCu_OvYr6ZWjvx-QYGNTzb?usp=sharing](https://colab.research.google.com/drive/1DK2JLJSzuwxCu_OvYr6ZWjvx-QYGNTzb?usp=sharing)\n\n3. Buat file `README.md` yang berisi dokumentasi lengkap mengenai alur kerja dan teknologi yang digunakan dalam proyek ini.\n\n   Isi `README.md` tersebut harus kreatif dan informatif 💡, serta mencakup hal-hal berikut:\n   - Penjelasan mengenai teknologi yang digunakan (misalnya OpenCV, model deteksi wajah, dll)\n   - Penjabaran mengenai arsitektur model yang dipakai\n   - Penjelasan cara kerja sistem deteksi\n   - Hasil prediksi (deteksi wajah dan objek), dilengkapi dengan gambar atau visualisasi jika memungkinkan 🧠🖼️📊\n\n4. Unggah seluruh proyek ke akun GitHub masing-masing.\n   Proyek harus terdiri dari:\n   - Notebook Google Colab (`.ipynb`) dari Klasifikasi Tumor Otak yang sudah diperbarui isinya sesuai template markdown CNN Markdown Example.\n   - File `README.md`.\n   - (opsional) File atau folder pendukung lainnya.\n\n5. Pastikan repository GitHub bersifat publik agar bisa diakses oleh siapa saja.\n\n**Kumpulkan hanya link repository GitHub**"
+    },
+    {
+      "task_number": "Tugas 21",
+      "title": "Quiz : Computer Vision Quiz",
+      "competency": "AI Applications",
+      "date_given": "Monday, 26 May 2025, 12:00 AM",
+      "deadline": "Tuesday, 27 May 2025, 12:00 PM",
+      "example_task": "http://example.com",
+      "instructions": "Kerjakan quiz di Quizziz, maksimal **27 Mei 2025. Jam 11.00 WIB.**\n\nKerjakan disini : [https://quizizz.com/join?gc=13988428](https://quizizz.com/join?gc=13988428)\n\n**Kumpulkan screenshot penyelesaian untuk bukti pengerjaan disini.**"
+    },
+    {
+      "task_number": "Tugas 22",
+      "title": "Essay: Analysis on Time Series Specific Libraries",
+      "competency": "AI Applications",
+      "date_given": "Wednesday, 4 June 2025, 12:00 AM",
+      "deadline": "Wednesday, 11 June 2025, 11:59 PM",
+      "example_task": "http://example.com",
+      "instructions": "Buatlah sebuah artikel / essay tentang :\n\n- **Prophet (by Facebook)** → Powerful forecasting model for seasonal and holiday trends (easy to use).\n- **GluonTS (by Amazon)** → Toolkit for probabilistic time series modelling with DeepAR, Transformer, etc.\n- **tsfresh** → Automatic feature extraction from time series for ML.\n- **darts (by Unit8)** → All-in-one library for time series (statistical, ML, DL, forecasting, ensemble).\n- **sktime** → Framework for time series ML, compatible with scikit-learn.\n\nMinimal **500 kata**.\n\nBuat menggunakan Google Docs.\n\n**Kirimkan link public view nya kesini.**"
+    },
+    {
+      "task_number": "Tugas 23",
+      "title": "Mini Project: Use Attention Mechanism Layer on LSTM",
+      "competency": "AI Applications",
+      "date_given": "Wednesday, 4 June 2025, 12:00 AM",
+      "deadline": "Thursday, 12 June 2025, 11:59 PM",
+      "example_task": "http://example.com",
+      "instructions": "Copy to drive Google Colab Notebook ini : [https://colab.research.google.com/drive/1hPF1h76WXDpv6BRDDR-g2LxuaS10Mpnz?usp=sharing](https://colab.research.google.com/drive/1hPF1h76WXDpv6BRDDR-g2LxuaS10Mpnz?usp=sharing)\n\n### Instruksi:\n\n- Harap perhatikan `# TODO` pada kode.\n- Kerjakan semua `# TODO` sesuai perintah.\n- **Kirim kesini link Google Colab nya jika sudah selesai.**"
+    },
+    {
+      "task_number": "Tugas 24",
+      "title": "Mini-Project: Movie Recommendation with Content-Based Filtering",
+      "competency": "AI Applications",
+      "date_given": "Wednesday, 11 June 2025, 12:00 AM",
+      "deadline": "Friday, 20 June 2025, 11:59 PM",
+      "example_task": "http://example.com",
+      "instructions": "Save copy in drive : [https://colab.research.google.com/drive/1Xe9hWbG4azLhlwKPMSLxEuC9K5TEwIGn?usp=sharing](https://colab.research.google.com/drive/1Xe9hWbG4azLhlwKPMSLxEuC9K5TEwIGn?usp=sharing)\n\n### Instruksi :\n\n- Isi semua `#TODO`.\n- Coba setidaknya 3 film berbeda.\n- Berikan analisis, tulis langsung di Google Colab di blok analisis paling bawah.\n- **Kumpulkan dalam bentuk link public Google Colab.**"
+    },
+    {
+      "task_number": "Tugas 25",
+      "title": "Mini Project: Speech Classification with CNN",
+      "competency": "AI Applications",
+      "date_given": "Tuesday, 17 June 2025, 12:00 AM",
+      "deadline": "Thursday, 10 July 2025, 12:00 AM",
+      "example_task": "http://example.com",
+      "instructions": "You will build a Convolutional Neural Network (CNN) model to classify animal sounds imitated by humans into 5 categories. The model should be trained to recognize these sound classes:\n\n### 🎧 Sound Classes (Labels):\n- Cow – imitated sound: `moo`\n- Cat – imitated sound: `meow`\n- Dog – imitated sound: `woof`\n- Goat – imitated sound: `mbee`\n- Bird – imitated sound: `tweet`\n\n### Download the Starter Notebook\nOpen this link and download the `.ipynb` file:\n🔗 [Vowel Classification Notebook](https://colab.research.google.com/drive/1OtS6QR0u1bJp0-lJyFZ71_HFdQ3f2Stj?usp=sharing)\n\n### Create Project Directory\nOn your computer, create a new folder: `speech_classification/`\n\n### Move the Notebook File\nPlace the downloaded `.ipynb` file inside the `speech_classification/` folder.\n\n### Open in Visual Studio Code (VS Code)\nOpen the `speech_classification` folder in VS Code for editing.\n\n### Modify and Train Your Model\n- Modify the notebook to use your own dataset of imitated animal sounds (you may use a small custom dataset or simulate it).\n- Use a CNN model to train the classifier.\n- Ensure your model can classify the 5 animal sound classes mentioned above.\n\n### Add Markdown Insight Cells\nThroughout the notebook, include markdown cells to explain your code, your dataset, model architecture.\n\n### Create a README.md\nIn the `speech_classification/` folder, create a file called `README.md`.\n\n### Upload to GitHub\n- Push your `speech_classification` folder (with `.ipynb`, `README.md`, and any other relevant files) to your public GitHub repository. Make sure your GitHub repo is not private.\n- **Submit Your GitHub Link**"
+    },
+    {
+      "task_number": "Tugas 26",
+      "title": "Essay: Comparison of Learning Methods and Basic Understanding of Reinforcement Learning Concepts",
+      "competency": "AI Applications",
+      "date_given": "Wednesday, 18 June 2025, 12:00 AM",
+      "deadline": "Thursday, 10 July 2025, 11:59 PM",
+      "example_task": "http://example.com",
+      "instructions": "### Judul Tugas:\nPerbandingan Metode Pembelajaran dan Pemahaman Dasar Konsep Reinforcement Learning\n\n### Jenis Tugas:\nEsai Individu\n\n### Deskripsi Tugas:\nDalam tugas ini, Anda diminta menulis sebuah esai dengan panjang total **500–700 kata**. Esai Anda harus terdiri dari dua bagian utama, dengan struktur dan panduan penulisan sebagai berikut:\n\n#### Bagian 1: Perbandingan Tipe Pembelajaran (200–300 kata)\nJelaskan perbedaan antara Supervised Learning, Unsupervised Learning, dan Reinforcement Learning dalam bentuk esai naratif (bukan tabel). Tulis dengan gaya bahasa Anda sendiri, namun tetap jelas, ringkas, dan formal.\n\n**Panduan Isi:**\n- Jenis data yang digunakan\n- Cara kerja dan proses belajar\n- Feedback atau umpan balik yang diterima\n- Tujuan dari masing-masing pendekatan\n- Contoh aplikasi nyata\n\n#### Bagian 2: Penjelasan Konsep Dasar dalam Reinforcement Learning (300–400 kata)\nUraikan secara ringkas dan mudah dipahami empat konsep penting berikut:\n\n1.  **Markov Decision Process (MDP):**\n    - Apa itu MDP dan kenapa penting dalam RL?\n    - Komponen MDP (state, action, transition, reward).\n\n2.  **Value Function:**\n    - Perbedaan antara state-value function dan action-value function.\n    - Mengapa value function dibutuhkan dalam pengambilan keputusan?\n\n3.  **Bellman Equation:**\n    - Fungsi dan peran Bellman Equation dalam memperbarui nilai state atau aksi.\n    - Hubungan antara Bellman Equation dan proses belajar agen.\n\n4.  **Algoritma Klasik RL:**\n    Jelaskan satu paragraf untuk masing-masing metode berikut:\n    a. Dynamic Programming\n    b. Monte Carlo Methods\n    c. Temporal Difference Learning\n    Tekankan kelebihan, keterbatasan, dan kapan metode itu digunakan.\n\n### Ketentuan Tugas:\n- Esai ditulis dalam bahasa Indonesia yang baku.\n- Panjang total: 500–700 kata.\n- Dikumpulkan menggunakan link Google Docs.\n- Tuliskan nama lengkap di halaman atas.\n- Boleh menggunakan referensi tambahan dan AI, but humanize it! Don't simply copy and paste!"
+    },
+    {
+      "task_number": "Tugas 27",
+      "title": "Project: Deploying a Machine Learning Model with Flask API on Hugging Face Spaces",
+      "competency": "Model Deployment",
+      "date_given": "Friday, 27 June 2025, 12:00 AM",
+      "deadline": "Friday, 11 July 2025, 11:59 PM",
+      "example_task": "http://example.com",
+      "instructions": "### Instruksi :\n\n1.  Save model yang ada pada project Tugas 12 : [https://colab.research.google.com/drive/1z15hxhnfWYaSUyNLS8CDEeEaCCo6NyfC?usp=sharing](https://colab.research.google.com/drive/1z15hxhnfWYaSUyNLS8CDEeEaCCo6NyfC?usp=sharing)\n2.  Buatkan kode Flask untuk model tersebut, referensi : [https://huggingface.co/spaces/arifian853/predict-tavg/blob/main/app.py](https://huggingface.co/spaces/arifian853/predict-tavg/blob/main/app.py)\n3.  Referensi lainnya : [https://flask.palletsprojects.com/en/stable/quickstart/](https://flask.palletsprojects.com/en/stable/quickstart/)\n4.  Buat Dockerfile untuk project ini, referensi : [https://huggingface.co/spaces/arifian853/predict-tavg/blob/main/Dockerfile](https://huggingface.co/spaces/arifian853/predict-tavg/blob/main/Dockerfile)\n5.  Push project nya ke HuggingFace Spaces. Referensi lengkap : [https://drive.google.com/file/d/13pHz9-yYuRk1rmuMyw7qBrJZFJ4Y6J7J/view?usp=sharing](https://drive.google.com/file/d/13pHz9-yYuRk1rmuMyw7qBrJZFJ4Y6J7J/view?usp=sharing)\n6.  Tes di Postman, kalau berhasil, silakan kumpulkan link HuggingFace Spaces - nya.\n\n**Opsional (+10 poin nilai)** : Bikin web untuk aplikasinya, integrasikan API yang sudah di host di HuggingFace Spaces nya pakai `.env` (Environment Variable). Host web nya di Vercel/Netlify. Kumpulkan link web nya saja yang sudah berfungsi sama API nya sekalian. (Nggak wajib, boleh kerjakan pake prompt aja buat desain web nya dan teknologi apapun diterima (JavaScript-based / PHP-based))"
+    }
+  ]
+}

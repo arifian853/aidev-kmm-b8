@@ -2,152 +2,32 @@ import { motion, type Variants } from 'framer-motion';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { ArrowLeft, Clock, BookOpen, Users, CheckCircle, PlayCircle, FileText, Video } from 'lucide-react';
+import { ArrowLeft, BookOpen, Users, Video, FileText, ExternalLink, Calendar } from 'lucide-react';
 import { Footer } from '@/components/layout/Footer';
 import { Navbar } from '@/components/layout/Navbar';
 import { useParams, useNavigate } from 'react-router-dom';
+import syllabusData from '@/utils/SilabusData.json';
 
-// Definisi tipe data
-interface Module {
-  id: number;
-  title: string;
+// Definisi tipe data berdasarkan struktur JSON baru
+interface ClassItem {
+  name: string;
   description: string;
-  duration: string;
-  type: string;
-  completed: boolean;
+  ppt_class: string;
+  date: string;
+  reading_module: string;
 }
 
-interface SyllabusContent {
+interface PracticeItem {
   title: string;
+  url: string;
+}
+
+export interface Course {
+  category: string;
   description: string;
-  duration: string;
-  students: string;
-  level: string;
-  modules: Module[];
+  classes: ClassItem[];
+  practice: PracticeItem[];
 }
-
-interface SyllabusData {
-  [key: number]: SyllabusContent;
-}
-
-// Data silabus berdasarkan ID
-const syllabusData: SyllabusData = {
-  1: {
-    title: 'Introduction to AI',
-    description: 'Pengenalan dasar tentang Artificial Intelligence dan konsep fundamentalnya',
-    duration: '4 Minggu',
-    students: '150+ Peserta',
-    level: 'Beginner',
-    modules: [
-      {
-        id: 1,
-        title: 'Apa itu Artificial Intelligence?',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-        duration: '45 menit',
-        type: 'video',
-        completed: true
-      },
-      {
-        id: 2,
-        title: 'Sejarah dan Perkembangan AI',
-        description: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-        duration: '30 menit',
-        type: 'reading',
-        completed: true
-      },
-      {
-        id: 3,
-        title: 'Jenis-jenis AI dan Aplikasinya',
-        description: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-        duration: '60 menit',
-        type: 'video',
-        completed: false
-      },
-      {
-        id: 4,
-        title: 'Machine Learning vs Deep Learning',
-        description: 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-        duration: '40 menit',
-        type: 'reading',
-        completed: false
-      },
-      {
-        id: 5,
-        title: 'Etika dalam AI',
-        description: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.',
-        duration: '35 menit',
-        type: 'video',
-        completed: false
-      },
-      {
-        id: 6,
-        title: 'Quiz: Pemahaman Dasar AI',
-        description: 'Totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt.',
-        duration: '20 menit',
-        type: 'quiz',
-        completed: false
-      }
-    ]
-  },
-  2: {
-    title: 'AI Dev. Tools and Frameworks',
-    description: 'Tools dan framework yang digunakan dalam pengembangan AI',
-    duration: '3 Minggu',
-    students: '120+ Peserta',
-    level: 'Intermediate',
-    modules: [
-      {
-        id: 1,
-        title: 'Pengenalan Development Tools',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-        duration: '40 menit',
-        type: 'video',
-        completed: false
-      },
-      {
-        id: 2,
-        title: 'Sejarah dan Perkembangan AI',
-        description: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-        duration: '30 menit',
-        type: 'reading',
-        completed: true
-      },
-      {
-        id: 3,
-        title: 'Jenis-jenis AI dan Aplikasinya',
-        description: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-        duration: '60 menit',
-        type: 'video',
-        completed: false
-      },
-      {
-        id: 4,
-        title: 'Machine Learning vs Deep Learning',
-        description: 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-        duration: '40 menit',
-        type: 'reading',
-        completed: false
-      },
-      {
-        id: 5,
-        title: 'Etika dalam AI',
-        description: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.',
-        duration: '35 menit',
-        type: 'video',
-        completed: false
-      },
-      {
-        id: 6,
-        title: 'Quiz: Pemahaman Dasar AI',
-        description: 'Totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt.',
-        duration: '20 menit',
-        type: 'quiz',
-        completed: false
-      }
-    ]
-  },
-  // ... tambahkan data untuk ID 3-9 sesuai kebutuhan
-};
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
@@ -171,57 +51,59 @@ const cardVariants: Variants = {
   }
 };
 
-const progressVariants: Variants = {
-  hidden: { width: 0 },
-  visible: {
-    width: '33%',
-    transition: {
-      duration: 1,
-      ease: [0.4, 0.0, 0.2, 1],
-      delay: 0.5
-    }
-  }
-};
-
 export const Silabus = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
   
   // Ambil data silabus berdasarkan ID dengan tipe yang aman
-  const syllabusId = parseInt(id || '1');
-  const syllabusContent = syllabusData[syllabusId] || syllabusData[1];
-  
-  const completedModules = syllabusContent.modules.filter((module: Module) => module.completed).length;
-  const totalModules = syllabusContent.modules.length;
-  const progressPercentage = (completedModules / totalModules) * 100;
+  const courseIndex = parseInt(id || '0');
+  const course = syllabusData.courses[courseIndex] || syllabusData.courses[0];
 
   const handleBackClick = () => {
     navigate('/silabus');
   };
 
+  const getTypeFromUrl = (url: string): string => {
+    if (url.includes('canva.com') || url.includes('ppt')) return 'presentation';
+    if (url.includes('docs.google.com')) return 'reading';
+    if (url.includes('colab.research.google.com')) return 'practice';
+    if (url.includes('github.com')) return 'code';
+    return 'link';
+  };
+
   const getTypeIcon = (type: string) => {
     switch (type) {
-      case 'video':
+      case 'presentation':
         return <Video size={16} />;
       case 'reading':
         return <FileText size={16} />;
-      case 'quiz':
-        return <CheckCircle size={16} />;
-      default:
+      case 'practice':
         return <BookOpen size={16} />;
+      case 'code':
+        return <ExternalLink size={16} />;
+      default:
+        return <ExternalLink size={16} />;
     }
   };
 
   const getTypeColor = (type: string) => {
     switch (type) {
-      case 'video':
+      case 'presentation':
         return 'bg-blue-500';
       case 'reading':
         return 'bg-green-500';
-      case 'quiz':
+      case 'practice':
         return 'bg-purple-500';
+      case 'code':
+        return 'bg-orange-500';
       default:
         return 'bg-gray-500';
+    }
+  };
+
+  const handleLinkClick = (url: string) => {
+    if (url && url !== 'None' && url !== 'None, async') {
+      window.open(url, '_blank');
     }
   };
 
@@ -247,70 +129,37 @@ export const Silabus = () => {
               Kembali ke Daftar Silabus
             </Button>
             
-            <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
+            <div className="flex flex-col gap-6">
               <div className="flex-1">
                 <h1 className="text-4xl font-bold mb-4" style={{ color: 'var(--black)' }}>
-                  {syllabusContent.title}
+                  {course.category}
                 </h1>
                 <p className="text-lg mb-6" style={{ color: 'var(--black-dark)', opacity: 0.8 }}>
-                  {syllabusContent.description}
+                  {course.description}
                 </p>
                 
                 <div className="flex flex-wrap gap-4 mb-6">
                   <div className="flex items-center gap-2">
-                    <Clock size={16} style={{ color: 'var(--black-dark)' }} />
-                    <span className="text-sm" style={{ color: 'var(--black-dark)' }}>{syllabusContent.duration}</span>
+                    <BookOpen size={16} style={{ color: 'var(--black-dark)' }} />
+                    <span className="text-sm" style={{ color: 'var(--black-dark)' }}>{course.classes.length} Kelas</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <Users size={16} style={{ color: 'var(--black-dark)' }} />
-                    <span className="text-sm" style={{ color: 'var(--black-dark)' }}>{syllabusContent.students}</span>
+                    <span className="text-sm" style={{ color: 'var(--black-dark)' }}>Dokumentasi Pembelajaran</span>
                   </div>
-                  <Badge className="bg-blue-500 text-white">{syllabusContent.level}</Badge>
+                  {course.practice.length > 0 && (
+                    <div className="flex items-center gap-2">
+                      <ExternalLink size={16} style={{ color: 'var(--black-dark)' }} />
+                      <span className="text-sm" style={{ color: 'var(--black-dark)' }}>{course.practice.length} Materi Praktik</span>
+                    </div>
+                  )}
+                  <Badge className="bg-blue-500 text-white">Dokumentasi</Badge>
                 </div>
               </div>
-              
-              {/* Progress Card */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: 0.3 }}
-              >
-                <Card className="w-full lg:w-80" style={{ backgroundColor: 'var(--gray)' }}>
-                  <CardHeader className="pb-4">
-                    <CardTitle className="text-lg" style={{ color: 'var(--black)' }}>Progress Pembelajaran</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="mb-4">
-                      <div className="flex justify-between mb-2">
-                        <span className="text-sm" style={{ color: 'var(--black-dark)' }}>Selesai</span>
-                        <span className="text-sm font-medium" style={{ color: 'var(--black)' }}>
-                          {completedModules}/{totalModules} Modul
-                        </span>
-                      </div>
-                      <div className="w-full bg-gray-300 rounded-full h-2">
-                        <motion.div
-                          className="bg-blue-500 h-2 rounded-full"
-                          variants={progressVariants}
-                          initial="hidden"
-                          animate="visible"
-                          style={{ width: `${progressPercentage}%` }}
-                        />
-                      </div>
-                    </div>
-                    <Button 
-                      className="w-full text-white"
-                      style={{ backgroundColor: 'var(--black)' }}
-                    >
-                      <PlayCircle size={16} className="mr-2" />
-                      Lanjutkan Belajar
-                    </Button>
-                  </CardContent>
-                </Card>
-              </motion.div>
             </div>
           </motion.div>
 
-          {/* Modules List */}
+          {/* Classes List */}
           <motion.div
             className="mb-8"
             variants={containerVariants}
@@ -320,66 +169,140 @@ export const Silabus = () => {
             <h2 className="text-2xl font-bold mb-6" style={{ color: 'var(--black)' }}>Materi Pembelajaran</h2>
             
             <div className="space-y-4">
-              {syllabusContent.modules.map((module: Module, index: number) => (
-                <motion.div
-                  key={module.id}
-                  variants={cardVariants}
-                  whileHover={{ 
-                    scale: 1.01,
-                    transition: { duration: 0.2 }
-                  }}
-                >
-                  <Card 
-                    className="cursor-pointer hover:shadow-lg transition-shadow duration-300 border-0 shadow-md"
-                    style={{ backgroundColor: 'var(--gray)' }}
+              {course.classes.map((classItem: ClassItem, index: number) => {
+                const presentationType = getTypeFromUrl(classItem.ppt_class);
+                
+                return (
+                  <motion.div
+                    key={index}
+                    variants={cardVariants}
+                    whileHover={{ 
+                      scale: 1.01,
+                      transition: { duration: 0.2 }
+                    }}
                   >
-                    <CardHeader className="pb-4">
-                      <div className="flex items-start justify-between">
-                        <div className="flex items-start gap-4 flex-1">
-                          <div className="flex items-center gap-2">
-                            <div className={`p-2 rounded-lg ${getTypeColor(module.type)} text-white`}>
-                              {getTypeIcon(module.type)}
+                    <Card 
+                      className="cursor-pointer hover:shadow-lg transition-shadow duration-300 border-0 shadow-md"
+                      style={{ backgroundColor: 'var(--gray)' }}
+                    >
+                      <CardHeader className="pb-4">
+                        <div className="flex items-start justify-between">
+                          <div className="flex items-start gap-4 flex-1">
+                            <div className="flex items-center gap-2">
+                              <div className={`p-2 rounded-lg ${getTypeColor(presentationType)} text-white`}>
+                                {getTypeIcon(presentationType)}
+                              </div>
                             </div>
-                            {module.completed && (
-                              <motion.div
-                                initial={{ scale: 0 }}
-                                animate={{ scale: 1 }}
-                                transition={{ duration: 0.3, delay: index * 0.1 }}
-                              >
-                                <CheckCircle size={20} className="text-green-500" />
-                              </motion.div>
-                            )}
-                          </div>
-                          
-                          <div className="flex-1">
-                            <div className="flex items-center gap-2 mb-2">
-                              <span className="text-sm font-medium" style={{ color: 'var(--black-dark)', opacity: 0.7 }}>
-                                Modul {module.id}
-                              </span>
-                              <Badge variant="outline" className="text-xs">
-                                {module.type}
-                              </Badge>
+                            
+                            <div className="flex-1">
+                              <div className="flex items-center gap-2 mb-2">
+                                <span className="text-sm font-medium" style={{ color: 'var(--black-dark)', opacity: 0.7 }}>
+                                  Kelas {index + 1}
+                                </span>
+                                <Badge variant="outline" className="text-xs">
+                                  {presentationType}
+                                </Badge>
+                                {classItem.date && classItem.date !== 'None' && (
+                                  <div className="flex items-center gap-1">
+                                    <Calendar size={12} style={{ color: 'var(--black-dark)' }} />
+                                    <span className="text-xs" style={{ color: 'var(--black-dark)' }}>
+                                      {classItem.date}
+                                    </span>
+                                  </div>
+                                )}
+                              </div>
+                              <CardTitle className="text-lg font-bold mb-2" style={{ color: 'var(--black)' }}>
+                                {classItem.name}
+                              </CardTitle>
+                              <CardDescription style={{ color: 'var(--black-dark)', opacity: 0.8 }}>
+                                {classItem.description}
+                              </CardDescription>
+                              
+                              {/* Action Buttons */}
+                              <div className="flex gap-2 mt-4">
+                                {classItem.ppt_class && classItem.ppt_class !== 'None' && classItem.ppt_class !== 'None, async' && (
+                                  <Button
+                                    size="sm"
+                                    variant="outline"
+                                    onClick={() => handleLinkClick(classItem.ppt_class)}
+                                    className="text-xs"
+                                  >
+                                    <Video size={12} className="mr-1" />
+                                    Presentasi
+                                  </Button>
+                                )}
+                                {classItem.reading_module && classItem.reading_module !== 'None' && (
+                                  <Button
+                                    size="sm"
+                                    variant="outline"
+                                    onClick={() => handleLinkClick(classItem.reading_module)}
+                                    className="text-xs"
+                                  >
+                                    <FileText size={12} className="mr-1" />
+                                    Modul
+                                  </Button>
+                                )}
+                              </div>
                             </div>
-                            <CardTitle className="text-lg font-bold mb-2" style={{ color: 'var(--black)' }}>
-                              {module.title}
-                            </CardTitle>
-                            <CardDescription style={{ color: 'var(--black-dark)', opacity: 0.8 }}>
-                              {module.description}
-                            </CardDescription>
                           </div>
                         </div>
-                        
-                        <div className="flex items-center gap-2 ml-4">
-                          <Clock size={14} style={{ color: 'var(--black-dark)' }} />
-                          <span className="text-sm" style={{ color: 'var(--black-dark)' }}>{module.duration}</span>
-                        </div>
-                      </div>
-                    </CardHeader>
-                  </Card>
-                </motion.div>
-              ))}
+                      </CardHeader>
+                    </Card>
+                  </motion.div>
+                );
+              })}
             </div>
           </motion.div>
+
+          {/* Practice Section */}
+          {course.practice.length > 0 && (
+            <motion.div
+              className="mb-8"
+              variants={containerVariants}
+              initial="hidden"
+              animate="visible"
+            >
+              <h2 className="text-2xl font-bold mb-6" style={{ color: 'var(--black)' }}>Materi Praktik</h2>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                {course.practice.map((practiceItem: PracticeItem, index: number) => (
+                  <motion.div
+                    key={index}
+                    variants={cardVariants}
+                    whileHover={{ 
+                      scale: 1.02,
+                      transition: { duration: 0.2 }
+                    }}
+                  >
+                    <Card 
+                      className="cursor-pointer hover:shadow-lg transition-shadow duration-300 border-0 shadow-md h-full"
+                      style={{ backgroundColor: 'var(--gray)' }}
+                      onClick={() => handleLinkClick(practiceItem.url)}
+                    >
+                      <CardHeader className="pb-4">
+                        <div className="flex items-start gap-3">
+                          <div className={`p-2 rounded-lg ${getTypeColor(getTypeFromUrl(practiceItem.url))} text-white`}>
+                            {getTypeIcon(getTypeFromUrl(practiceItem.url))}
+                          </div>
+                          <div className="flex-1">
+                            <CardTitle className="text-base font-bold" style={{ color: 'var(--black)' }}>
+                              {practiceItem.title}
+                            </CardTitle>
+                            <div className="flex items-center gap-1 mt-2">
+                              <ExternalLink size={12} style={{ color: 'var(--black-dark)' }} />
+                              <span className="text-xs" style={{ color: 'var(--black-dark)' }}>
+                                Buka Link
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </CardHeader>
+                    </Card>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          )}
 
           {/* Summary Card */}
           <motion.div
@@ -390,9 +313,9 @@ export const Silabus = () => {
           >
             <Card className="text-center p-6" style={{ backgroundColor: 'var(--gray)' }}>
               <CardHeader>
-                <CardTitle className="text-xl" style={{ color: 'var(--black)' }}>Siap Memulai Perjalanan AI Anda?</CardTitle>
+                <CardTitle className="text-xl" style={{ color: 'var(--black)' }}>Dokumentasi Pembelajaran</CardTitle>
                 <CardDescription style={{ color: 'var(--black-dark)', opacity: 0.8 }}>
-                  Bergabunglah dengan ribuan peserta lainnya dan kuasai dasar-dasar Artificial Intelligence
+                  Akses semua materi pembelajaran {course.category.toLowerCase()} yang telah disediakan
                 </CardDescription>
               </CardHeader>
               <CardContent>
@@ -400,9 +323,10 @@ export const Silabus = () => {
                   size="lg" 
                   className="text-white px-8"
                   style={{ backgroundColor: 'var(--black)' }}
+                  onClick={handleBackClick}
                 >
-                  <PlayCircle size={20} className="mr-2" />
-                  Mulai Sekarang
+                  <ArrowLeft size={20} className="mr-2" />
+                  Kembali ke Daftar
                 </Button>
               </CardContent>
             </Card>
