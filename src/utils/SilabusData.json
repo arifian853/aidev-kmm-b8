@@ -76,28 +76,28 @@
         },
         {
           "name": "Data Structures and Control Flow",
-          "description": "Struktur data pada Python serta alur kontrol nya.",
+          "description": "Struktur data pada Python mencakup list, tuple, dictionary, dan set yang digunakan untuk menyimpan dan mengorganisir data. Alur kontrol meliputi conditional statements, loops, dan exception handling untuk mengatur jalannya program secara efektif.",
           "ppt_class": "https://www.canva.com/design/DAGctL9IGqM/5ncd53HkRf8krvL1VM-6QA/view?utlId=h2bde4b016b",
           "date": "Senin, 24 Maret 2025",
           "reading_module": "https://docs.google.com/document/d/1gAOQZHPtgDHHRACsfwqCySqUw8F4aaxU/edit"
         },
         {
           "name": "Function and Class",
-          "description": "Fungsi dan kelas pada Python",
+          "description": "Fungsi dan kelas pada Python merupakan konsep fundamental dalam pemrograman. Fungsi memungkinkan kita untuk membuat kode yang dapat digunakan kembali, sedangkan kelas memungkinkan implementasi pemrograman berorientasi objek untuk mengorganisir kode dengan lebih terstruktur.",
           "ppt_class": "https://www.canva.com/design/DAGczPpDJfo/WkAaOLdZ3cIXpEF2tbKbqA/view?utlId=h081e242b31",
           "date": "Selasa, 25 Maret 2025",
           "reading_module": "https://docs.google.com/document/d/1gAOQZHPtgDHHRACsfwqCySqUw8F4aaxU/edit"
         },
         {
           "name": "Python Modules, Packages and Projects",
-          "description": "Module, package dan project Python",
+          "description": "Module, package dan project Python membantu dalam mengorganisir kode menjadi unit-unit yang dapat dikelola dengan baik. Module adalah file Python tunggal, package adalah kumpulan module, dan project adalah struktur lengkap aplikasi Python dengan berbagai komponen.",
           "ppt_class": "https://www.canva.com/design/DAGdrwCPU5k/F2ALA2DN4ouMkqEurGpqsA/view?utlId=hdb29e89239",
           "date": "Rabu, 26 Maret 2025",
           "reading_module": "https://docs.google.com/document/d/1gAOQZHPtgDHHRACsfwqCySqUw8F4aaxU/edit"
         },
         {
           "name": "Python Object-Oriented Programming",
-          "description": "Pemrograman Berorientasi Objek pada Python",
+          "description": "Pemrograman Berorientasi Objek pada Python mencakup konsep class, object, inheritance, encapsulation, dan polymorphism. Paradigma ini memungkinkan pengembangan aplikasi yang lebih modular, maintainable, dan scalable dengan mengorganisir kode dalam bentuk objek yang memiliki atribut dan method.",
           "ppt_class": "None, async",
           "date": "Kamis, 27 Maret 2025",
           "reading_module": "https://docs.google.com/document/d/15QwZmli80KnYdjKpgsZd9zT-MDWXFC0G/edit?usp=sharing&ouid=104578463738234355559&rtpof=true&sd=true"
@@ -139,28 +139,28 @@
         },
         {
           "name": "Data Cleaning and Transformation",
-          "description": "Proses pembersihan dan transformasi data.",
+          "description": "Proses pembersihan dan transformasi data merupakan tahap krusial dalam data science yang meliputi penanganan missing values, outliers, duplikasi data, normalisasi, dan standardisasi. Proses ini memastikan kualitas data yang optimal untuk analisis dan modeling selanjutnya.",
           "ppt_class": "https://www.canva.com/design/DAGctw2jxJk/wk1a_sb-wCcjjsxIa0TEbg/view?utlId=ha6b588ba6c",
           "date": "Rabu, 09 April 2025",
           "reading_module": "https://docs.google.com/document/d/1qhqQIioSIkDIMpZuQZgiJ19dzCUwLBK6cGqA_uaxK-o/edit?usp=sharing"
         },
         {
           "name": "Feature Engineering",
-          "description": "Proses pemilihan fitur sebelum modelling.",
+          "description": "Proses pemilihan fitur sebelum modelling mencakup teknik feature selection, feature extraction, dan feature creation untuk meningkatkan performa model machine learning. Tahap ini melibatkan analisis korelasi, importance scoring, dan transformasi variabel untuk mengoptimalkan input model.",
           "ppt_class": "https://www.canva.com/design/DAGerQtMf8Y/8eyH25nvlWLF_9jpAo5k3g/view?utlId=h1fb9876169",
           "date": "Kamis, 10 April 2025",
           "reading_module": "https://docs.google.com/document/d/1AyoGsUUW77r-bwC1SKdSvmqeCqq_HmYw1HrRfTrdqUg/edit?usp=sharing"
         },
         {
           "name": "Data Visualization with Matplotlib and Seaborn",
-          "description": "Proses visualisasi data dengan tools Matplotlib dan Seaborn.",
+          "description": "Proses visualisasi data dengan tools Matplotlib dan Seaborn memungkinkan pembuatan grafik dan chart yang informatif untuk eksplorasi data. Kedua library ini menyediakan berbagai jenis plot seperti histogram, scatter plot, heatmap, dan statistical plots untuk memahami pola dan distribusi data.",
           "ppt_class": "https://www.canva.com/design/DAGeGyVIp0A/hPXG5x9WNDZQX_kZzv356w/view?utlId=hfe53644347",
           "date": "None",
           "reading_module": "None"
         },
         {
           "name": "Exploratory Data Analysis (EDA)",
-          "description": "Penerapan proses Exploratory Data Analysis (EDA) pada proses eksplorasi data.",
+          "description": "Penerapan proses Exploratory Data Analysis (EDA) pada proses eksplorasi data meliputi analisis statistik deskriptif, identifikasi pola, trend, dan anomali dalam dataset. EDA membantu memahami karakteristik data sebelum melakukan modeling dan memberikan insight untuk pengambilan keputusan bisnis.",
           "ppt_class": "None, async",
           "date": "Jum'at, 11 April 2025",
           "reading_module": "https://docs.google.com/document/d/1ifszkXmngiNxdK-LirAKQVa_g3G-QHJjNsH-DDH1seI/edit?usp=sharing"
@@ -183,21 +183,21 @@
       "classes": [
         {
           "name": "Introduction to Machine Learning",
-          "description": "Perkenalan awal dengan Pembelajaran Mesin.",
+          "description": "Perkenalan awal dengan Pembelajaran Mesin mencakup konsep dasar, jenis-jenis algoritma, dan aplikasi machine learning dalam berbagai industri. Materi ini membahas supervised learning, unsupervised learning, dan reinforcement learning sebagai fondasi pemahaman AI modern.",
           "ppt_class": "https://www.canva.com/design/DAGc_PV00Tc/LYKGZLLnM-xNZSfT8fJinA/view?utlId=hfb77be585b",
           "date": "Senin, 14 April 2025",
           "reading_module": "https://docs.google.com/document/d/1L_avGBxJdzxaUotWpltnIkafJ8uBBfJfC1MZJmYtZLY/edit?usp=sharing"
         },
         {
           "name": "Types of Machine Learning",
-          "description": "Jenis-jenis Pembelajaran Mesin.",
+          "description": "Jenis-jenis Pembelajaran Mesin meliputi supervised learning untuk prediksi dengan data berlabel, unsupervised learning untuk pattern recognition tanpa label, dan reinforcement learning untuk pembelajaran melalui interaksi dengan environment. Setiap jenis memiliki karakteristik dan aplikasi yang berbeda.",
           "ppt_class": "https://www.canva.com/design/DAGkdoIdx5c/VrPqPKEMhrrBI7jcU3g8Fw/view?utlId=h49dc72d5b0",
           "date": "Selasa, 15 April 2025",
           "reading_module": "None"
         },
         {
           "name": "Machine Learning Algorithms",
-          "description": "Jenis-jenis algoritma Pembelajaran Mesin.",
+          "description": "Jenis-jenis algoritma Pembelajaran Mesin mencakup linear regression, decision trees, random forest, SVM, k-means clustering, dan neural networks. Setiap algoritma memiliki kelebihan dan kekurangan untuk menyelesaikan masalah klasifikasi, regresi, dan clustering dengan pendekatan yang berbeda.",
           "ppt_class": "https://www.canva.com/design/DAGd1hUA64c/mZnt8IKh5nkaEczGvydgVw/view?utlId=h29dc9554fe",
           "date": "Rabu, 16 April 2025",
           "reading_module": "None"
@@ -228,14 +228,14 @@
       "classes": [
         {
           "name": "Introduction to Deep Learning",
-          "description": "Perkenalan awal dengan pembelajaran mendalam.",
+          "description": "Perkenalan awal dengan pembelajaran mendalam mencakup konsep neural networks, backpropagation, dan arsitektur deep learning. Materi ini membahas perbedaan dengan machine learning tradisional, aplikasi dalam computer vision, NLP, dan implementasi menggunakan framework seperti TensorFlow dan PyTorch.",
           "ppt_class": "https://www.canva.com/design/DAGcJIhRgJE/4U_TtMxGdCeNk6c8M-JCSQ/view?utlId=h50b3c43075",
           "date": "Selasa, 22 April 2025",
           "reading_module": "None"
         },
         {
           "name": "Neural Network",
-          "description": "Perkenalan awal dengan Jaringan Syaraf Tiruan.",
+          "description": "Perkenalan awal dengan Jaringan Syaraf Tiruan mencakup struktur neuron, layer, activation functions, dan proses training. Materi ini membahas feedforward networks, backpropagation algorithm, optimization techniques, dan implementasi praktis untuk menyelesaikan masalah klasifikasi dan regresi.",
           "ppt_class": "https://www.canva.com/design/DAGcUx1fk9k/Imqmu-Y3oXNy16GUo7YY_Q/view?utlId=h51fc7ababa",
           "date": "Rabu - Senin, 23 - 28 April 2025",
           "reading_module": "None"
@@ -249,7 +249,7 @@
         },
         {
           "name": "Transfer Learning in Deep Learning",
-          "description": "Perkenalan dengan Transfer Learning.",
+          "description": "Perkenalan dengan Transfer Learning mencakup konsep penggunaan model pre-trained untuk menyelesaikan task baru dengan data terbatas. Teknik ini memungkinkan fine-tuning model yang sudah dilatih pada dataset besar untuk aplikasi spesifik dengan efisiensi waktu dan resource yang optimal.",
           "ppt_class": "https://www.canva.com/design/DAGl8_4sr5I/ctRymaha2zXckVobE_MPyw/view?utlId=h4996b0af11",
           "date": "Selasa - Rabu, 29-30 April 2025",
           "reading_module": "None"
@@ -296,49 +296,49 @@
       "classes": [
         {
           "name": "Generative AI",
-          "description": "Perkenalan dengan Generative AI.",
+          "description": "Perkenalan dengan Generative AI mencakup teknologi yang dapat menghasilkan konten baru seperti teks, gambar, audio, dan video. Materi ini membahas Large Language Models (LLM), Diffusion Models, GANs, dan aplikasi praktis dalam content creation, automation, dan creative industries.",
           "ppt_class": "https://www.canva.com/design/DAGl845OjUI/yMTIyyR6tyX3x1mwHdtSBg/view?utlId=h1f64a66a9a",
           "date": "Jum'at, Rabu, Kamis, 9, 14, 15 Mei 2025",
           "reading_module": "None"
         },
         {
           "name": "Natural Language Processing",
-          "description": "Perkenalan dengan Natural Language Processing",
+          "description": "Perkenalan dengan Natural Language Processing mencakup teknik pemrosesan bahasa alami untuk analisis teks, sentiment analysis, machine translation, dan chatbot development. Materi ini membahas tokenization, word embeddings, transformer architecture, dan implementasi menggunakan library seperti NLTK dan spaCy.",
           "ppt_class": "https://www.canva.com/design/DAGnfSJmXp8/iMl55pkTgSsOwt2CGS1WsA/view?utlId=h1f7e4fba3f",
           "date": "Senin, Selasa, Rabu, 19, 20, 21 Mei 2025",
           "reading_module": "None"
         },
         {
           "name": "Computer Vision",
-          "description": "Perkenalan dengan Computer Vision",
+          "description": "Perkenalan dengan Computer Vision mencakup teknik pemrosesan dan analisis gambar digital untuk object detection, image classification, face recognition, dan image segmentation. Materi ini membahas CNN architecture, OpenCV, dan implementasi praktis untuk aplikasi real-world seperti autonomous vehicles dan medical imaging.",
           "ppt_class": "https://www.canva.com/design/DAGn3VTuGEE/fDFtzljWjavs9gHAPLjHkA/view?utlId=hf1439ab438",
           "date": "Kamis, Jum'at, Senin, 22, 23, 26 Mei 2025",
           "reading_module": "None"
         },
         {
           "name": "Time-Series Forecasting",
-          "description": "Perkenalan dengan Time-Series Forecasting",
+          "description": "Perkenalan dengan Time-Series Forecasting mencakup analisis dan prediksi data temporal untuk forecasting penjualan, harga saham, cuaca, dan trend bisnis. Materi ini membahas ARIMA models, seasonal decomposition, LSTM networks, dan evaluation metrics untuk time-series prediction.",
           "ppt_class": "https://www.canva.com/design/DAGoqn9CXOw/JBov57ObwV6fdMGDj4az6A/view?utlId=h519e43116f",
           "date": "Senin, Selasa, Rabu, 02, 03, 04 Juni 2025",
           "reading_module": "None"
         },
         {
           "name": "Recommendation System",
-          "description": "Perkenalan dengan Recommendation System",
+          "description": "Perkenalan dengan Recommendation System mencakup algoritma untuk memberikan rekomendasi produk, konten, atau layanan kepada pengguna. Materi ini membahas collaborative filtering, content-based filtering, hybrid approaches, dan implementasi sistem rekomendasi untuk e-commerce dan platform digital.",
           "ppt_class": "https://www.canva.com/design/DAGpX5lgAJ8/pF-erDdFsbGemZg_OU3Veg/view?utlId=h2d3c2b47e5",
           "date": "Jum'at, Senin, Selasa, 06, 09, 10 Juni 2025",
           "reading_module": "None"
         },
         {
           "name": "Speech & Audio Processing",
-          "description": "Perkenalan dengan Speech & Audio Processing",
+          "description": "Perkenalan dengan Speech & Audio Processing mencakup teknik pemrosesan sinyal audio untuk speech recognition, text-to-speech, music analysis, dan audio classification. Materi ini membahas feature extraction, spectrograms, mel-frequency cepstral coefficients, dan implementasi menggunakan library audio processing.",
           "ppt_class": "https://www.canva.com/design/DAGp6IEuZHE/dPtiNQvf9AUQaCMFofXoOQ/view?utlId=ha0a84b6e31",
           "date": "Kamis, Jum'at, 12, 13 Juni 2025",
           "reading_module": "None"
         },
         {
           "name": "Reinforcement Learning",
-          "description": "Perkenalan dengan Reinforcement Learning",
+          "description": "Perkenalan dengan Reinforcement Learning mencakup pembelajaran melalui interaksi dengan environment untuk memaksimalkan reward. Materi ini membahas Q-learning, policy gradient methods, deep reinforcement learning, dan aplikasi dalam game AI, robotics, dan autonomous systems.",
           "ppt_class": "https://www.canva.com/design/DAGqED985F4/9GPiPqDXe_EnZWoDWdznAw/view?utlId=hf526ee433a",
           "date": "Selasa, Rabu, 17, 18 Juni 2025",
           "reading_module": "None"

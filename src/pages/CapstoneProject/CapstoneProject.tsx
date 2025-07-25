@@ -98,6 +98,18 @@ export const CapstoneProject = () => {
     return colors[tech] || '#6C5CE7';
   };
 
+  // Function to format mentors display
+  const formatMentors = (mentorString: string) => {
+    const mentors = mentorString.split(',').map(mentor => mentor.trim());
+    if (mentors.length === 1) {
+      return mentors[0];
+    } else if (mentors.length === 2) {
+      return `${mentors[0]} & ${mentors[1]}`;
+    } else {
+      return `${mentors[0]} & ${mentors.length - 1} lainnya`;
+    }
+  };
+
   return (
     <>
       <Navbar />
@@ -173,7 +185,7 @@ export const CapstoneProject = () => {
                       className="text-sm mb-2"
                       style={{ color: 'var(--black-dark)' }}
                     >
-                      Mentor: {project.mentor}
+                      Mentor: {formatMentors(project.mentor)}
                     </CardDescription>
                     
                     {/* Project Brief Description */}

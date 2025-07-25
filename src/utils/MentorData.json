@@ -3,12 +3,20 @@
     "no": 1,
     "name": "Arifian Saputra",
     "university": "Universitas Maritim Raja Ali Haji",
-    "major": "Teknik Informatika"
+    "major": "Teknik Informatika",
+    "email": "arifian.saputra@infinitelearning.id",
+    "linkedin": "https://www.linkedin.com/in/arifian-saputra/",
+    "github": "https://github.com/arifian853",
+    "instagram": "https://www.instagram.com/arifiansaputra_/"
   },
   {
     "no": 2,
     "name": "Belgis Anggita",
     "university": "Universitas Islam Sultan Agung",
-    "major": "Teknik Informatika"
+    "major": "Teknik Informatika",
+    "email": "belgis.anggita@infinitelearning.id",
+    "linkedin": "https://www.linkedin.com/in/belgis-anggita/",
+    "github": "https://github.com/belgisanggita",
+    "instagram": "https://www.instagram.com/belgissst/"
   }
 ]

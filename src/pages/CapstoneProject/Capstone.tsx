@@ -41,6 +41,9 @@ export const Capstone = () => {
   const projectIndex = parseInt(id || '0');
   const project = projects[projectIndex] || projects[0];
 
+  // Parse mentors from comma-separated string
+  const mentors = project.mentor.split(',').map(mentor => mentor.trim());
+
   const handleBack = () => {
     navigate('/capstone');
   };
@@ -310,22 +313,25 @@ export const Capstone = () => {
                             backgroundColor: '#74B9FF'
                           }}
                         >
-                          1
+                          {mentors.length}
                         </Badge>
                       </div>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
-                        <div
-                          className="flex items-center gap-2 p-2 rounded"
-                          style={{ backgroundColor: 'var(--white)' }}
-                        >
-                          <User size={14} style={{ color: 'var(--black-dark)' }} />
-                          <span
-                            className="text-sm"
-                            style={{ color: 'var(--black-dark)' }}
+                        {mentors.map((mentor, idx) => (
+                          <div
+                            key={idx}
+                            className="flex items-center gap-2 p-2 rounded"
+                            style={{ backgroundColor: 'var(--white)' }}
                           >
-                            {project.mentor}
-                          </span>
-                        </div>
+                            <User size={14} style={{ color: 'var(--black-dark)' }} />
+                            <span
+                              className="text-sm"
+                              style={{ color: 'var(--black-dark)' }}
+                            >
+                              {mentor}
+                            </span>
+                          </div>
+                        ))}
                       </div>
                     </div>
                     

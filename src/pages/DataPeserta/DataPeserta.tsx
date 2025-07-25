@@ -1,7 +1,8 @@
 import { motion, type Variants } from 'framer-motion';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Users, GraduationCap, BookOpen } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Users, GraduationCap, BookOpen, Mail, Linkedin, Github, Instagram } from 'lucide-react';
 import { Footer } from '@/components/layout/Footer';
 import { Navbar } from '@/components/layout/Navbar';
 
@@ -126,6 +127,8 @@ export const DataPeserta = () => {
                         <th className="text-left p-3 font-semibold" style={{ color: 'var(--black)' }}>Nama</th>
                         <th className="text-left p-3 font-semibold" style={{ color: 'var(--black)' }}>Universitas</th>
                         <th className="text-left p-3 font-semibold" style={{ color: 'var(--black)' }}>Jurusan</th>
+                        <th className="text-left p-3 font-semibold" style={{ color: 'var(--black)' }}>Email</th>
+                        <th className="text-left p-3 font-semibold" style={{ color: 'var(--black)' }}>Sosial Media</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -144,6 +147,52 @@ export const DataPeserta = () => {
                           <td className="p-3" style={{ color: 'var(--black-dark)' }}>{mentor.university}</td>
                           <td className="p-3">
                             <Badge className="bg-blue-500 text-white">{mentor.major}</Badge>
+                          </td>
+                          <td className="p-3">
+                            <div className="flex items-center gap-2">
+                              <Mail size={14} style={{ color: 'var(--black-dark)' }} />
+                              <a 
+                                href={`mailto:${mentor.email}`}
+                                className="text-sm hover:underline"
+                                style={{ color: 'var(--black-dark)' }}
+                              >
+                                {mentor.email}
+                              </a>
+                            </div>
+                          </td>
+                          <td className="p-3">
+                            <div className="flex items-center gap-2">
+                              {mentor.linkedin && (
+                                <Button
+                                  size="sm"
+                                  className="p-1 h-8 w-8"
+                                  style={{ backgroundColor: '#0077B5', border: 'none' }}
+                                  onClick={() => window.open(mentor.linkedin, '_blank')}
+                                >
+                                  <Linkedin size={14} className="text-white" />
+                                </Button>
+                              )}
+                              {mentor.github && (
+                                <Button
+                                  size="sm"
+                                  className="p-1 h-8 w-8"
+                                  style={{ backgroundColor: '#24292E', border: 'none' }}
+                                  onClick={() => window.open(mentor.github, '_blank')}
+                                >
+                                  <Github size={14} className="text-white" />
+                                </Button>
+                              )}
+                              {mentor.instagram && (
+                                <Button
+                                  size="sm"
+                                  className="p-1 h-8 w-8"
+                                  style={{ backgroundColor: '#E4405F', border: 'none' }}
+                                  onClick={() => window.open(mentor.instagram, '_blank')}
+                                >
+                                  <Instagram size={14} className="text-white" />
+                                </Button>
+                              )}
+                            </div>
                           </td>
                         </motion.tr>
                       ))}
