@@ -1,43 +1,46 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Textarea } from '@/components/ui/textarea';
-import { MessageCircle, Heart, Send, Users, Sparkles, AtSign } from 'lucide-react';
+import { MessageCircle, Heart, Send, Users, Sparkles, AtSign, Loader2, RefreshCw, AlertTriangle, X } from 'lucide-react';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
 import { BackgroundPattern } from '@/components/ui/BackgroundPattern';
 
 import mentorData from '@/utils/MentorData.json';
 import menteeData from '@/utils/MenteeData.json';
+import ApiClient from '@/utils/api-client';
 
 interface Message {
-  id: string;
+  _id: string;
   type: 'mentor' | 'general';
   content: string;
   recipient?: string;
-  mentions?: string[];
-  timestamp: Date;
+  mentions: string[];
+  createdAt: string;
+  updatedAt: string;
 }
 
 export const Say = () => {
   const [mentorMessage, setMentorMessage] = useState('');
   const [generalMessage, setGeneralMessage] = useState('');
   const [messages, setMessages] = useState<Message[]>([]);
-  
+  const [loading, setLoading] = useState(false);
+  const [sendingMentor, setSendingMentor] = useState(false);
+  const [sendingGeneral, setSendingGeneral] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   // Mentor message suggestions
   const [showMentorSuggestions, setShowMentorSuggestions] = useState(false);
   const [mentorSuggestions, setMentorSuggestions] = useState<string[]>([]);
   const [mentorCursorPosition, setMentorCursorPosition] = useState(0);
-  const [currentMentorMention, setCurrentMentorMention] = useState('');
   const mentorTextareaRef = useRef<HTMLTextAreaElement>(null);
   
   // General message suggestions
   const [showGeneralSuggestions, setShowGeneralSuggestions] = useState(false);
   const [generalSuggestions, setGeneralSuggestions] = useState<string[]>([]);
   const [generalCursorPosition, setGeneralCursorPosition] = useState(0);
-  const [currentGeneralMention, setCurrentGeneralMention] = useState('');
   const generalTextareaRef = useRef<HTMLTextAreaElement>(null);
 
   // Combine all names for @ mentions
@@ -48,6 +51,28 @@ export const Say = () => {
 
   // Only mentor names for mentor message
   const mentorNames = mentorData.map(mentor => mentor.name);
+
+  // Load messages on component mount
+  useEffect(() => {
+    loadMessages();
+  }, []);
+
+  // Load messages from API
+  const loadMessages = async () => {
+    try {
+      setLoading(true);
+      setError(null);
+      const response = await ApiClient.getMessages({ limit: 50 });
+      if (response.success && response.data) {
+        setMessages(response.data.messages);
+      }
+    } catch (error) {
+      console.error('Failed to load messages:', error);
+      setError('Gagal memuat pesan. Pastikan backend server berjalan.');
+    } finally {
+      setLoading(false);
+    }
+  };
 
   // Handle @ mention functionality for mentor message
   const handleMentorMessageChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
@@ -64,7 +89,6 @@ export const Say = () => {
     if (atIndex !== -1) {
       const mentionText = textBeforeCursor.substring(atIndex + 1);
       if (mentionText.length > 0 && !mentionText.includes(' ')) {
-        setCurrentMentorMention(mentionText);
         const filteredSuggestions = mentorNames.filter(name => 
           name.toLowerCase().includes(mentionText.toLowerCase())
         );
@@ -96,7 +120,6 @@ export const Say = () => {
     if (atIndex !== -1) {
       const mentionText = textBeforeCursor.substring(atIndex + 1);
       if (mentionText.length > 0 && !mentionText.includes(' ')) {
-        setCurrentGeneralMention(mentionText);
         const filteredSuggestions = allNames.filter(name => 
           name.toLowerCase().includes(mentionText.toLowerCase())
         );
@@ -170,36 +193,64 @@ export const Say = () => {
   };
 
   // Send mentor message
-  const sendMentorMessage = () => {
-    if (mentorMessage.trim()) {
+  const sendMentorMessage = async () => {
+    if (!mentorMessage.trim()) return;
+
+    try {
+      setSendingMentor(true);
+      setError(null);
+      
       const mentions = extractMentions(mentorMessage);
-      const newMessage: Message = {
-        id: Date.now().toString(),
-        type: 'mentor',
-        content: mentorMessage,
-        mentions,
-        timestamp: new Date()
+      const messageData = {
+        type: 'mentor' as const,
+        content: mentorMessage.trim(),
+        mentions
       };
-      setMessages(prev => [newMessage, ...prev]);
-      setMentorMessage('');
-      setShowMentorSuggestions(false);
+
+      const response = await ApiClient.createMessage(messageData);
+      
+      if (response.success && response.data) {
+        // Add new message to the top of the list
+        setMessages(prev => [response.data!, ...prev]);
+        setMentorMessage('');
+        setShowMentorSuggestions(false);
+      }
+    } catch (error) {
+      console.error('Failed to send mentor message:', error);
+      setError('Gagal mengirim pesan. Pastikan backend server berjalan.');
+    } finally {
+      setSendingMentor(false);
     }
   };
 
   // Send general message
-  const sendGeneralMessage = () => {
-    if (generalMessage.trim()) {
+  const sendGeneralMessage = async () => {
+    if (!generalMessage.trim()) return;
+
+    try {
+      setSendingGeneral(true);
+      setError(null);
+      
       const mentions = extractMentions(generalMessage);
-      const newMessage: Message = {
-        id: Date.now().toString(),
-        type: 'general',
-        content: generalMessage,
-        mentions,
-        timestamp: new Date()
+      const messageData = {
+        type: 'general' as const,
+        content: generalMessage.trim(),
+        mentions
       };
-      setMessages(prev => [newMessage, ...prev]);
-      setGeneralMessage('');
-      setShowGeneralSuggestions(false);
+
+      const response = await ApiClient.createMessage(messageData);
+      
+      if (response.success && response.data) {
+        // Add new message to the top of the list
+        setMessages(prev => [response.data!, ...prev]);
+        setGeneralMessage('');
+        setShowGeneralSuggestions(false);
+      }
+    } catch (error) {
+      console.error('Failed to send general message:', error);
+      setError('Gagal mengirim pesan. Pastikan backend server berjalan.');
+    } finally {
+      setSendingGeneral(false);
     }
   };
 
@@ -243,12 +294,32 @@ export const Say = () => {
     // Split by placeholders and rebuild with JSX elements
     const parts = processedContent.split(/(__MENTION_PLACEHOLDER_\d+__)/);
     
-    return parts.map((part, index) => {
+    return parts.map(part => {
       if (mentionElements[part]) {
         return mentionElements[part];
       }
       return part;
     });
+  };
+
+  // Format timestamp
+  const formatTimestamp = (timestamp: string) => {
+    const date = new Date(timestamp);
+    
+    // Selalu tampilkan tanggal dan waktu lengkap
+    const fullDateTime = date.toLocaleDateString('id-ID', { 
+      day: 'numeric', 
+      month: 'long', 
+      year: 'numeric'
+    });
+    
+    const fullTime = date.toLocaleTimeString('id-ID', {
+      hour: '2-digit',
+      minute: '2-digit',
+      hour12: false
+    });
+    
+    return `${fullDateTime}, ${fullTime}`;
   };
 
   return (
@@ -328,6 +399,69 @@ export const Say = () => {
             </motion.p>
           </motion.div>
 
+          {/* Error Display */}
+          {error && (
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              className="mb-6"
+            >
+              <Card 
+                className="border-red-200 bg-red-50 shadow-lg"
+                style={{ 
+                  backgroundColor: 'rgba(254, 242, 242, 0.9)',
+                  borderColor: '#fecaca'
+                }}
+              >
+                <CardContent className="p-4">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-3">
+                      <div 
+                        className="p-2 rounded-full"
+                        style={{ backgroundColor: '#ef4444' }}
+                      >
+                        <AlertTriangle size={20} style={{ color: 'white' }} />
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-red-800">Terjadi Kesalahan</h4>
+                        <p className="text-red-700 text-sm">{error}</p>
+                      </div>
+                    </div>
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      onClick={() => setError(null)}
+                      className="text-red-600 hover:text-red-800 hover:bg-red-100"
+                    >
+                      <X size={16} />
+                    </Button>
+                  </div>
+                  <div className="mt-3 flex gap-2">
+                    <Button
+                      size="sm"
+                      onClick={loadMessages}
+                      disabled={loading}
+                      className="bg-red-600 hover:bg-red-700 text-white"
+                    >
+                      {loading ? (
+                        <>
+                          <Loader2 size={14} className="mr-1 animate-spin" />
+                          Mencoba lagi...
+                        </>
+                      ) : (
+                        <>
+                          <RefreshCw size={14} className="mr-1" />
+                          Coba Lagi
+                        </>
+                      )}
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+            </motion.div>
+          )}
+
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
             {/* Mentor Message Section */}
             <motion.div
@@ -364,6 +498,7 @@ export const Say = () => {
                       placeholder="Tulis pesan anonim untuk mentor di sini... Gunakan @ untuk mention mentor spesifik"
                       value={mentorMessage}
                       onChange={handleMentorMessageChange}
+                      disabled={sendingMentor}
                       className="min-h-[120px] resize-none border-0 focus:ring-2 focus:ring-teal-500"
                       style={{ 
                         backgroundColor: 'rgba(255, 255, 255, 0.8)',
@@ -398,15 +533,24 @@ export const Say = () => {
                   
                   <Button 
                     onClick={sendMentorMessage}
-                    disabled={!mentorMessage.trim()}
+                    disabled={!mentorMessage.trim() || sendingMentor}
                     className="w-full transition-all duration-300 hover:shadow-lg text-white"
                     style={{ 
                       background: 'linear-gradient(135deg, #14b8a6, #0d9488)',
                       border: 'none'
                     }}
                   >
-                    <Send size={16} className="mr-2" />
-                    Kirim ke Mentor
+                    {sendingMentor ? (
+                      <>
+                        <Loader2 size={16} className="mr-2 animate-spin" />
+                        Mengirim...
+                      </>
+                    ) : (
+                      <>
+                        <Send size={16} className="mr-2" />
+                        Kirim ke Mentor
+                      </>
+                    )}
                   </Button>
                 </CardContent>
               </Card>
@@ -447,6 +591,7 @@ export const Say = () => {
                       placeholder="Tulis pesan anonim di sini... Gunakan @ untuk mention seseorang"
                       value={generalMessage}
                       onChange={handleGeneralMessageChange}
+                      disabled={sendingGeneral}
                       className="min-h-[120px] resize-none border-0 focus:ring-2 focus:ring-teal-500"
                       style={{ 
                         backgroundColor: 'rgba(255, 255, 255, 0.8)',
@@ -494,15 +639,24 @@ export const Say = () => {
                   
                   <Button 
                     onClick={sendGeneralMessage}
-                    disabled={!generalMessage.trim()}
+                    disabled={!generalMessage.trim() || sendingGeneral}
                     className="w-full transition-all duration-300 hover:shadow-lg text-white"
                     style={{ 
                       background: 'linear-gradient(135deg, #14b8a6, #0d9488)',
                       border: 'none'
                     }}
                   >
-                    <Send size={16} className="mr-2" />
-                    Kirim Pesan
+                    {sendingGeneral ? (
+                      <>
+                        <Loader2 size={16} className="mr-2 animate-spin" />
+                        Mengirim...
+                      </>
+                    ) : (
+                      <>
+                        <Send size={16} className="mr-2" />
+                        Kirim Pesan
+                      </>
+                    )}
                   </Button>
                 </CardContent>
               </Card>
@@ -531,56 +685,71 @@ export const Say = () => {
                     >
                       <Users size={20} style={{ color: 'white' }} />
                     </div>
-                    <span style={{ color: 'var(--black)' }}>Pesan Terkirim</span>
+                    <span style={{ color: 'var(--black)' }}>Pesan yang Terkirim</span>
+                    <Button
+                      onClick={loadMessages}
+                      variant="outline"
+                      size="sm"
+                      disabled={loading}
+                      className="ml-auto"
+                    >
+                      {loading ? (
+                        <Loader2 size={14} className="animate-spin" />
+                      ) : (
+                        <RefreshCw size={14} />
+                      )}
+                    </Button>
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-4 max-h-96 overflow-y-auto">
                     {messages.map((message, index) => (
                       <motion.div
-                        key={message.id}
+                        key={message._id}
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.3, delay: index * 0.1 }}
                         className="p-4 rounded-lg"
                         style={{ backgroundColor: 'rgba(255, 255, 255, 0.6)' }}
                       >
-                        <div className="flex items-center gap-2 mb-2">
-                          <Badge
-                            className="text-xs text-white"
-                            style={{
-                              backgroundColor: message.type === 'mentor' ? '#14b8a6' : '#0d9488'
-                            }}
-                          >
-                            {message.type === 'mentor' ? 'Untuk Mentor' : 'Pesan Umum'}
-                          </Badge>
-                          <span className="text-xs opacity-60" style={{ color: 'var(--black-dark)' }}>
-                            {message.timestamp.toLocaleTimeString('id-ID')}
-                          </span>
+                        <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-3 gap-2">
+                          <div className="flex items-center gap-2 flex-wrap">
+                            <Badge 
+                              className="text-xs"
+                              style={{ 
+                                backgroundColor: message.type === 'mentor' ? '#0066cc' : '#14b8a6',
+                                color: 'white'
+                              }}
+                            >
+                              {message.type === 'mentor' ? 'Untuk Mentor' : 'Untuk Semuanya'}
+                            </Badge>
+                            {message.mentions.length > 0 && (
+                              <div className="flex gap-1 flex-wrap">
+                                {message.mentions.map((mention, idx) => (
+                                  <Badge 
+                                    key={idx}
+                                    variant="outline" 
+                                    className="text-xs"
+                                    style={{ 
+                                      borderColor: mentorNames.includes(mention) ? '#0066cc' : '#14b8a6',
+                                      color: mentorNames.includes(mention) ? '#0066cc' : '#14b8a6'
+                                    }}
+                                  >
+                                    @{mention}
+                                  </Badge>
+                                ))}
+                              </div>
+                            )}
+                          </div>
+                          <div className="text-left sm:text-right">
+                            <span className="text-xs opacity-70 font-medium block leading-tight" style={{ color: 'var(--black-dark)' }}>
+                              {formatTimestamp(message.createdAt)}
+                            </span>
+                          </div>
                         </div>
-                        <p className="text-sm leading-relaxed" style={{ color: 'var(--black-dark)' }}>
+                        <p style={{ color: 'var(--black-dark)' }}>
                           {formatMessageContent(message.content)}
                         </p>
-                        {message.mentions && message.mentions.length > 0 && (
-                          <div className="mt-2 flex flex-wrap gap-1">
-                            {message.mentions.map((mention, idx) => {
-                              const isMentor = mentorNames.some(name => name.toLowerCase() === mention.toLowerCase());
-                              return (
-                                <Badge 
-                                  key={idx} 
-                                  variant="outline" 
-                                  className="text-xs"
-                                  style={{
-                                    borderColor: isMentor ? '#0066cc' : '#14b8a6',
-                                    color: isMentor ? '#0066cc' : '#14b8a6'
-                                  }}
-                                >
-                                  @{mention}
-                                </Badge>
-                              );
-                            })}
-                          </div>
-                        )}
                       </motion.div>
                     ))}
                   </div>
