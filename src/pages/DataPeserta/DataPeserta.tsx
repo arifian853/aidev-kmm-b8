@@ -468,6 +468,7 @@ export const DataPeserta = () => {
                         <th className="text-left p-3 font-semibold" style={{ color: 'var(--black)' }}>Nama</th>
                         <th className="text-left p-3 font-semibold" style={{ color: 'var(--black)' }}>Universitas</th>
                         <th className="text-left p-3 font-semibold" style={{ color: 'var(--black)' }}>Jurusan</th>
+                        <th className="text-left p-3 font-semibold" style={{ color: 'var(--black)' }}>LinkedIn</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -478,7 +479,7 @@ export const DataPeserta = () => {
                           style={{ borderColor: 'var(--black-dark)', opacity: 0.1 }}
                           initial={{ opacity: 0, x: -20 }}
                           animate={{ opacity: 1, x: 0 }}
-                          transition={{ duration: 0.3, delay: index * 0.05 }}
+                          transition={{ duration: 0.3, delay: index * 0.1 }}
                           whileHover={{ backgroundColor: 'rgba(20, 184, 166, 0.05)' }}
                         >
                           <td className="p-3" style={{ color: 'var(--black-dark)' }}>{mentee.no}</td>
@@ -495,6 +496,18 @@ export const DataPeserta = () => {
                               {mentee.major}
                             </Badge>
                           </td>
+                          <td className="p-3">
+                            {mentee.linkedin && (
+                              <Button
+                                size="sm"
+                                className="p-1 h-8 w-8 transition-all duration-300 hover:scale-110"
+                                style={{ backgroundColor: '#0077B5', border: 'none' }}
+                                onClick={() => window.open(mentee.linkedin, '_blank')}
+                              >
+                                <Linkedin size={14} className="text-white" />
+                              </Button>
+                            )}
+                          </td>
                         </motion.tr>
                       ))}
                     </tbody>
@@ -503,35 +516,6 @@ export const DataPeserta = () => {
               </CardContent>
             </Card>
           </motion.div>
-
-          {/* Decorative elements with teal colors */}
-          <motion.div
-              className="absolute -top-10 -left-10 w-20 h-20 rounded-full opacity-20 blur-xl"
-              style={{ backgroundColor: '#14b8a6' }}
-              animate={{
-                  scale: [1, 1.2, 1],
-                  opacity: [0.2, 0.3, 0.2]
-              }}
-              transition={{
-                  duration: 4,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-              }}
-          />
-          <motion.div
-              className="absolute -bottom-10 -right-10 w-16 h-16 rounded-full opacity-20 blur-xl"
-              style={{ backgroundColor: '#0d9488' }}
-              animate={{
-                  scale: [1.2, 1, 1.2],
-                  opacity: [0.3, 0.2, 0.3]
-              }}
-              transition={{
-                  duration: 3,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: 1
-              }}
-          />
         </div>
       </div>
       <Footer />
