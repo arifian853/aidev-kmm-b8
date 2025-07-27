@@ -45,7 +45,7 @@ export const Onboarding = () => {
         },
         {
             title: 'Say Something',
-            description: 'Pesan untuk mentor dan teman seperjuangan',
+            description: 'Pesan untuk mentor dan mentee',
             icon: MessageCircle,
             link: '/say',
             delay: 1.4
