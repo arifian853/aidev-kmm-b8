@@ -9,6 +9,8 @@ import { DaftarTugas } from './pages/DaftarTugas/DaftarTugas'
 import { Tugas } from './pages/DaftarTugas/Tugas'
 import { CapstoneProject } from './pages/CapstoneProject/CapstoneProject'
 import { Capstone } from './pages/CapstoneProject/Capstone'
+import { Memories } from './pages/CoreMemories/Memories'
+import { Say } from './pages/SaySomething/Say'
 
 function App() {
 
@@ -24,6 +26,8 @@ function App() {
         <Route path="/data" element={<DataPeserta />} />
         <Route path="/capstone" element={<CapstoneProject />} />
         <Route path="/capstone/:id" element={<Capstone />} />
+        <Route path="/memories" element={<Memories />} />
+        <Route path="/say" element={<Say />} />
       </Routes>
     </>
   )

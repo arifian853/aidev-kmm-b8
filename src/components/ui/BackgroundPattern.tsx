@@ -35,7 +35,7 @@ const Particle = ({ delay }: { delay: number }) => {
 
 // Background particles component
 const BackgroundParticles = () => {
-    const particles = Array.from({ length: 15 }, (_, i) => (
+    const particles = Array.from({ length: 160 }, (_, i) => (
         <Particle key={i} delay={i * 0.3} />
     ));
 

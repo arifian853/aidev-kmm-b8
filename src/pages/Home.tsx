@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { BookOpen, Sparkles } from 'lucide-react';
 import { useEffect, useState } from 'react';
 
-// Particle component
+// Enhanced Particle component with better visibility
 const Particle = ({ delay }: { delay: number }) => {
     const [position, setPosition] = useState({ x: 0, y: 0 });
 
@@ -15,19 +15,29 @@ const Particle = ({ delay }: { delay: number }) => {
         });
     }, []);
 
+    // Random particle colors with teal accent
+    const colors = ['#14b8a6', '#0d9488', '#0f766e', '#134e4a'];
+    const color = colors[Math.floor(Math.random() * colors.length)];
+
     return (
         <motion.div
-            className="absolute w-1 h-1 bg-blue-400 rounded-full opacity-30"
+            className="absolute rounded-full"
             style={{
                 left: position.x,
                 top: position.y,
+                width: Math.random() * 4 + 2, // 2-6px
+                height: Math.random() * 4 + 2, // 2-6px
+                backgroundColor: color,
+                boxShadow: `0 0 10px ${color}40`
             }}
             animate={{
-                y: [position.y, position.y - 100, position.y],
-                opacity: [0.3, 0.8, 0.3],
+                y: [position.y, position.y - 150, position.y],
+                x: [position.x, position.x + (Math.random() - 0.5) * 100, position.x],
+                opacity: [0.4, 1, 0.4],
+                scale: [0.8, 1.2, 0.8]
             }}
             transition={{
-                duration: 4 + Math.random() * 2,
+                duration: 6 + Math.random() * 4,
                 repeat: Infinity,
                 delay: delay,
                 ease: "easeInOut"
@@ -36,10 +46,10 @@ const Particle = ({ delay }: { delay: number }) => {
     );
 };
 
-// Background particles component
+// Background particles component with more particles
 const BackgroundParticles = () => {
-    const particles = Array.from({ length: 15 }, (_, i) => (
-        <Particle key={i} delay={i * 0.3} />
+    const particles = Array.from({ length: 160 }, (_, i) => (
+        <Particle key={i} delay={i * 0.2} />
     ));
 
     return (
@@ -53,59 +63,59 @@ export const Home = () => {
     return (
         <div className='relative h-screen flex flex-col items-center justify-center p-10 overflow-hidden'
             style={{ 
-                background: 'linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%)'
+                backgroundColor: 'var(--white)' // Using CSS variable from App.css
             }}>
             
             {/* Background Particles */}
             <BackgroundParticles />
 
-            {/* Multiple layered background patterns */}
-            {/* Pattern Layer 1: Dots */}
+            {/* Multiple layered background patterns with teal accents */}
+            {/* Pattern Layer 1: Dots with teal */}
             <div 
-                className="absolute inset-0 opacity-4"
+                className="absolute inset-0 opacity-6"
                 style={{
-                    backgroundImage: `radial-gradient(circle at 25% 25%, #3b82f6 2px, transparent 2px),
-                                     radial-gradient(circle at 75% 75%, #8b5cf6 2px, transparent 2px)`,
+                    backgroundImage: `radial-gradient(circle at 25% 25%, #14b8a6 2px, transparent 2px),
+                                     radial-gradient(circle at 75% 75%, #0d9488 2px, transparent 2px)`,
                     backgroundSize: '60px 60px'
                 }}
             />
 
             {/* Pattern Layer 2: Grid Lines */}
             <div 
-                className="absolute inset-0 opacity-3"
+                className="absolute inset-0 opacity-4"
                 style={{
-                    backgroundImage: `linear-gradient(90deg, #e2e8f0 1px, transparent 1px),
-                                     linear-gradient(180deg, #e2e8f0 1px, transparent 1px)`,
+                    backgroundImage: `linear-gradient(90deg, var(--gray) 1px, transparent 1px),
+                                     linear-gradient(180deg, var(--gray) 1px, transparent 1px)`,
                     backgroundSize: '40px 40px'
                 }}
             />
 
             {/* Pattern Layer 3: Diagonal Lines */}
             <div 
-                className="absolute inset-0 opacity-2"
+                className="absolute inset-0 opacity-3"
                 style={{
-                    backgroundImage: `repeating-linear-gradient(45deg, transparent, transparent 35px, #cbd5e1 35px, #cbd5e1 36px)`,
+                    backgroundImage: `repeating-linear-gradient(45deg, transparent, transparent 35px, #14b8a620 35px, #14b8a620 36px)`,
                     backgroundSize: '80px 80px'
                 }}
             />
 
             {/* Pattern Layer 4: Small Dots */}
             <div 
-                className="absolute inset-0 opacity-3"
+                className="absolute inset-0 opacity-4"
                 style={{
-                    backgroundImage: `radial-gradient(circle at 50% 50%, #64748b 1px, transparent 1px),
-                                     radial-gradient(circle at 0% 100%, #94a3b8 1px, transparent 1px)`,
+                    backgroundImage: `radial-gradient(circle at 50% 50%, var(--black-dark) 1px, transparent 1px),
+                                     radial-gradient(circle at 0% 100%, #0d9488 1px, transparent 1px)`,
                     backgroundSize: '30px 30px',
                     backgroundPosition: '0 0, 15px 15px'
                 }}
             />
 
-            {/* Pattern Layer 5: Hexagon Pattern */}
+            {/* Pattern Layer 5: Hexagon Pattern with teal */}
             <div 
-                className="absolute inset-0 opacity-2"
+                className="absolute inset-0 opacity-3"
                 style={{
-                    backgroundImage: `radial-gradient(circle at 33% 33%, #6366f1 1.5px, transparent 1.5px),
-                                     radial-gradient(circle at 66% 66%, #a855f7 1.5px, transparent 1.5px)`,
+                    backgroundImage: `radial-gradient(circle at 33% 33%, #14b8a6 1.5px, transparent 1.5px),
+                                     radial-gradient(circle at 66% 66%, #0f766e 1.5px, transparent 1.5px)`,
                     backgroundSize: '90px 90px',
                     backgroundPosition: '0 0, 45px 45px'
                 }}
@@ -115,20 +125,20 @@ export const Home = () => {
             <div 
                 className="absolute inset-0 opacity-2"
                 style={{
-                    backgroundImage: `linear-gradient(90deg, transparent 49%, #e2e8f0 49%, #e2e8f0 51%, transparent 51%),
-                                     linear-gradient(0deg, transparent 49%, #e2e8f0 49%, #e2e8f0 51%, transparent 51%)`,
+                    backgroundImage: `linear-gradient(90deg, transparent 49%, var(--gray) 49%, var(--gray) 51%, transparent 51%),
+                                     linear-gradient(0deg, transparent 49%, var(--gray) 49%, var(--gray) 51%, transparent 51%)`,
                     backgroundSize: '100px 100px'
                 }}
             />
 
-            {/* Pattern Layer 7: Scattered Circles */}
+            {/* Pattern Layer 7: Scattered Circles with teal accents */}
             <div 
-                className="absolute inset-0 opacity-3"
+                className="absolute inset-0 opacity-4"
                 style={{
-                    backgroundImage: `radial-gradient(circle at 10% 20%, #3b82f6 1px, transparent 1px),
-                                     radial-gradient(circle at 80% 80%, #8b5cf6 1px, transparent 1px),
-                                     radial-gradient(circle at 40% 40%, #06b6d4 1px, transparent 1px),
-                                     radial-gradient(circle at 90% 10%, #ec4899 1px, transparent 1px)`,
+                    backgroundImage: `radial-gradient(circle at 10% 20%, #14b8a6 1px, transparent 1px),
+                                     radial-gradient(circle at 80% 80%, #0d9488 1px, transparent 1px),
+                                     radial-gradient(circle at 40% 40%, #0f766e 1px, transparent 1px),
+                                     radial-gradient(circle at 90% 10%, #134e4a 1px, transparent 1px)`,
                     backgroundSize: '120px 120px, 80px 80px, 150px 150px, 200px 200px'
                 }}
             />
@@ -137,7 +147,7 @@ export const Home = () => {
             <div 
                 className="absolute inset-0 opacity-2"
                 style={{
-                    backgroundImage: `repeating-linear-gradient(0deg, transparent, transparent 20px, #f1f5f9 20px, #f1f5f9 22px)`,
+                    backgroundImage: `repeating-linear-gradient(0deg, transparent, transparent 20px, #14b8a610 20px, #14b8a610 22px)`,
                     transform: 'rotate(15deg) scale(1.5)',
                     transformOrigin: 'center'
                 }}
@@ -151,7 +161,7 @@ export const Home = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, ease: "easeOut" }}
                 >
-                    {/* Icon with gradient background */}
+                    {/* Icon with teal gradient background */}
                     <motion.div
                         className="mb-8 relative"
                         initial={{ scale: 0.8 }}
@@ -162,24 +172,25 @@ export const Home = () => {
                             <div 
                                 className="absolute w-20 h-20 rounded-full opacity-20"
                                 style={{
-                                    background: 'linear-gradient(135deg, #3b82f6, #8b5cf6)'
+                                    background: 'linear-gradient(135deg, #14b8a6, #0d9488)'
                                 }}
                             />
-                            <BookOpen size={48} style={{ color: '#1e40af' }} />
+                            <BookOpen size={48} style={{ color: '#0d9488' }} />
                             <Sparkles 
                                 size={16} 
-                                className="absolute -top-2 -right-2 text-purple-500 opacity-70" 
+                                className="absolute -top-2 -right-2 opacity-70" 
+                                style={{ color: '#14b8a6' }}
                             />
                         </div>
                     </motion.div>
 
-                    {/* Main heading */}
+                    {/* Main heading with teal gradient */}
                     <motion.h1
                         className="text-4xl md:text-5xl font-bold mb-3 tracking-tight"
                         style={{ 
-                            background: 'linear-gradient(135deg, #1e40af, #7c3aed)',
+                            background: 'linear-gradient(135deg, #0d9488, #14b8a6)',
                             WebkitBackgroundClip: 'text',
-                            WebkitTextFillColor: 'transparent',
+                            WebkitTextFillColor: 'transparent', 
                             backgroundClip: 'text'
                         }}
                         initial={{ opacity: 0, y: 20 }}
@@ -191,7 +202,8 @@ export const Home = () => {
 
                     {/* Subtitle */}
                     <motion.h2
-                        className="text-lg md:text-xl font-medium mb-3 text-slate-700"
+                        className="text-lg md:text-xl font-medium mb-3"
+                        style={{ color: 'var(--black)' }}
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
@@ -201,7 +213,8 @@ export const Home = () => {
 
                     {/* Program info */}
                     <motion.p
-                        className="text-base md:text-lg text-slate-600 font-medium"
+                        className="text-base md:text-lg font-medium"
+                        style={{ color: 'var(--black-dark)' }}
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
@@ -211,9 +224,10 @@ export const Home = () => {
 
                     {/* Description */}
                     <motion.p
-                        className="text-sm md:text-base mt-6 text-slate-500 leading-relaxed max-w-2xl mx-auto"
+                        className="text-sm md:text-base mt-6 leading-relaxed max-w-2xl mx-auto opacity-80"
+                        style={{ color: 'var(--black-dark)' }}
                         initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
+                        animate={{ opacity: 0.8 }}
                         transition={{ duration: 0.6, delay: 0.6 }}
                     >
                         Dokumentasi materi yang telah dipelajari, tugas yang telah diselesaikan,
@@ -222,7 +236,7 @@ export const Home = () => {
                     </motion.p>
                 </motion.div>
 
-                {/* CTA Button */}
+                {/* CTA Button with teal gradient */}
                 <motion.div
                     className="text-center"
                     initial={{ opacity: 0, scale: 0.8 }}
@@ -233,7 +247,7 @@ export const Home = () => {
                         <Button
                             className='relative px-8 py-3 text-base font-medium cursor-pointer rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105'
                             style={{
-                                background: 'linear-gradient(135deg, #3b82f6, #1e40af)',
+                                background: 'linear-gradient(135deg, #14b8a6, #0d9488)',
                                 color: 'white',
                                 border: 'none'
                             }}
@@ -250,16 +264,17 @@ export const Home = () => {
                             <div 
                                 className="absolute inset-0 rounded-lg opacity-0 hover:opacity-20 transition-opacity duration-300"
                                 style={{
-                                    background: 'linear-gradient(135deg, #8b5cf6, #3b82f6)'
+                                    background: 'linear-gradient(135deg, #0f766e, #14b8a6)'
                                 }}
                             />
                         </Button>
                     </Link>
                 </motion.div>
 
-                {/* Decorative elements */}
+                {/* Decorative elements with teal colors */}
                 <motion.div
-                    className="absolute -top-10 -left-10 w-20 h-20 bg-blue-200 rounded-full opacity-20 blur-xl"
+                    className="absolute -top-10 -left-10 w-20 h-20 rounded-full opacity-20 blur-xl"
+                    style={{ backgroundColor: '#14b8a6' }}
                     animate={{
                         scale: [1, 1.2, 1],
                         opacity: [0.2, 0.3, 0.2]
@@ -271,7 +286,8 @@ export const Home = () => {
                     }}
                 />
                 <motion.div
-                    className="absolute -bottom-10 -right-10 w-16 h-16 bg-purple-200 rounded-full opacity-20 blur-xl"
+                    className="absolute -bottom-10 -right-10 w-16 h-16 rounded-full opacity-20 blur-xl"
+                    style={{ backgroundColor: '#0d9488' }}
                     animate={{
                         scale: [1.2, 1, 1.2],
                         opacity: [0.3, 0.2, 0.3]
