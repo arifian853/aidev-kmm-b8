@@ -98,20 +98,41 @@ const memories = [
     },
     {
         id: 6,
+        image: '/memories/19-05-2025.png',
+        date: '19 Mei 2025',
+        title: '19 Mei 2025',
+        description: 'Foto setelah zoom pada tanggal tersebut'
+    },
+    {
+        id: 7,
+        image: '/memories/03-06-2025.png',
+        date: '03 Juni 2025',
+        title: '03 Juni 2025',
+        description: 'Foto setelah zoom pada tanggal tersebut'
+    },
+    {
+        id: 8,
         image: '/memories/05-06-2025.png',
         date: '05 Juni 2025',
         title: '05 Juni 2025',
         description: 'Foto setelah zoom pada tanggal tersebut'
     },
     {
-        id: 7,
+        id: 9,
+        image: '/memories/10-06-2025.png',
+        date: '10 Juni 2025',
+        title: '10 Juni 2025',
+        description: 'Foto setelah zoom pada tanggal tersebut'
+    },
+    {
+        id: 10,
         image: '/memories/24-06-2025.png',
         date: '24 Juni 2025',
         title: '24 Juni 2025',
         description: 'Foto setelah zoom pada tanggal tersebut'
     },
     {
-        id: 8,
+        id: 11,
         image: '/memories/closing.png',
         date: 'Penutupan',
         title: 'Penutupan',
