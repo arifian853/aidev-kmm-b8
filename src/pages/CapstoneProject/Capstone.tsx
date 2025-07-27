@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { useParams, useNavigate } from 'react-router-dom';
-import { ArrowLeft, Users, Brain, Briefcase, User, Sparkles } from 'lucide-react';
+import { ArrowLeft, Users, Brain, Briefcase, User, Sparkles, ExternalLink, Github, Bot } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -404,6 +404,53 @@ const project = capstoneData[projectIndex] || capstoneData[0];
                             {collab}
                           </Badge>
                         ))}
+                      </div>
+                    </div>
+
+                    {/* Project Links Section */}
+                    <div>
+                      <h4 className="font-medium mb-2" style={{ color: 'var(--black)' }}>
+                        Link Proyek
+                      </h4>
+                      <div className="space-y-2">
+                        {/* Live Project Link */}
+                        {project.link_proyek && (
+                          <Button
+                            onClick={() => window.open(project.link_proyek, '_blank')}
+                            className="w-full justify-start text-white hover:opacity-90 transition-all duration-300 hover:scale-105"
+                            style={{ backgroundColor: '#14b8a6' }}
+                            size="sm"
+                          >
+                            <ExternalLink size={14} className="mr-2" />
+                            Live Project
+                          </Button>
+                        )}
+
+                        {/* GitHub Repository Link */}
+                        {project.repo_github && (
+                          <Button
+                            onClick={() => window.open(project.repo_github, '_blank')}
+                            className="w-full justify-start text-white hover:opacity-90 transition-all duration-300 hover:scale-105"
+                            style={{ backgroundColor: '#0d9488' }}
+                            size="sm"
+                          >
+                            <Github size={14} className="mr-2" />
+                            GitHub Repository
+                          </Button>
+                        )}
+
+                        {/* Hugging Face Repository Link */}
+                        {project.repo_huggingface && (
+                          <Button
+                            onClick={() => window.open(project.repo_huggingface, '_blank')}
+                            className="w-full justify-start text-white hover:opacity-90 transition-all duration-300 hover:scale-105"
+                            style={{ backgroundColor: '#0f766e' }}
+                            size="sm"
+                          >
+                            <Bot size={14} className="mr-2" />
+                            Hugging Face
+                          </Button>
+                        )}
                       </div>
                     </div>
                   </div>

@@ -219,7 +219,7 @@ export const Home = () => {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
                     >
-                        Artificial Intelligence Batch 1 @ Infinite Learning
+                        AI Development Angkatan 1 @ Infinite Learning
                     </motion.p>
 
                     {/* Description */}
@@ -232,7 +232,7 @@ export const Home = () => {
                     >
                         Dokumentasi materi yang telah dipelajari, tugas yang telah diselesaikan,
                         <br className="hidden md:block" />
-                        dan data-data lainnya dalam perjalanan pembelajaran AI.
+                        kenangan dan data-data lainnya dalam perjalanan pembelajaran AI.
                     </motion.p>
                 </motion.div>
 
