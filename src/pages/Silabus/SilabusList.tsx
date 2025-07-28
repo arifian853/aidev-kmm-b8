@@ -242,9 +242,35 @@ export const SilabusList = () => {
             >
               Silabus Pembelajaran
             </h1>
-            <p className="text-xl max-w-2xl mx-auto leading-relaxed" style={{ color: 'var(--black-dark)', opacity: 0.8 }}>
+            <p className="text-xl max-w-2xl mx-auto leading-relaxed mb-6" style={{ color: 'var(--black-dark)', opacity: 0.8 }}>
               Kampus Merdeka Mandiri Batch 8 - Artificial Intelligence Batch 1
             </p>
+            
+            {/* Tombol Versi PDF */}
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+            >
+              <Button
+                className="text-white hover:shadow-lg transition-all duration-300 px-6 py-2 text-sm font-medium relative overflow-hidden"
+                style={{ 
+                  background: 'linear-gradient(135deg, #14b8a6, #0d9488)',
+                  border: 'none'
+                }}
+                onClick={() => window.open('https://drive.google.com/drive/folders/1dob8HHts-B3r8K3Nr5IMk6nGC-L0Yg7h?usp=sharing', '_blank')}
+              >
+                <span className="relative z-10 flex items-center justify-center gap-2">
+                  📄 Versi PDF
+                </span>
+                <div 
+                    className="absolute inset-0 opacity-0 hover:opacity-20 transition-opacity duration-300"
+                    style={{
+                        background: 'linear-gradient(135deg, #0f766e, #14b8a6)'
+                    }}
+                />
+              </Button>
+            </motion.div>
           </motion.div>
 
           {/* Silabus Grid */}
