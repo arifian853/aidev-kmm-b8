@@ -91,52 +91,115 @@ const memories = [
     },
     {
         id: 5,
+        image: '/memories/Tim Nuswapada ke Penyengat - 03 Mei 2025.jpg',
+        date: '03 Mei 2025',
+        title: 'Tim Nuswapada ke Penyengat',
+        description: 'Foto tim Nuswapada saat kunjungan ke Penyengat'
+    },
+    {
+        id: 6,
         image: '/memories/15-05-2025.png',
         date: '15 Mei 2025',
         title: '15 Mei 2025',
         description: 'Foto setelah zoom pada tanggal tersebut'
     },
     {
-        id: 6,
+        id: 7,
         image: '/memories/19-05-2025.png',
         date: '19 Mei 2025',
         title: '19 Mei 2025',
         description: 'Foto setelah zoom pada tanggal tersebut'
     },
     {
-        id: 7,
+        id: 8,
         image: '/memories/03-06-2025.png',
         date: '03 Juni 2025',
         title: '03 Juni 2025',
         description: 'Foto setelah zoom pada tanggal tersebut'
     },
     {
-        id: 8,
+        id: 9,
         image: '/memories/05-06-2025.png',
         date: '05 Juni 2025',
         title: '05 Juni 2025',
         description: 'Foto setelah zoom pada tanggal tersebut'
     },
     {
-        id: 9,
+        id: 10,
         image: '/memories/10-06-2025.png',
         date: '10 Juni 2025',
         title: '10 Juni 2025',
         description: 'Foto setelah zoom pada tanggal tersebut'
     },
     {
-        id: 10,
+        id: 11,
         image: '/memories/24-06-2025.png',
         date: '24 Juni 2025',
         title: '24 Juni 2025',
         description: 'Foto setelah zoom pada tanggal tersebut'
     },
     {
-        id: 11,
+        id: 12,
         image: '/memories/closing.png',
         date: 'Penutupan',
-        title: 'Penutupan',
-        description: 'Foto penutupan program'
+        title: 'Penutupan Program',
+        description: 'Foto penutupan program KMM B8'
+    },
+    {
+        id: 13,
+        image: '/memories/Last speech 28 - 07 - 2025.png',
+        date: '28 Juli 2025',
+        title: 'Last Speech',
+        description: 'Pidato terakhir pada acara graduation'
+    },
+    {
+        id: 14,
+        image: '/memories/Last speech 2 28 - 07 - 2025.png',
+        date: '28 Juli 2025',
+        title: 'Last Speech 2',
+        description: 'Momen pidato terakhir - foto kedua'
+    },
+    {
+        id: 15,
+        image: '/memories/Last speech 3 28 - 07 - 2025.png',
+        date: '28 Juli 2025',
+        title: 'Last Speech 3',
+        description: 'Momen pidato terakhir - foto ketiga'
+    },
+    {
+        id: 16,
+        image: '/memories/Foto Graduation 1 28 - 07 - 2025.png',
+        date: '28 Juli 2025',
+        title: 'Graduation 1',
+        description: 'Foto graduation KMM B8 - foto pertama'
+    },
+    {
+        id: 17,
+        image: '/memories/Foto Graduation 2 28 - 07 - 2025.png',
+        date: '28 Juli 2025',
+        title: 'Graduation 2',
+        description: 'Foto graduation KMM B8 - foto kedua'
+    },
+    {
+        id: 18,
+        image: '/memories/Foto Graduation 3 28 - 07 - 2025.png',
+        date: '28 Juli 2025',
+        title: 'Graduation 3',
+        description: 'Foto graduation KMM B8 - foto ketiga'
+    },
+    {
+        id: 19,
+        image: '/memories/Foto Graduation 4 28 - 07 - 2025.png',
+        date: '28 Juli 2025',
+        title: 'Graduation 4',
+        description: 'Foto graduation KMM B8 - foto keempat'
+    },
+    {
+        id: 20,
+        image: '/memories/Graduation.png',
+        date: '28 Juli 2025',
+        title: 'Graduation',
+        description: 'Momen graduation yang bersejarah'
     }
 ];
 
