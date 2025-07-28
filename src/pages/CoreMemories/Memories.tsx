@@ -1,8 +1,9 @@
 import { motion } from 'framer-motion';
-import { Camera, Heart, Sparkles, Calendar } from 'lucide-react';
+import { Camera, Heart, Sparkles, Calendar, Play, Video } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Navbar } from '@/components/layout/Navbar';
 import { useEffect, useState } from 'react';
+import { Footer } from '@/components/layout/Footer';
 
 // Enhanced Particle component with better visibility
 const Particle = ({ delay }: { delay: number }) => {
@@ -141,7 +142,7 @@ const memories = [
     {
         id: 12,
         image: '/memories/closing.png',
-        date: 'Penutupan',
+        date: '24 Juli 2025',
         title: 'Penutupan Program',
         description: 'Foto penutupan program KMM B8'
     },
@@ -200,6 +201,13 @@ const memories = [
         date: '28 Juli 2025',
         title: 'Graduation',
         description: 'Momen graduation yang bersejarah'
+    },
+    {
+        id: 21,
+        image: '/memories/Sambutan.jpg',
+        date: '28 Juli 2025',
+        title: 'Sambutan oleh Syahana',
+        description: 'Kata sambutan oleh perwakilan Mentee.'
     }
 ];
 
@@ -415,6 +423,170 @@ export const Memories = () => {
                         ))}
                     </motion.div>
 
+                    {/* Video Memories Section */}
+                    <motion.div
+                        className="mt-16 mb-8"
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, delay: 0.5 }}
+                    >
+                        {/* Video Section Header */}
+                        <motion.div
+                            className="mb-8 text-center"
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 0.6 }}
+                        >
+                            <div className='relative flex items-center justify-center mb-4'>
+                                <div 
+                                    className="absolute w-16 h-16 rounded-full opacity-20"
+                                    style={{
+                                        background: 'linear-gradient(135deg, #14b8a6, #0d9488)'
+                                    }}
+                                />
+                                <Video size={32} style={{ color: '#0d9488' }} />
+                                <Play 
+                                    size={12} 
+                                    className="absolute -top-1 -right-1 opacity-70" 
+                                    style={{ color: '#14b8a6' }}
+                                />
+                            </div>
+                            <h2
+                                className="text-2xl md:text-3xl font-bold mb-4 tracking-tight"
+                                style={{ 
+                                    background: 'linear-gradient(135deg, #0d9488, #14b8a6)',
+                                    WebkitBackgroundClip: 'text',
+                                    WebkitTextFillColor: 'transparent',
+                                    backgroundClip: 'text'
+                                }}
+                            >
+                                Video Memories
+                            </h2>
+                            <p className="text-lg" style={{ color: 'var(--black-dark)' }}>
+                                Rekaman momen-momen bersejarah dalam perjalanan KMM B8
+                            </p>
+                        </motion.div>
+
+                        {/* Video Grid */}
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                            {/* Last Speech Video */}
+                            <motion.div
+                                initial={{ opacity: 0, x: -30 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ duration: 0.6, delay: 0.7 }}
+                            >
+                                <Card
+                                    className="overflow-hidden backdrop-blur-sm relative"
+                                    style={{ 
+                                        backgroundColor: 'rgba(239, 239, 239, 0.9)',
+                                        border: 'none',
+                                        boxShadow: '0 15px 35px rgba(20, 184, 166, 0.15)'
+                                    }}
+                                >
+                                    {/* Decorative gradient overlay */}
+                                    <div 
+                                        className="absolute top-0 left-0 w-full h-2"
+                                        style={{
+                                            background: 'linear-gradient(90deg, #14b8a6, #0d9488)'
+                                        }}
+                                    />
+
+                                    <CardContent className="p-6">
+                                        <div className="flex items-center gap-3 mb-4">
+                                            <div 
+                                                className="w-10 h-10 rounded-full flex items-center justify-center"
+                                                style={{ backgroundColor: '#14b8a620' }}
+                                            >
+                                                <Play size={20} style={{ color: '#0d9488' }} />
+                                            </div>
+                                            <div>
+                                                <h3 className="text-xl font-bold" style={{ color: 'var(--black)' }}>
+                                                    Last Speech Recording
+                                                </h3>
+                                                <p className="text-sm" style={{ color: '#14b8a6' }}>
+                                                    28 Juli 2025 • Graduation Day
+                                                </p>
+                                            </div>
+                                        </div>
+                                        
+                                        <p className="text-sm mb-6" style={{ color: 'var(--black-dark)' }}>
+                                            Rekaman pidato terakhir pada acara graduation KMM B8. Momen bersejarah yang menandai berakhirnya perjalanan pembelajaran AI bersama.
+                                        </p>
+
+                                        {/* Google Drive Video Embed */}
+                                        <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
+                                            <iframe
+                                                src="https://drive.google.com/file/d/18mjgNEJ3et8CNrL7ZlONPwB58R-k7JYz/preview"
+                                                className="absolute top-0 left-0 w-full h-full rounded-lg"
+                                                allow="autoplay"
+                                                style={{ border: 'none' }}
+                                                title="Last Speech Recording"
+                                            />
+                                        </div>
+                                    </CardContent>
+                                </Card>
+                            </motion.div>
+
+                            {/* Testimoni Mentee Video */}
+                            <motion.div
+                                initial={{ opacity: 0, x: 30 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ duration: 0.6, delay: 0.8 }}
+                            >
+                                <Card
+                                    className="overflow-hidden backdrop-blur-sm relative"
+                                    style={{ 
+                                        backgroundColor: 'rgba(239, 239, 239, 0.9)',
+                                        border: 'none',
+                                        boxShadow: '0 15px 35px rgba(20, 184, 166, 0.15)'
+                                    }}
+                                >
+                                    {/* Decorative gradient overlay */}
+                                    <div 
+                                        className="absolute top-0 left-0 w-full h-2"
+                                        style={{
+                                            background: 'linear-gradient(90deg, #0d9488, #14b8a6)'
+                                        }}
+                                    />
+
+                                    <CardContent className="p-6">
+                                        <div className="flex items-center gap-3 mb-4">
+                                            <div 
+                                                className="w-10 h-10 rounded-full flex items-center justify-center"
+                                                style={{ backgroundColor: '#0d948820' }}
+                                            >
+                                                <Heart size={20} style={{ color: '#14b8a6' }} />
+                                            </div>
+                                            <div>
+                                                <h3 className="text-xl font-bold" style={{ color: 'var(--black)' }}>
+                                                    Testimoni Mentee
+                                                </h3>
+                                                <p className="text-sm" style={{ color: '#0d9488' }}>
+                                                    Pengalaman & Kesan Selama Program
+                                                </p>
+                                            </div>
+                                        </div>
+                                        
+                                        <p className="text-sm mb-6" style={{ color: 'var(--black-dark)' }}>
+                                            Testimoni dari para mentee tentang pengalaman mereka selama mengikuti program Kampus Merdeka Mandiri Batch 8 di Infinite Learning.
+                                        </p>
+
+                                        {/* Google Drive Video Embed */}
+                                        <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
+                                            <iframe
+                                                src="https://drive.google.com/file/d/11z8VjRHDdmmP6WSCeTizM9HDZ8D1Htt0/preview"
+                                                className="absolute top-0 left-0 w-full h-full rounded-lg"
+                                                allow="autoplay"
+                                                style={{ border: 'none' }}
+                                                title="Testimoni Mentee"
+                                            />
+                                        </div>
+                                    </CardContent>
+                                </Card>
+                            </motion.div>
+                        </div>
+                    </motion.div>
+
                     {/* Decorative elements */}
                     <motion.div
                         className="absolute -top-10 -left-10 w-20 h-20 rounded-full opacity-20 blur-xl"
@@ -476,6 +648,7 @@ export const Memories = () => {
                     </motion.div>
                 )}
             </div>
+            <Footer />
         </>
     );
 };
